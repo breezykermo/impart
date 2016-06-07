@@ -4,12 +4,12 @@ import SwipeCards from 'react-native-swipe-cards'
 import Card from '../../components/Card'
 
 const Cards = [
-  { text: 'Tomato', backgroundColor: 'red' },
-  { text: 'Aubergine', backgroundColor: 'purple' },
-  { text: 'Courgette', backgroundColor: 'green' },
-  { text: 'Blueberry', backgroundColor: 'blue' },
-  { text: 'Umm...', backgroundColor: 'cyan' },
-  { text: 'orange', backgroundColor: 'orange' },
+  { header: 'NEXT', text: 'Tomato' },
+  { header: 'NEXT', text: 'Aubergine' },
+  { header: 'NEXT', text: 'Courgette' },
+  { header: 'NEXT', text: 'Blueberry' },
+  { header: 'NEXT', text: 'Umm...' },
+  { header: 'NEXT', text: 'orange' },
 ]
 
 export default class App extends Component {
