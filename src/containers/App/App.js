@@ -4,12 +4,18 @@ import SwipeCards from 'react-native-swipe-cards'
 import Card from '../../components/Card'
 
 const Cards = [
-  { header: 'NEXT', text: 'Tomato' },
-  { header: 'NEXT', text: 'Aubergine' },
-  { header: 'NEXT', text: 'Courgette' },
-  { header: 'NEXT', text: 'Blueberry' },
-  { header: 'NEXT', text: 'Umm...' },
-  { header: 'NEXT', text: 'orange' },
+  {
+    header: 'Supervise holiday program',
+    organization: 'MindLab',
+    location: 'Carlton Gore Road, Newmarket, Auckland',
+    body: `MindLab is looking for volunteers to supervise our holiday programs,
+which we run for high school students. No specific experience is required.`,
+  },
+  { header: 'NEXT', body: 'Aubergine' },
+  { header: 'NEXT', body: 'Courgette' },
+  { header: 'NEXT', body: 'Blueberry' },
+  { header: 'NEXT', body: 'Umm...' },
+  { header: 'NEXT', body: 'orange' },
 ]
 
 export default class App extends Component {

@@ -9,18 +9,26 @@ import styles from './Card.styles'
 const Card = props => (
   <View style={styles.container}>
     <Text style={styles.header}>{props.header}</Text>
-    <Image source={require('../../media/no-user-image.gif')} style={styles.image}>
-      <Text>{props.text}</Text>
-    </Image>
+    <Image source={require('../../media/no-user-image.gif')} style={styles.image} />
     <View style={styles.body}>
-
+      <View style={styles.organization}>
+        <Text>Organization: {props.organization || 'Unlisted'}</Text>
+      </View>
+      <View style={styles.topBreak}>
+        <Text>Location: {props.location || 'Unlisted'}</Text>
+      </View>
+      <View style={styles.topBreak}>
+        <Text>{props.body || 'No further description is provided for this listing.'}</Text>
+      </View>
     </View>
   </View>
 )
 Card.propTypes = {
   header: PropTypes.string.isRequired,
   imageSrc: PropTypes.string,
-  text: PropTypes.string.isRequired,
+  organization: PropTypes.string,
+  location: PropTypes.string,
+  body: PropTypes.string,
 }
 
 export default Card

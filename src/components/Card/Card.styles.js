@@ -1,3 +1,4 @@
+import { styles as textStyles } from '../../common/constants/text'
 import { Dimensions } from 'react-native'
 
 const WINDOW = Dimensions.get('window')
@@ -8,7 +9,7 @@ export default {
     flexDirection: 'column',
     justifyContent: 'space-between',
     borderRadius: 5,
-    borderColor: 'blue',
+    borderColor: 'grey',
     borderWidth: 2,
     padding: 10,
     height: WINDOW.height - 200,
@@ -17,6 +18,7 @@ export default {
   header: {
     flex: 1,
     textAlign: 'center',
+    ...textStyles.h1,
   },
   image: {
     flex: 5,
@@ -26,5 +28,15 @@ export default {
   },
   body: {
     flex: 4,
+  },
+  organization: {
+    padding: 5,
+    paddingTop: 14,
+  },
+  topBreak: {
+    marginTop: 8,
+    paddingTop: 5,
+    borderTopWidth: 1,
+    borderTopColor: 'grey',
   },
 }
