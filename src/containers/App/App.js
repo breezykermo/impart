@@ -1,8 +1,9 @@
 import { connect } from 'react-redux'
 import { mapDispatchToProps } from '../../util/redux'
 import * as viewActions from '../../reducers/view/actions'
+import * as cardActions from '../../reducers/cards/actions'
 
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import SwipeCards from 'react-native-swipe-cards'
 import Card from '../../components/Card'
 import NoMoreCards from '../../components/NoMoreCards'
@@ -23,18 +24,22 @@ which we run for high school students. No specific experience is required.`,
 ]
 
 class App extends Component {
+  static propTypes = {
+    saidYes: PropTypes.func.isRequired,
+    saidNo: PropTypes.func.isRequired,
+    goToView: PropTypes.func.isRequired,
+  }
+
   state = {
     cards: Cards,
   }
 
   handleYup(card) {
-    // eslint-disable-next-line
-    console.log(`Yup for ${card.text}`)
+    this.props.saidYes(card)
   }
 
   handleNope(card) {
-    // eslint-disable-next-line
-    console.log(`Nope for ${card.text}`)
+    this.props.saidNo(card)
   }
 
   render() {
@@ -42,11 +47,11 @@ class App extends Component {
       <SwipeCards
         cards={this.state.cards}
 
-        renderCard={(cardData) => <Card {...cardData} />}
+        renderCard={cardData => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards />}
 
-        handleYup={this.handleYup}
-        handleNope={this.handleNope}
+        handleYup={card => this.handleYup(card)}
+        handleNope={card => this.handleNope(card)}
 
         showYup={true}
         showNope={true}
@@ -57,5 +62,5 @@ class App extends Component {
 
 export default connect(
   state => state,
-  mapDispatchToProps(viewActions)
+  mapDispatchToProps([viewActions, cardActions])
 )(App)
