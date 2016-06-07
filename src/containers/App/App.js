@@ -48,10 +48,9 @@ class App extends Component {
 
 export default connect(
   state => {
-    // const cardsAsObj = state.cards.get('toDo').toJS()
-    const cardsAsList = Object.keys(state.cards.toDo)
-      .map(key => state.cards.toDo[key])
-    console.log(cardsAsList)
+    const cardsAsObj = state.cards.get('toDo').toJS()
+    const cardsAsList = Object.keys(cardsAsObj)
+      .map(key => cardsAsObj[key])
     return {
       toDo: cardsAsList,
     }

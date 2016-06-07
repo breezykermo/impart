@@ -1,4 +1,6 @@
-export default {
+import { fromJS } from 'immutable'
+
+export default fromJS({
   yes: {},
   no: {},
   toDo: {
@@ -26,4 +28,4 @@ export default {
       body: 'Tomato',
     },
   },
-}
+})
