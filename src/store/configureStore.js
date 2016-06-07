@@ -7,11 +7,17 @@ import {
 import reducers from '../reducers'
 
 export default function configureStore(initialState) {
+  const middlewares = [
+    // add middlewares
+  ]
+  if (__DEV__) {
+    if (global.reduxNativeDevTools) middlewares.push(global.reduxNativeDevTools())
+  }
   return createStore(
     reducers,
     initialState,
     compose(
-      // global.reduxNativeDevTools ? global.reduxNativeDevTools() : nope => nope
+      ...middlewares
     )
   )
 }
