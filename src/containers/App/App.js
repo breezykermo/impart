@@ -8,30 +8,16 @@ import SwipeCards from 'react-native-swipe-cards'
 import Card from '../../components/Card'
 import NoMoreCards from '../../components/NoMoreCards'
 
-const Cards = [
-  {
-    header: 'Supervise holiday program',
-    organization: 'MindLab',
-    location: 'Carlton Gore Road, Newmarket, Auckland',
-    body: `MindLab is looking for volunteers to supervise our holiday programs,
-which we run for high school students. No specific experience is required.`,
-  },
-  { header: 'NEXT', body: 'Aubergine' },
-  // { header: 'NEXT', body: 'Courgette' },
-  // { header: 'NEXT', body: 'Blueberry' },
-  // { header: 'NEXT', body: 'Umm...' },
-  // { header: 'NEXT', body: 'orange' },
-]
-
 class App extends Component {
   static propTypes = {
+    toDo: PropTypes.arrayOf(PropTypes.object).isRequired,
     saidYes: PropTypes.func.isRequired,
     saidNo: PropTypes.func.isRequired,
     goToView: PropTypes.func.isRequired,
   }
 
   state = {
-    cards: Cards,
+    cards: this.props.toDo,
   }
 
   handleYup(card) {
@@ -61,6 +47,14 @@ class App extends Component {
 }
 
 export default connect(
-  state => state,
+  state => {
+    // const cardsAsObj = state.cards.get('toDo').toJS()
+    const cardsAsList = Object.keys(state.cards.toDo)
+      .map(key => state.cards.toDo[key])
+    console.log(cardsAsList)
+    return {
+      toDo: cardsAsList,
+    }
+  },
   mapDispatchToProps([viewActions, cardActions])
 )(App)
