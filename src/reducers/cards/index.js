@@ -1,8 +1,3 @@
-// NB: no immutable because I couldn't get it working
-// I know this mutable state is horrible.
-// But immutable just didn't want to work!!!
-// I've just isolated it so that the badness is only within this file
-
 import { fromJS } from 'immutable'
 import defaultState from './defaultState'
 import {
@@ -13,6 +8,7 @@ import {
 export default (state = defaultState, action) => {
   switch (action.type) {
     case SAID_YES: {
+      // TODO: use the appropriate immutable methods to make more efficient
       const mutableState = state.toJS()
       delete mutableState.toDo[action.card.id]
       mutableState.yes[action.card.id] = action.card
@@ -20,6 +16,7 @@ export default (state = defaultState, action) => {
     }
 
     case SAID_NO: {
+      // TODO: use the appropriate immutable methods to make more efficient
       const mutableState = state.toJS()
       delete mutableState.toDo[action.card.id]
       mutableState.no[action.card.id] = action.card
