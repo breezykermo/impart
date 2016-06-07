@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View } from 'react-native'
 import SwipeCards from 'react-native-swipe-cards'
 import Card from '../../components/Card'
+import NoMoreCards from '../../components/NoMoreCards'
 
 const Cards = [
   {
@@ -12,10 +13,10 @@ const Cards = [
 which we run for high school students. No specific experience is required.`,
   },
   { header: 'NEXT', body: 'Aubergine' },
-  { header: 'NEXT', body: 'Courgette' },
-  { header: 'NEXT', body: 'Blueberry' },
-  { header: 'NEXT', body: 'Umm...' },
-  { header: 'NEXT', body: 'orange' },
+  // { header: 'NEXT', body: 'Courgette' },
+  // { header: 'NEXT', body: 'Blueberry' },
+  // { header: 'NEXT', body: 'Umm...' },
+  // { header: 'NEXT', body: 'orange' },
 ]
 
 export default class App extends Component {
@@ -37,10 +38,13 @@ export default class App extends Component {
         cards={this.state.cards}
 
         renderCard={(cardData) => <Card {...cardData} />}
-        renderNoMoreCards={() => <View />}
+        renderNoMoreCards={() => <NoMoreCards />}
 
         handleYup={this.handleYup}
         handleNope={this.handleNope}
+
+        showYup={true}
+        showNope={true}
       />
     )
   }
