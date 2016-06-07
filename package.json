@@ -10,6 +10,7 @@
     "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
+    "immutable": "^3.8.1",
     "react": "15.0.2",
     "react-native": "0.26.3",
     "react-native-swipe-cards": "0.0.7",
