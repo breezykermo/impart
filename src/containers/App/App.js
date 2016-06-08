@@ -21,41 +21,18 @@ class App extends Component {
     cards: this.props.toDo,
   }
 
-  componentWilLReceiveProps(nextProps) {
-    this.setState({
-      cards: nextProps.toDo,
-    })
-  }
-
-  handleYup(card) {
-    this.props.saidYes(card)
-  }
-
-  handleNope(card) {
-    this.props.saidNo(card)
-  }
-
   render() {
-    console.log(this.state.cards)
     return (
       <SwipeCards
-        cards={this.state.cards}
+        card={this.props.toDo[0]}
         loop={true}
         renderCard={cardData => <Card {...cardData} />}
-        renderNoMoreCards={() => (
-          <NoMoreCards
-            refreshCards={() => {
-              this.props.refreshCards()
-              this.forceUpdate()
-            }}
-          />
-        )}
+        renderNoMoreCards={() => <NoMoreCards refreshCards={this.props.refreshCards} />}
 
-        handleYup={card => this.handleYup(card)}
-        handleNope={card => this.handleNope(card)}
+        handleYup={this.props.saidYes}
+        handleNope={this.props.saidNo}
 
-        showYup={true}
-        showNope={true}
+        resetState={f => f}
       />
     )
   }
