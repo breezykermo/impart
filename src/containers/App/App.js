@@ -13,11 +13,18 @@ class App extends Component {
     toDo: PropTypes.arrayOf(PropTypes.object).isRequired,
     saidYes: PropTypes.func.isRequired,
     saidNo: PropTypes.func.isRequired,
+    refreshCards: PropTypes.func.isRequired,
     goToView: PropTypes.func.isRequired,
   }
 
   state = {
     cards: this.props.toDo,
+  }
+
+  componentWilLReceiveProps(nextProps) {
+    this.setState({
+      cards: nextProps.toDo,
+    })
   }
 
   handleYup(card) {
@@ -29,12 +36,20 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.cards)
     return (
       <SwipeCards
         cards={this.state.cards}
-
+        loop={true}
         renderCard={cardData => <Card {...cardData} />}
-        renderNoMoreCards={() => <NoMoreCards />}
+        renderNoMoreCards={() => (
+          <NoMoreCards
+            refreshCards={() => {
+              this.props.refreshCards()
+              this.forceUpdate()
+            }}
+          />
+        )}
 
         handleYup={card => this.handleYup(card)}
         handleNope={card => this.handleNope(card)}

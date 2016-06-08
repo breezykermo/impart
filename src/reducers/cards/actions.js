@@ -9,3 +9,8 @@ export const saidNo = card => ({
   type: SAID_NO,
   card,
 })
+
+export const REFRESH_CARDS = 'REFRESH_CARDS'
+export const refreshCards = () => ({
+  type: REFRESH_CARDS,
+})

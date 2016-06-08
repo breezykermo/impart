@@ -3,6 +3,7 @@ import defaultState from './defaultState'
 import {
   SAID_YES,
   SAID_NO,
+  REFRESH_CARDS,
 } from './actions'
 
 export default (state = defaultState, action) => {
@@ -22,6 +23,9 @@ export default (state = defaultState, action) => {
       mutableState.no[action.card.id] = action.card
       return fromJS(mutableState)
     }
+
+    case REFRESH_CARDS:
+      return defaultState
 
     default:
       return state
