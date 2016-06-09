@@ -1,4 +1,4 @@
-import { goToView } from '../view/actions'
+import { goToView } from '../navigation/actions'
 import views from '../../navigation'
 
 export const SAID_YES = 'SAID_YES'

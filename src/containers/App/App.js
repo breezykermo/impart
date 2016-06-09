@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { mapDispatchToProps } from '../../util/redux'
-import * as viewActions from '../../reducers/view/actions'
+import * as viewActions from '../../reducers/navigation/actions'
 import * as cardActions from '../../reducers/cards/actions'
 
 import React, { Component, PropTypes } from 'react'
