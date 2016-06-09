@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { mapDispatchToProps } from '../../util/redux'
-import * as viewActions from '../../reducers/navigation/actions'
+import views from '../../navigation'
+import * as navigationActions from '../../reducers/navigation/actions'
 import * as cardActions from '../../reducers/cards/actions'
 
 import React, { Component, PropTypes } from 'react'
@@ -10,6 +11,7 @@ import NoMoreCards from '../../components/NoMoreCards'
 
 class App extends Component {
   static propTypes = {
+    currentView: PropTypes.string,
     toDo: PropTypes.arrayOf(PropTypes.object).isRequired,
     swipeYes: PropTypes.func.isRequired,
     swipeNo: PropTypes.func.isRequired,
@@ -22,19 +24,28 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <SwipeCards
-        card={this.props.toDo[0]}
-        loop={true}
-        renderCard={cardData => <Card {...cardData} />}
-        renderNoMoreCards={() => <NoMoreCards refreshCards={this.props.refreshCards} />}
+    const { toDo, currentView, refreshCards, swipeYes, swipeNo } = this.props
+    let component
+    if (currentView === views.SWIPE) {
+      component = (
+        <SwipeCards
+          card={toDo[0]}
+          loop={true}
+          renderCard={cardData => <Card {...cardData} />}
+          renderNoMoreCards={() => <NoMoreCards refreshCards={refreshCards} />}
 
-        handleYup={this.props.swipeYes}
-        handleNope={this.props.swipeNo}
+          handleYup={swipeYes}
+          handleNope={swipeNo}
 
-        resetState={f => f}
-      />
-    )
+          resetState={f => f}
+        />
+      )
+    } else if (currentView === views.YES_DETAIL) {
+      component = (
+        <NoMoreCards />
+      )
+    }
+    return component
   }
 }
 
@@ -44,8 +55,9 @@ export default connect(
     const cardsAsList = Object.keys(cardsAsObj)
       .map(key => cardsAsObj[key])
     return {
+      currentView: state.navigation.get('current'),
       toDo: cardsAsList,
     }
   },
-  mapDispatchToProps([viewActions, cardActions])
+  mapDispatchToProps([navigationActions, cardActions])
 )(App)
