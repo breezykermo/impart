@@ -17,7 +17,7 @@
   "dependencies": {
     "immutable": "^3.8.1",
     "react": "^15.1.0",
-    "react-native": "^0.27.1",
+    "react-native": "^0.27.2",
     "react-native-swipe-cards": "git://github.com/breezykermo/react-native-tinder-swipe-cards.git#branch/redux",
     "react-redux": "4.4.5",
     "redux": "3.5.2",
