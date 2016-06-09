@@ -43,7 +43,15 @@ class App extends Component {
       )
     } else if (currentView === views.YES_DETAIL) {
       component = (
-        <YesDetail card={toDo[0]} />
+        <YesDetail
+          card={toDo[0]}
+          acceptHandler={() => {
+            console.log('accepting')
+          }}
+          rejectHandler={() => {
+            console.log('rejecting')
+          }}
+        />
       )
     }
     return component

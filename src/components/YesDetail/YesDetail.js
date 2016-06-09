@@ -1,19 +1,50 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes, Component } from 'react'
 import { View, Text } from 'react-native'
 import styles from './YesDetail.styles'
+import Button from '../Button'
+import Accepted from '../Accepted'
 
-const YesDetail = props => (
-  <View style={styles.container}>
-    <Text>{props.card.header}</Text>
-  </View>
-)
-YesDetail.propTypes = {
-  card: PropTypes.shape({
-    header: PropTypes.string,
-    organization: PropTypes.string,
-    location: PropTypes.string,
-    body: PropTypes.string,
-  }),
+class YesDetail extends Component {
+  static propTypes = {
+    card: PropTypes.shape({
+      header: PropTypes.string,
+      organization: PropTypes.string,
+      location: PropTypes.string,
+      body: PropTypes.string,
+    }),
+    acceptHandler: PropTypes.func.isRequired,
+    rejectHandler: PropTypes.func.isRequired,
+  }
+
+  state = {
+    accepted: false,
+  }
+
+  render() {
+    let component
+    const { card, acceptHandler, rejectHandler } = this.props
+    component = (
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>{card.header}</Text>
+        </View>
+        <View style={styles.body}>
+          <Text>{card.header}</Text>
+        </View>
+        <View style={styles.footer}>
+          <Button onPress={rejectHandler}>No, thanks</Button>
+          <Button
+            onPress={() => {
+              this.setState({ accepted: true })
+              acceptHandler()
+            }}
+          >Sign me up!</Button>
+        </View>
+      </View>
+    )
+    if (this.state.accepted) component = <Accepted />
+    return component
+  }
 }
 
 export default YesDetail
