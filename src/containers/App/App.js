@@ -8,6 +8,7 @@ import React, { Component, PropTypes } from 'react'
 import SwipeCards from 'react-native-swipe-cards'
 import Card from '../../components/Card'
 import NoMoreCards from '../../components/NoMoreCards'
+import YesDetail from '../../components/YesDetail'
 
 class App extends Component {
   static propTypes = {
@@ -42,7 +43,7 @@ class App extends Component {
       )
     } else if (currentView === views.YES_DETAIL) {
       component = (
-        <NoMoreCards />
+        <YesDetail card={toDo[0]} />
       )
     }
     return component
