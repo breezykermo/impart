@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import view from './view'
+import navigation from './navigation'
 import cards from './cards'
 
 export default combineReducers({
-  view,
+  navigation,
   cards,
 })

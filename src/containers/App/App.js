@@ -11,8 +11,8 @@ import NoMoreCards from '../../components/NoMoreCards'
 class App extends Component {
   static propTypes = {
     toDo: PropTypes.arrayOf(PropTypes.object).isRequired,
-    saidYes: PropTypes.func.isRequired,
-    saidNo: PropTypes.func.isRequired,
+    swipeYes: PropTypes.func.isRequired,
+    swipeNo: PropTypes.func.isRequired,
     refreshCards: PropTypes.func.isRequired,
     goToView: PropTypes.func.isRequired,
   }
@@ -29,8 +29,8 @@ class App extends Component {
         renderCard={cardData => <Card {...cardData} />}
         renderNoMoreCards={() => <NoMoreCards refreshCards={this.props.refreshCards} />}
 
-        handleYup={this.props.saidYes}
-        handleNope={this.props.saidNo}
+        handleYup={this.props.swipeYes}
+        handleNope={this.props.swipeNo}
 
         resetState={f => f}
       />
