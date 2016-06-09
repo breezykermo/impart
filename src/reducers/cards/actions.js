@@ -20,7 +20,7 @@ export const refreshCards = () => ({
 
 export const SWIPE_YES = 'SWIPE_YES'
 export const swipeYes = card => dispatch => {
-  // dispatch(saidYes(card))
+  dispatch(saidYes(card))
   dispatch(goToView(views.YES_DETAIL))
 }
 

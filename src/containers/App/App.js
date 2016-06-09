@@ -14,8 +14,8 @@ class App extends Component {
   static propTypes = {
     currentView: PropTypes.string,
     toDo: PropTypes.arrayOf(PropTypes.object).isRequired,
-    swipeYes: PropTypes.func.isRequired,
-    swipeNo: PropTypes.func.isRequired,
+    saidYes: PropTypes.func.isRequired,
+    saidNo: PropTypes.func.isRequired,
     refreshCards: PropTypes.func.isRequired,
     goToView: PropTypes.func.isRequired,
   }
@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   render() {
-    const { toDo, currentView, refreshCards, swipeYes, swipeNo } = this.props
+    const { toDo, currentView, refreshCards, saidYes, saidNo, goToView, popView } = this.props
     let component
     if (currentView === views.SWIPE) {
       component = (
@@ -35,8 +35,8 @@ class App extends Component {
           renderCard={cardData => <Card {...cardData} />}
           renderNoMoreCards={() => <NoMoreCards refreshCards={refreshCards} />}
 
-          handleYup={swipeYes}
-          handleNope={swipeNo}
+          handleYup={() => goToView(views.YES_DETAIL)}
+          handleNope={() => saidNo(toDo[0])}
 
           resetState={f => f}
         />
@@ -46,11 +46,13 @@ class App extends Component {
         <YesDetail
           card={toDo[0]}
           acceptHandler={() => {
-            console.log('accepting')
+            saidYes(toDo[0])
           }}
           rejectHandler={() => {
-            console.log('rejecting')
+            saidNo(toDo[0])
+            goToView(views.SWIPE)
           }}
+          backHandler={popView}
         />
       )
     }

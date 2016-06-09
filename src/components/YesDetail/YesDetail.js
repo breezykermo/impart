@@ -14,6 +14,7 @@ class YesDetail extends Component {
     }),
     acceptHandler: PropTypes.func.isRequired,
     rejectHandler: PropTypes.func.isRequired,
+    backHandler: PropTypes.func.isRequired,
   }
 
   state = {
@@ -22,7 +23,7 @@ class YesDetail extends Component {
 
   render() {
     let component
-    const { card, acceptHandler, rejectHandler } = this.props
+    const { card, acceptHandler, rejectHandler, backHandler } = this.props
     component = (
       <View style={styles.container}>
         <View style={styles.header}>
@@ -42,7 +43,7 @@ class YesDetail extends Component {
         </View>
       </View>
     )
-    if (this.state.accepted) component = <Accepted />
+    if (this.state.accepted) component = <Accepted backHandler={backHandler} />
     return component
   }
 }

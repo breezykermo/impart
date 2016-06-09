@@ -17,7 +17,7 @@ export default (state = defaultState, action) => {
     case POP_VIEW:
       return state
         .set('current', stack.last())
-        .set('stack', state.pop())
+        .set('stack', stack.pop())
 
     default:
       return state
