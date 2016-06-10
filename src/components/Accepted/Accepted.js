@@ -6,7 +6,7 @@ import Button from '../Button'
 const Accepted = props => (
   <View style={styles.container}>
     <View style={styles.innerContainer}>
-      <Text>This is where you will authenticate with the brand spanking new iD SDK!!!!!!!!</Text>
+      <Text>This is where you will put in your details and we will HOOK YOU UP!!!!!</Text>
     </View>
     <View style={styles.buttonContainer}>
       <Button onPress={props.backHandler}>

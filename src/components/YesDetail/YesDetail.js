@@ -31,7 +31,8 @@ class YesDetail extends Component {
             <Text style={styles.headerText}>{card.header}</Text>
           </View>
           <View style={styles.body}>
-            <Text>{card.header}</Text>
+            <Text style={{ paddingBottom: 20 }}>{card.short}</Text>
+            <Text>{card.desc}</Text>
           </View>
           <View style={styles.footer}>
             <Button onPress={rejectHandler}>No, thanks</Button>
