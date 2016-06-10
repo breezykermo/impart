@@ -1,3 +1,6 @@
+import { goToView } from '../navigation/actions'
+import views from '../../navigation'
+
 export const SAID_YES = 'SAID_YES'
 export const saidYes = card => ({
   type: SAID_YES,
@@ -14,3 +17,14 @@ export const REFRESH_CARDS = 'REFRESH_CARDS'
 export const refreshCards = () => ({
   type: REFRESH_CARDS,
 })
+
+export const SWIPE_YES = 'SWIPE_YES'
+export const swipeYes = card => dispatch => {
+  dispatch(saidYes(card))
+  dispatch(goToView(views.YES_DETAIL))
+}
+
+export const SWIPE_NO = 'SWIPE_NO'
+export const swipeNo = card => dispatch => {
+  dispatch(saidNo(card))
+}

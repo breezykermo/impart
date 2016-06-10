@@ -8,7 +8,7 @@ import configureStore from './store/configureStore'
 
 export default function native() {
   // remove warnings overlay
-  console.disableYellowBox = true // eslint-disable-line no-console
+  // console.disableYellowBox = true // eslint-disable-line no-console
 
   const store = configureStore()
 

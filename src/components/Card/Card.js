@@ -18,7 +18,7 @@ const Card = props => (
         <Text>Location: {props.location || 'Unlisted'}</Text>
       </View>
       <View style={styles.topBreak}>
-        <Text>{props.body || 'No further description is provided for this listing.'}</Text>
+        <Text>{props.short || 'No further description is provided for this listing.'}</Text>
       </View>
     </View>
   </View>
@@ -28,7 +28,7 @@ Card.propTypes = {
   imageSrc: PropTypes.string,
   organization: PropTypes.string,
   location: PropTypes.string,
-  body: PropTypes.string,
+  short: PropTypes.string,
 }
 
 export default Card
