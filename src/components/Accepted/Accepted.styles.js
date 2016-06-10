@@ -10,4 +10,7 @@ export default {
     borderWidth: 0,
     borderRadius: 10,
   },
+  buttonContainer: {
+    height: 80,
+  },
 }

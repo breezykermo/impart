@@ -24,25 +24,27 @@ class YesDetail extends Component {
   render() {
     let component
     const { card, acceptHandler, rejectHandler, backHandler } = this.props
-    component = (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.headerText}>{card.header}</Text>
+    if (card) {
+      component = (
+        <View style={styles.container}>
+          <View style={styles.header}>
+            <Text style={styles.headerText}>{card.header}</Text>
+          </View>
+          <View style={styles.body}>
+            <Text>{card.header}</Text>
+          </View>
+          <View style={styles.footer}>
+            <Button onPress={rejectHandler}>No, thanks</Button>
+            <Button
+              onPress={() => {
+                this.setState({ accepted: true })
+                acceptHandler()
+              }}
+            >Sign me up!</Button>
+          </View>
         </View>
-        <View style={styles.body}>
-          <Text>{card.header}</Text>
-        </View>
-        <View style={styles.footer}>
-          <Button onPress={rejectHandler}>No, thanks</Button>
-          <Button
-            onPress={() => {
-              this.setState({ accepted: true })
-              acceptHandler()
-            }}
-          >Sign me up!</Button>
-        </View>
-      </View>
-    )
+      )
+    }
     if (this.state.accepted) component = <Accepted backHandler={backHandler} />
     return component
   }

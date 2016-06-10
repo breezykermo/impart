@@ -8,9 +8,11 @@ const Accepted = props => (
     <View style={styles.innerContainer}>
       <Text>This is where you will authenticate with the brand spanking new iD SDK!!!!!!!!</Text>
     </View>
-    <Button onPress={props.backHandler}>
-      Back to swiping
-    </Button>
+    <View style={styles.buttonContainer}>
+      <Button onPress={props.backHandler}>
+        Back to swiping
+      </Button>
+    </View>
   </View>
 )
 Accepted.propTypes = {

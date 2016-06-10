@@ -10,6 +10,8 @@ import Card from '../../components/Card'
 import NoMoreCards from '../../components/NoMoreCards'
 import YesDetail from '../../components/YesDetail'
 
+import styles from './App.styles'
+
 class App extends Component {
   static propTypes = {
     currentView: PropTypes.string,
@@ -18,6 +20,7 @@ class App extends Component {
     saidNo: PropTypes.func.isRequired,
     refreshCards: PropTypes.func.isRequired,
     goToView: PropTypes.func.isRequired,
+    popView: PropTypes.func.isRequired,
   }
 
   state = {
@@ -30,6 +33,12 @@ class App extends Component {
     if (currentView === views.SWIPE) {
       component = (
         <SwipeCards
+          style={styles.swipeCards}
+          yupStyle={styles.yup}
+          yupTextStyle={styles.yupText}
+          nopeStyle={styles.nope}
+          nopeTextStyle={styles.nopeText}
+
           card={toDo[0]}
           loop={true}
           renderCard={cardData => <Card {...cardData} />}
