@@ -1,3 +1,4 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">tcclDfvHIxd6RoFWoc-H-rnppT_FV1NPlr4VW</string>
     <string name="app_name">CharityTinder</string>
 </resources>

@@ -2,6 +2,7 @@ import React from 'react'
 import {
   AppRegistry,
 } from 'react-native'
+import codePush from 'react-native-code-push'
 import App from './containers/App'
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
@@ -12,11 +13,19 @@ export default function native() {
 
   const store = configureStore()
 
-  const CharityTinder = () => (
-    <Provider store={store} >
-      <App />
-    </Provider>
-  )
+  class CharityTinder extends React.Component {
+    componentDidMount() {
+      codePush.sync()
+    }
+
+    render() {
+      return (
+        <Provider store={store} >
+          <App />
+        </Provider>
+      )
+    }
+  }
 
   AppRegistry.registerComponent('CharityTinder', () => CharityTinder)
 }
