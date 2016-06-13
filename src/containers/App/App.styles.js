@@ -1,7 +1,5 @@
 import { styles as colors } from '../../common/constants/colors'
 
-console.log(colors)
-
 export default {
   swipeCards: {
     backgroundColor: colors.background,
