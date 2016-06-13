@@ -1,17 +1,21 @@
+import { styles as colors } from '../../common/constants/colors'
+
+console.log(colors)
+
 export default {
   swipeCards: {
-    backgroundColor: 'white',
+    backgroundColor: colors.background,
   },
   yup: {
-    borderColor: 'pink',
+    borderColor: colors.one,
   },
   yupText: {
-    color: 'pink',
+    color: colors.two,
   },
   nope: {
-    borderColor: 'purple',
+    borderColor: colors.two,
   },
   nopeText: {
-    color: 'purple',
+    color: colors.one,
   },
 }
