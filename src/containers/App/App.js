@@ -19,12 +19,17 @@ class App extends Component {
     saidYes: PropTypes.func.isRequired,
     saidNo: PropTypes.func.isRequired,
     refreshCards: PropTypes.func.isRequired,
+    fetchFromParse: PropTypes.func.isRequired,
     goToView: PropTypes.func.isRequired,
     popView: PropTypes.func.isRequired,
   }
 
   state = {
     cards: this.props.toDo,
+  }
+
+  componentDidMount() {
+    this.props.fetchFromParse()
   }
 
   render() {
