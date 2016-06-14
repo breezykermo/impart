@@ -1,5 +1,6 @@
 import { goToView } from '../navigation/actions'
 import views from '../../navigation'
+import { allCards } from '../../parse'
 
 export const SAID_YES = 'SAID_YES'
 export const saidYes = card => ({
@@ -27,4 +28,14 @@ export const swipeYes = card => dispatch => {
 export const SWIPE_NO = 'SWIPE_NO'
 export const swipeNo = card => dispatch => {
   dispatch(saidNo(card))
+}
+
+// eslint-disable-next-line new-cap
+export const fetchFromParse = () => dispatch => {
+  Promise.resolve()
+    .then(() => allCards.find())
+    .then(results => {
+      console.log(results[0].get('header'))
+      console.log(results.length)
+    })
 }
