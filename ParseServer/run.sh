@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# https://github.com/yongjhih/docker-parse-server
+
+
 APP_ID=8683A294D744F6A55879C13E8374A \
 APP_NAME=Impart \
 MASTER_KEY=4A62D8929E5C2EAFC5AFFEC34B71B \
