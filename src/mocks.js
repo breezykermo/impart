@@ -1,5 +1,6 @@
 /* eslint-disable */
-export default {
+import { Card } from './parse'
+const mockCards = {
   0: {
     id: 0,
     header: 'Holiday program supervisor',
@@ -34,3 +35,14 @@ export default {
   },
 }
 /* eslint-enable */
+
+export const createMockCards = () => (
+  Object.keys(mockCards).map(id => {
+    const card = new Card()
+    const item = mockCards[id]
+    Object.keys(item).forEach(key => {
+      card.set(key, item[key])
+    })
+    return card
+  })
+)

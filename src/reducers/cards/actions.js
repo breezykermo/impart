@@ -41,6 +41,8 @@ export const fetchFromParse = () => dispatch => {
   Promise.resolve()
     .then(() => allCards.find())
     .then(results => {
+      console.log(allCards.find)
+      console.log(results)
       console.log(`${results.length} cards retrieved`) // eslint-disable-line no-console
       dispatch(updateCards(results))
     })
