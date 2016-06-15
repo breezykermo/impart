@@ -3,6 +3,7 @@ import { mapDispatchToProps } from '../../util/redux'
 import views from '../../navigation'
 import * as navigationActions from '../../reducers/navigation/actions'
 import * as cardActions from '../../reducers/cards/actions'
+import * as userActions from '../../reducers/user/actions'
 
 import React, { Component, PropTypes } from 'react'
 import SwipeCards from 'react-native-swipe-cards'
@@ -22,6 +23,7 @@ class App extends Component {
     fetchFromParse: PropTypes.func.isRequired,
     goToView: PropTypes.func.isRequired,
     popView: PropTypes.func.isRequired,
+    syncUser: PropTypes.func.isRequired,
   }
 
   state = {
@@ -84,5 +86,5 @@ export default connect(
       toDo: cardsAsList,
     }
   },
-  mapDispatchToProps([navigationActions, cardActions])
+  mapDispatchToProps([navigationActions, cardActions, userActions])
 )(App)
