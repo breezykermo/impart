@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchFromParse()
+    this.props.syncUser()
   }
 
   render() {

@@ -4,7 +4,9 @@ import {
   SAID_YES,
   SAID_NO,
   REFRESH_CARDS,
-  UPDATE_CARDS,
+  CARD_FETCH_START,
+  CARD_FETCH_SUCCESS,
+  CARD_FETCH_ERROR,
 } from './actions'
 
 export default (state = defaultState, action) => {
@@ -25,12 +27,20 @@ export default (state = defaultState, action) => {
       return fromJS(mutableState)
     }
 
-    case UPDATE_CARDS: {
+    case CARD_FETCH_START:
+      return state.set('isFetching', true)
+
+    case CARD_FETCH_SUCCESS: {
       if (!Array.isArray(action.cards)) return state
       const cardsJS = {}
       action.cards.forEach(card => { cardsJS[card.id] = card })
-      return state.set('toDo', fromJS(cardsJS))
+      return state.set('isFetching', false)
+        .set('toDo', fromJS(cardsJS))
     }
+
+    case CARD_FETCH_ERROR:
+      return state.set('isFetching', false)
+        .set('error', action.error)
 
     case REFRESH_CARDS:
       return defaultState

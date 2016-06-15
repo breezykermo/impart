@@ -13,6 +13,9 @@ var nodeModulesBabel = [
   // add modules that require babel here
 ];
 
+// set react-native dev mode variable
+global.__DEV__ = false;
+
 require.extensions['.js'] = function (module, fileName) {
   output = null;
 
