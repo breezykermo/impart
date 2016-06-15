@@ -12,3 +12,8 @@ sh initialize.sh
 ```
 
 This will configure the Parse server database with the appropriate fields, so that requests from the application code don't fall flat looking for Classes that don't exist.
+
+To save the current state of your Parse database to the dump (so that the next initialization maintains the state), run:
+```bash
+sh dump.sh
+```

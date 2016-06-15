@@ -79,7 +79,6 @@ export default connect(
     const cardsAsObj = state.cards.get('toDo').toJS()
     const cardsAsList = Object.keys(cardsAsObj)
       .map(key => cardsAsObj[key])
-    console.log(cardsAsList)
     return {
       currentView: state.navigation.get('current'),
       toDo: cardsAsList,
