@@ -15,8 +15,14 @@ export const saidNo = card => ({
 })
 
 export const REFRESH_CARDS = 'REFRESH_CARDS'
-export const refreshCards = () => ({
-  type: REFRESH_CARDS,
+export const refreshCards = () => dispatch => {
+  dispatch(fetchFromParse())
+}
+
+export const UPDATE_CARDS = 'UPDATE_CARDS'
+export const updateCards = cards => ({
+  type: UPDATE_CARDS,
+  cards,
 })
 
 export const SWIPE_YES = 'SWIPE_YES'
@@ -35,7 +41,7 @@ export const fetchFromParse = () => dispatch => {
   Promise.resolve()
     .then(() => allCards.find())
     .then(results => {
-      console.log(results[0].get('header'))
-      console.log(results.length)
+      console.log(`${results.length} cards retrieved`) // eslint-disable-line no-console
+      dispatch(updateCards(results))
     })
 }

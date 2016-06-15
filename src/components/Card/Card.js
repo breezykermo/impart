@@ -6,29 +6,26 @@ import {
 } from 'react-native'
 import styles from './Card.styles'
 
-const Card = props => (
+const Card = ({ data }) => (
   <View style={styles.container}>
-    <Text style={styles.header}>{props.header}</Text>
+    <Text style={styles.header}>{data.get('header')}</Text>
     <Image source={require('../../media/no-user-image.gif')} style={styles.image} />
     <View style={styles.body}>
       <View style={styles.organization}>
-        <Text>Organization: {props.organization || 'Unlisted'}</Text>
+        <Text>Organization: {data.get('organization') || 'Unlisted'}</Text>
       </View>
       <View style={styles.topBreak}>
-        <Text>Location: {props.location || 'Unlisted'}</Text>
+        <Text>Location: {data.get('location') || 'Unlisted'}</Text>
       </View>
       <View style={styles.topBreak}>
-        <Text>{props.short || 'No further description is provided for this listing.'}</Text>
+        <Text>{data.get('shortDesc') ||
+          'No further description is provided for this listing.'}</Text>
       </View>
     </View>
   </View>
 )
 Card.propTypes = {
-  header: PropTypes.string.isRequired,
-  imageSrc: PropTypes.string,
-  organization: PropTypes.string,
-  location: PropTypes.string,
-  short: PropTypes.string,
+  data: PropTypes.object,
 }
 
 export default Card

@@ -6,12 +6,7 @@ import Accepted from '../Accepted'
 
 class YesDetail extends Component {
   static propTypes = {
-    card: PropTypes.shape({
-      header: PropTypes.string,
-      organization: PropTypes.string,
-      location: PropTypes.string,
-      body: PropTypes.string,
-    }),
+    card: PropTypes.object.isRequired,
     acceptHandler: PropTypes.func.isRequired,
     rejectHandler: PropTypes.func.isRequired,
     backHandler: PropTypes.func.isRequired,
@@ -28,11 +23,11 @@ class YesDetail extends Component {
       component = (
         <View style={styles.container}>
           <View style={styles.header}>
-            <Text style={styles.headerText}>{card.header}</Text>
+            <Text style={styles.headerText}>{card.get('header')}</Text>
           </View>
           <View style={styles.body}>
-            <Text style={{ paddingBottom: 20 }}>{card.short}</Text>
-            <Text>{card.desc}</Text>
+            <Text style={{ paddingBottom: 20 }}>{card.get('shortDesc')}</Text>
+            <Text>{card.get('longDesc')}</Text>
           </View>
           <View style={styles.footer}>
             <Button onPress={rejectHandler}>No, thanks</Button>

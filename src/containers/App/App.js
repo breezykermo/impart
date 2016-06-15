@@ -46,7 +46,7 @@ class App extends Component {
 
           card={toDo[0]}
           loop={true}
-          renderCard={cardData => <Card {...cardData} />}
+          renderCard={cardData => <Card data={cardData} />}
           renderNoMoreCards={() => <NoMoreCards refreshCards={refreshCards} />}
 
           handleYup={() => goToView(views.YES_DETAIL)}
@@ -79,6 +79,7 @@ export default connect(
     const cardsAsObj = state.cards.get('toDo').toJS()
     const cardsAsList = Object.keys(cardsAsObj)
       .map(key => cardsAsObj[key])
+    console.log(cardsAsList)
     return {
       currentView: state.navigation.get('current'),
       toDo: cardsAsList,

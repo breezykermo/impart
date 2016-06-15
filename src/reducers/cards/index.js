@@ -4,6 +4,7 @@ import {
   SAID_YES,
   SAID_NO,
   REFRESH_CARDS,
+  UPDATE_CARDS,
 } from './actions'
 
 export default (state = defaultState, action) => {
@@ -22,6 +23,13 @@ export default (state = defaultState, action) => {
       delete mutableState.toDo[action.card.id]
       mutableState.no[action.card.id] = action.card
       return fromJS(mutableState)
+    }
+
+    case UPDATE_CARDS: {
+      if (!Array.isArray(action.cards)) return state
+      const cardsJS = {}
+      action.cards.forEach(card => { cardsJS[card.id] = card })
+      return state.set('toDo', fromJS(cardsJS))
     }
 
     case REFRESH_CARDS:
