@@ -1,6 +1,6 @@
 ## Running an Impart server
 
-Ensure that Docker and Docker-Compose are installed on your system.
+Ensure that Docker and Docker-Compose are installed on your system, and that the Docker environment is saturated in your current terminal (only if using Mac)
 Run:
 ```bash
 sh run.sh
