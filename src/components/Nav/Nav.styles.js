@@ -1,15 +1,18 @@
 import { STATUS_BAR_HEIGHT } from '../../common/constants/sizes'
-import { PixelRatio } from 'react-native'
+import { white, lightGray } from '../../common/constants/colors'
 
 export default {
   container: {
-    backgroundColor: 'red',
+    backgroundColor: white,
     flex: 8,
     flexDirection: 'row',
     height: 73,
     paddingTop: STATUS_BAR_HEIGHT,
     paddingBottom: 3,
     marginBottom: 21,
+    // bottom border
+    borderBottomWidth: 0.5,
+    borderBottomColor: lightGray,
   },
   title: {
     flex: 4,
