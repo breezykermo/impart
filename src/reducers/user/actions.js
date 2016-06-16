@@ -18,16 +18,20 @@ export const fetchUserError = error => ({
   error,
 })
 
-export const fetchUserFromParse = () => dispatch => {
-
-}
+// export const fetchUserFromParse = () => dispatch => {
+//
+// }
 
 export const syncUser = () => dispatch => {
   Promise.resolve()
     .then(() => local.getUserId())
-    .then(id => (
+    .then(id => {
       // NB: id will be null if no user in local
       dispatch(fetchUserSuccess(id))
-    ))
+      // NB: need to filter only those cards that are relevant to the user,
+      //      should certainly be done client side. Should fetch data incrementally,
+      //      as well, (but again this is an eventually).
+      dispatch(fetchFromParse())
+    })
     .catch(err => dispatch(fetchUserError(err)))
 }

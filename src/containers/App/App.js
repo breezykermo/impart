@@ -6,6 +6,8 @@ import * as cardActions from '../../reducers/cards/actions'
 import * as userActions from '../../reducers/user/actions'
 
 import React, { Component, PropTypes } from 'react'
+import { View } from 'react-native'
+import Nav from '../../components/Nav'
 import SwipeCards from 'react-native-swipe-cards'
 import Card from '../../components/Card'
 import NoMoreCards from '../../components/NoMoreCards'
@@ -36,9 +38,9 @@ class App extends Component {
 
   render() {
     const { toDo, currentView, refreshCards, saidYes, saidNo, goToView, popView } = this.props
-    let component
+    let innerComponent
     if (currentView === views.SWIPE) {
-      component = (
+      innerComponent = (
         <SwipeCards
           style={styles.swipeCards}
           yupStyle={styles.yup}
@@ -58,7 +60,7 @@ class App extends Component {
         />
       )
     } else if (currentView === views.YES_DETAIL) {
-      component = (
+      innerComponent = (
         <YesDetail
           card={toDo[0]}
           acceptHandler={() => {
@@ -72,7 +74,13 @@ class App extends Component {
         />
       )
     }
-    return component
+    // return innerComponent
+    return (
+      <View style={{ margin: 0 }}>
+        <Nav />
+        {innerComponent}
+      </View>
+    )
   }
 }
 

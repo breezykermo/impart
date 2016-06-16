@@ -1,15 +1,24 @@
+import { styles as colors } from './colors'
+
 export const styles = {
   h1: {
-    fontFamily: 'Avenir-Medium',
-    fontSize: 18,
+    fontFamily: 'Helvetica Neue Medium',
+    fontSize: 36,
+    color: colors.white,
+  },
+  h2: {
+    fontFamily: 'Helvetica Neue Medium',
+    fontSize: 28,
+    color: colors.copy,
   },
   copy: {
-    fontFamily: 'System',
-    fontSize: 14,
+    fontFamily: 'Helvetica Neue Regular',
+    fontSize: 25,
+    color: colors.copy,
   },
-  copyBold: {
-    fontFamily: 'System',
-    fontSize: 14,
-    fontWeight: 'bold',
+  copyButton: {
+    fontFamily: 'Helvetica Neue Medium',
+    fontSize: 30,
+    color: colors.primary,
   },
 }

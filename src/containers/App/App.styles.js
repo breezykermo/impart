@@ -1,8 +1,11 @@
 import { styles as colors } from '../../common/constants/colors'
+import { Dimensions} from 'react-native'
 
 export default {
   swipeCards: {
-    backgroundColor: colors.background,
+    margin: 0,
+    padding: 0,
+    // backgroundColor: colors.background,
   },
   yup: {
     borderColor: colors.one,
