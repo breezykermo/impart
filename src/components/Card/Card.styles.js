@@ -28,8 +28,17 @@ export default {
   header: {
     flex: 1,
     textAlign: 'center',
-    ...textStyles.h1,
   },
+  headerText: [textStyles.h1, {
+    backgroundColor: colors.darkGrayOpaque,
+    position: 'absolute',
+    bottom: 8,
+    // backgroundColor: 'transparent',
+    marginLeft: 15,
+    marginRight: 15,
+    padding: 10,
+    borderRadius: 1,
+  }],
   image: {
     flex: 5,
     justifyContent: 'center',

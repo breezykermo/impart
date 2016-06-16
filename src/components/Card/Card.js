@@ -12,7 +12,9 @@ const Card = ({ data }) => (
     <Image
       source={require('../../media/no-user-image.gif')}
       style={[styles.image, styles.noShadow]}
-    />
+    >
+      <Text style={styles.headerText}>{data.get('header')}</Text>
+    </Image>
     <View style={styles.body}>
       <DetailList data={data} />
     </View>

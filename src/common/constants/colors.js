@@ -7,4 +7,6 @@ export const styles = {
   white: '#ffffff',
   green: '#55e248',
   red: '#ff2a27',
+  /* RGBA */
+  darkGrayOpaque: 'rgba(187, 187, 187, 0.4)',
 }
