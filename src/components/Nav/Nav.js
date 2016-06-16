@@ -6,20 +6,20 @@ const Nav = () => (
   <View style={styles.container}>
     <View style={styles.side}>
       <Image
-        style={[styles.iconImage, styles.left]}
-        source={require('../../common/images/menu.png')}
+        style={styles.menuIcon}
+        source={require('../../media/menu.png')}
       />
     </View>
     <View style={styles.title}>
       <Image
         style={styles.titleImage}
-        source={require('../../common/images/impart-logo.png')}
+        source={require('../../media/impart-logo.png')}
       />
     </View>
     <View style={styles.side}>
       <Image
-        style={[styles.iconImage, styles.right]}
-        source={require('../../common/images/menu.png')}
+        style={styles.searchIcon}
+        source={require('../../media/search.png')}
       />
     </View>
   </View>

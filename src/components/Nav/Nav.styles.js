@@ -28,14 +28,15 @@ export default {
     padding: 18,
     position: 'absolute',
   },
-  iconImage: {
+  menuIcon: {
     height: 20,
     width: 30,
-  },
-  left: {
     left: 0,
   },
-  right: {
+  searchIcon: {
+    marginTop: -10,
+    height: 30,
+    width: 30,
     right: 18 + 30 + 18,
   },
 }
