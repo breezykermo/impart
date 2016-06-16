@@ -1,18 +1,18 @@
 import { STATUS_BAR_HEIGHT } from '../../common/constants/sizes'
-import { white, lightGray } from '../../common/constants/colors'
+import { styles as colors } from '../../common/constants/colors'
 
 export default {
   container: {
-    backgroundColor: white,
+    backgroundColor: colors.white,
     flex: 8,
     flexDirection: 'row',
     height: 73,
     paddingTop: STATUS_BAR_HEIGHT,
     paddingBottom: 3,
-    marginBottom: 21,
+    // marginBottom: 21,
     // bottom border
     borderBottomWidth: 0.5,
-    borderBottomColor: lightGray,
+    borderBottomColor: colors.lightGray,
   },
   title: {
     flex: 4,

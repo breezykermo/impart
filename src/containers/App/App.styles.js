@@ -2,21 +2,24 @@ import { styles as colors } from '../../common/constants/colors'
 import { Dimensions} from 'react-native'
 
 export default {
+  container: {
+    backgroundColor: colors.gray,
+  },
   swipeCards: {
     margin: 0,
     padding: 0,
-    // backgroundColor: colors.background,
+    backgroundColor: 'transparent',
   },
   yup: {
-    borderColor: colors.one,
+    borderColor: colors.white,
   },
   yupText: {
-    color: colors.two,
+    color: colors.white,
   },
   nope: {
-    borderColor: colors.two,
+    borderColor: colors.white,
   },
   nopeText: {
-    color: colors.one,
+    color: colors.white,
   },
 }

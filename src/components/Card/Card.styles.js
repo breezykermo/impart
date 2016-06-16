@@ -1,19 +1,29 @@
 import { styles as textStyles } from '../../common/constants/text'
-import { Dimensions } from 'react-native'
-
-const WINDOW = Dimensions.get('window')
+import { styles as colors } from '../../common/constants/colors'
+import { CARD_WIDTH, CARD_HEIGHT } from '../../common/constants/sizes'
 
 export default {
   container: {
     flex: 10,
     flexDirection: 'column',
-    justifyContent: 'space-between',
-    borderRadius: 5,
-    borderColor: 'grey',
-    borderWidth: 2,
-    padding: 10,
-    height: WINDOW.height - 200,
-    width: WINDOW.width - 100,
+    backgroundColor: colors.white,
+    borderColor: colors.darkGray,
+    borderWidth: 1,
+    /* height and width are calculated via side padding,
+     * so that the feel is roughly the same on other devices,
+     * if slightly overpadded */
+    height: CARD_HEIGHT,
+    width: CARD_WIDTH,
+    marginBottom: 18,
+    marginTop: 18,
+    /* SHADOW */
+    shadowColor: colors.darkGray,
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 5,
+      width: 2,
+    },
   },
   header: {
     flex: 1,
@@ -24,7 +34,8 @@ export default {
     flex: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    width: WINDOW.width - 125,
+    width: CARD_WIDTH - 2, // for border TODO: remove
+    // height is automatically set via image proportions
   },
   body: {
     flex: 4,

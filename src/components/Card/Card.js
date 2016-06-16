@@ -8,9 +8,12 @@ import styles from './Card.styles'
 
 const Card = ({ data }) => (
   <View style={styles.container}>
-    <Text style={styles.header}>{data.get('header')}</Text>
-    <Image source={require('../../media/no-user-image.gif')} style={styles.image} />
+    <Image
+      source={require('../../media/no-user-image.gif')}
+      style={[styles.image, styles.noShadow]}
+    />
     <View style={styles.body}>
+      <Text style={styles.header}>{data.get('header')}</Text>
       <View style={styles.organization}>
         <Text>Organization: {data.get('organization') || 'Unlisted'}</Text>
       </View>

@@ -76,7 +76,7 @@ class App extends Component {
     }
     // return innerComponent
     return (
-      <View style={{ margin: 0 }}>
+      <View style={styles.container}>
         <Nav />
         {innerComponent}
       </View>
