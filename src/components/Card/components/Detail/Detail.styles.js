@@ -7,8 +7,8 @@ export default {
     alignItems: 'center',
   },
   icon: {
-    width: 20,
-    height: 20,
+    width: 31,
+    padding: 5,
   },
   text: [textStyles.copy, {
     padding: 5,

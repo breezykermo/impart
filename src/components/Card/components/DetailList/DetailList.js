@@ -16,8 +16,8 @@ const DetailList = ({ data }) => {
   return (
     <View style={styles.container}>
       {details.map((detail, index) => {
-        if (typeof detail === 'undefined') return null
-        return <Detail key={index} icon="T" text={detail} />
+        if (typeof detail === 'undefined' || detail === '') return null
+        return <Detail key={index} icon="I" text={detail} />
       })}
     </View>
   )

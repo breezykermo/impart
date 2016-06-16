@@ -13,7 +13,9 @@ const Card = ({ data }) => (
       source={require('../../media/no-user-image.gif')}
       style={[styles.image, styles.noShadow]}
     >
-      <Text style={styles.headerText}>{data.get('header')}</Text>
+      {data.get('header') ? (
+        <Text style={styles.headerText}>{data.get('header')}</Text>
+      ) : null}
     </Image>
     <View style={styles.body}>
       <DetailList data={data} />
