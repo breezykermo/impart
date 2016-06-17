@@ -1,36 +1,28 @@
-import { Dimensions } from 'react-native'
-import { textStyles } from '../../common/constants'
-
-const height = Dimensions.get('window').height
-const width = Dimensions.get('window').width
+import { styles as textStyles } from '../../common/constants/text'
+import { styles as colors } from '../../common/constants/colors'
+import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../common/constants/sizes'
 
 export default {
   container: {
-    padding: 15,
-    margin: 4,
+    backgroundColor: colors.white,
   },
-  header: {
-    height: height / 6, // 1/6th
-    // width,
-    top: 0,
-    flex: 1,
+  headerImage: {
+    height: SCREEN_HEIGHT / 3,
+    width: SCREEN_WIDTH,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingLeft: 43,
+    paddingRight: 43,
   },
-  headerText: {
-    ...textStyles.h1,
-  },
+  headerText: [textStyles.h1, {
+    position: 'absolute',
+    backgroundColor: colors.darkGrayOpaque,
+    padding: 8,
+    bottom: 8,
+  }],
   body: {
-    height: height * (4 / 6), // 4/6th
+    height: SCREEN_HEIGHT * (4 / 6), // 4/6th
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
-  footer: {
-    height: height / 6, // 1/6th
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  longDesc: textStyles.copy,
 }

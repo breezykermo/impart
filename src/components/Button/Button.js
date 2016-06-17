@@ -7,9 +7,10 @@ import {
 import styles from './Button.styles'
 
 class Button extends React.Component {
-  static propTypes: {
+  static propTypes = {
+    text: PropTypes.string,
     onPress: PropTypes.func.isRequired,
-    style: View.propTypes.style,
+    buttonStyles: View.propTypes.style,
   }
 
   constructor(props) {
@@ -35,26 +36,21 @@ class Button extends React.Component {
   }
 
   render() {
-    const { onPress, text } = this.props
+    const { onPress, text, buttonStyles } = this.props
     const { pressed } = this.state
 
     return (
-      <View style={pressed ? styles.containerActive : styles.container}>
-        <TouchableHighlight
-          activeOpacity={1}
-          onHideUnderlay={this._onHideUnderlay}
-          onShowUnderlay={this._onShowUnderlay}
-          onPress={onPress}
-        >
-          <Text style={pressed ? styles.textActive : styles.text}>{text}</Text>
-        </TouchableHighlight>
-      </View>
+      <TouchableHighlight
+        style={[pressed ? styles.containerActive : styles.container, buttonStyles]}
+        activeOpacity={1}
+        onHideUnderlay={() => this._onHideUnderlay()}
+        onShowUnderlay={() => this._onShowUnderlay()}
+        onPress={onPress}
+      >
+        <Text style={pressed ? styles.textActive : styles.text}>{text}</Text>
+      </TouchableHighlight>
     )
   }
-}
-Button.propTypes = {
-  onPress: PropTypes.func.isRequired,
-  text: PropTypes.string,
 }
 
 export default Button

@@ -18,7 +18,7 @@ export default {
     marginTop: 18,
     /* SHADOW */
     shadowColor: colors.darkGray,
-    shadowOpacity: 0.8,
+    shadowOpacity: 1,
     shadowRadius: 2,
     shadowOffset: {
       height: 5,

@@ -1,7 +1,9 @@
 import React, { PropTypes, Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import styles from './YesDetail.styles'
-import Button from '../Button'
+import i18n from '../../common/i18n'
+import AnimatedTab from './components/AnimatedTab'
+import ButtonRow from './components/ButtonRow'
 import Accepted from '../Accepted'
 
 class YesDetail extends Component {
@@ -13,6 +15,7 @@ class YesDetail extends Component {
   }
 
   state = {
+    detailsShowing: false,
     accepted: false,
   }
 
@@ -22,21 +25,31 @@ class YesDetail extends Component {
     if (card) {
       component = (
         <View style={styles.container}>
-          <View style={styles.header}>
+          <Image
+            source={require('../../media/no-user-image.gif')}
+            style={styles.headerImage}
+          >
             <Text style={styles.headerText}>{card.get('header')}</Text>
-          </View>
+          </Image>
+          <ButtonRow
+            acceptHandler={() => {
+              this.setState({ accepted: true })
+              acceptHandler()
+            }}
+            rejectHandler={() => {
+              this.setState({ accepted: false })
+              rejectHandler()
+            }}
+          />
           <View style={styles.body}>
-            <Text style={{ paddingBottom: 20 }}>{card.get('shortDesc')}</Text>
-            <Text>{card.get('longDesc')}</Text>
-          </View>
-          <View style={styles.footer}>
-            <Button onPress={rejectHandler}>No, thanks</Button>
-            <Button
-              onPress={() => {
-                this.setState({ accepted: true })
-                acceptHandler()
-              }}
-            >Sign me up!</Button>
+            <AnimatedTab title={i18n.details} icon="dropup" />
+            <AnimatedTab
+              title={i18n.description}
+              icon="dropdown"
+              renderContent={() => (
+                <Text style={styles.longDesc}>{card.get('longDesc')}</Text>
+              )}
+            />
           </View>
         </View>
       )
