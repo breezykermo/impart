@@ -9,9 +9,7 @@ const Accepted = props => (
       <Text>This is where you will put in your details and we will HOOK YOU UP!!!!!</Text>
     </View>
     <View style={styles.buttonContainer}>
-      <Button onPress={props.backHandler}>
-        Back to swiping
-      </Button>
+      <Button onPress={props.backHandler} text="Back to swiping" />
     </View>
   </View>
 )
