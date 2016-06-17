@@ -3,8 +3,8 @@ import {
   View,
   Text,
   Image,
-  TouchableOpacity,
 } from 'react-native'
+import Button from '../Button'
 import { NO_MORE_OPPORTUNITIES } from '../../common/i18n'
 
 import styles from './NoMoreCards.styles'
@@ -18,7 +18,10 @@ const NoMoreCards = props => (
       />
     </View>
     <Text style={styles.text}>{NO_MORE_OPPORTUNITIES}</Text>
-    {/* TODO: put a button here */}
+    <Button
+      onPress={() => console.log('pressed')}
+      text="Press me!"
+    />
   </View>
 )
 NoMoreCards.propTypes = {
