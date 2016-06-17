@@ -25,38 +25,21 @@ export default {
       width: 2,
     },
   },
-  header: {
-    flex: 1,
-    textAlign: 'center',
-  },
   headerText: [textStyles.h1, {
     backgroundColor: colors.darkGrayOpaque,
     position: 'absolute',
     bottom: 8,
-    // backgroundColor: 'transparent',
     marginLeft: 15,
     marginRight: 15,
     padding: 10,
     borderRadius: 1,
   }],
   image: {
-    flex: 5,
+    flex: 4,
     justifyContent: 'center',
     alignItems: 'center',
-    width: CARD_WIDTH - 2, // for border TODO: remove
-    // height is automatically set via image proportions
+    width: CARD_WIDTH - 2, // -2 for border
+    /* NB: height is automatically set via image proportions */
   },
-  body: {
-    flex: 4,
-  },
-  organization: {
-    padding: 5,
-    paddingTop: 14,
-  },
-  topBreak: {
-    marginTop: 8,
-    paddingTop: 5,
-    borderTopWidth: 1,
-    borderTopColor: 'grey',
-  },
+  body: {},
 }

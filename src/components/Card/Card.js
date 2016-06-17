@@ -11,7 +11,7 @@ const Card = ({ data }) => (
   <View style={styles.container}>
     <Image
       source={require('../../media/no-user-image.gif')}
-      style={[styles.image, styles.noShadow]}
+      style={styles.image}
     >
       {data.get('header') ? (
         <Text style={styles.headerText}>{data.get('header')}</Text>
