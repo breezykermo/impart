@@ -35,7 +35,7 @@ export default (state = defaultState, action) => {
       const cardsJS = {}
       action.cards.forEach(card => { cardsJS[card.id] = card })
       return state.set('isFetching', false)
-        // .set('toDo', fromJS(cardsJS))
+        .set('toDo', fromJS(cardsJS))
     }
 
     case CARD_FETCH_ERROR:

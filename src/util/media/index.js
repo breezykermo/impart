@@ -1,0 +1,1 @@
+export { returnIconAsImage } from './returnIconAsImage'

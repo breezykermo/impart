@@ -4,20 +4,21 @@ import styles from './DetailList.styles'
 import Detail from '../Detail'
 
 const DetailList = ({ data }) => {
-  const details = [
-    data.get('organization'),
-    data.get('organizationUrl'),
-    data.get('dateOfEvent'),
-    data.get('location'),
-    data.get('shortDesc'),
-    data.get('perks'),
-  ]
+  const details = {
+    organization: data.get('organization'),
+    organizationUrl: data.get('organizationUrl'),
+    dateOfEvent: data.get('dateOfEvent'),
+    location: data.get('location'),
+    shortDesc: data.get('shortDesc'),
+    perks: data.get('perks'),
+  }
 
   return (
     <View style={styles.container}>
-      {details.map((detail, index) => {
+      {Object.keys(details).map((key, index) => {
+        const detail = details[key]
         if (typeof detail === 'undefined' || detail === '') return null
-        return <Detail key={index} icon="I" text={detail} />
+        return <Detail key={index} icon={key} text={detail} />
       })}
     </View>
   )

@@ -14,13 +14,13 @@ const coreContainer = {
   marginLeft: 15,
   marginRight: 15,
   /* SHADOW */
-  shadowColor: colors.darkGray,
-  shadowOpacity: 0.8,
-  shadowRadius: 2,
-  shadowOffset: {
-    height: 5,
-    width: 2,
-  },
+  // shadowColor: colors.darkGray,
+  // shadowOpacity: 0.8,
+  // shadowRadius: 2,
+  // shadowOffset: {
+  //   height: 5,
+  //   width: 2,
+  // },
 }
 const coreText = textStyles.copyButton
 
