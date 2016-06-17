@@ -20,7 +20,7 @@ export default {
     alignItems: 'center',
   },
   titleImage: {
-    width: 79,
+    width: 90,
     height: 30,
   },
   side: {
