@@ -8,7 +8,9 @@ const Detail = ({ icon, text }) => (
     <View style={styles.iconContainer}>
       {returnIconAsImage(icon, styles.icon)}
     </View>
-    <Text style={styles.text}>{text}</Text>
+    <View style={styles.textContainer}>
+      <Text style={styles.text}>{text}</Text>
+    </View>
   </View>
 )
 Detail.propTypes = {

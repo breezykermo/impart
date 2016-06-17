@@ -1,4 +1,8 @@
 import { styles as textStyles } from '../../../../common/constants/text'
+import { CARD_WIDTH } from '../../../../common/constants/sizes'
+import DeviceInfo from 'react-native-device-info'
+
+const deviceType = DeviceInfo.getModel()
 
 export default {
   container: {
@@ -12,19 +16,13 @@ export default {
     alignItems: 'center',
     width: 21,
     height: 21,
-    marginLeft: 10,
+    marginLeft: (deviceType === 'iPhone 6 Plus') ? 15 : 0,
     marginRight: 20,
     marginTop: 10,
     marginBottom: 10,
   },
-  // icon: {
-  //   // textAlign: 'center',
-  //   marginLeft: 10,
-  //   marginRight: 15,
-  //   marginTop: 10,
-  //   marginBottom: 10,
-  // },
-  text: [textStyles.copy, {
-    padding: 5,
-  }],
+  text: textStyles.copy,
+  textContainer: {
+    width: CARD_WIDTH - (21 + 10 + 20 + 28),
+  },
 }
