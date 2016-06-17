@@ -1,9 +1,14 @@
 import Parse from 'parse/react-native'
 import { createMockCards } from './mocks'
+import {
+  SERVER_URL,
+  PARSE_API_KEY,
+  PARSE_JS_KEY,
+} from './common/constants/api'
 
 // TODO: move these into ENV variables
-Parse.initialize('8683A294D744F6A55879C13E8374A', 'XgsxILrjVR2v45f7a43gY9VfV60WFMGp')
-Parse.serverURL = 'http://192.168.99.100:1337/parse'
+Parse.initialize(PARSE_API_KEY, PARSE_JS_KEY)
+Parse.serverURL = SERVER_URL
 
 export const Card = Parse.Object.extend('Card')
 
