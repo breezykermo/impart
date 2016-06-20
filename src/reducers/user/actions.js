@@ -1,8 +1,8 @@
 import { local } from '../../api'
+import { Signup, Card } from '../../parse'
 import {
   fetchFromParse,
 } from '../cards/actions'
-import { Signup, Card, User } from '../../parse'
 
 export const FETCH_USER_START = 'FETCH_USER_START'
 export const fetchUserStart = () => ({
@@ -25,12 +25,6 @@ export const UPDATE_FORM = 'UPDATE_FORM'
 export const updateForm = profile => ({
   type: UPDATE_FORM,
   profile,
-})
-
-export const SET_USER_EMAIL = 'SET_USER_EMAIL'
-export const setUserEmail = email => ({
-  type: SET_USER_EMAIL,
-  email,
 })
 
 export const syncUser = () => dispatch => {
@@ -95,7 +89,21 @@ export const signupError = error => ({
 })
 
 export const signup = (card, profile) => dispatch => {
-  // dispatch(signupStart())
+  dispatch(signupStart())
   Promise.resolve()
-    .then(f => f)
+    .then(() => {
+      const newSignup = new Signup()
+      const cardPointer = new Card()
+      cardPointer.id = card.id
+      newSignup.save({
+        name: profile.name,
+        email: profile.email,
+        phoneNo: profile.phoneNo,
+        card: cardPointer,
+      }, {
+        success: savedSignup => dispatch(signupSuccess(savedSignup)),
+        error: (obj, err) => dispatch(signupError(err)),
+      })
+    })
+    .catch(err => signupError(err))
 }

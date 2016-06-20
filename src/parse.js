@@ -12,8 +12,7 @@ Parse.serverURL = SERVER_URL
 
 export const Card = Parse.Object.extend('Card')
 export const Signup = Parse.Object.extend('Signup')
-export const User = Parse.Object.extend('User')
-
+export const User = Parse.User
 
 /**
  * Returns a Promise that will return the newly saved object.
@@ -21,18 +20,21 @@ export const User = Parse.Object.extend('User')
  * Parse Users and authentication to write data, which I don't
  * want to do right now.
  */
-export const createSignup = (cardId, name, email, phoneNo) => {
-  const newSignup = new Signup()
-  const cardPointer = new Card()
-  cardPointer.id = cardId
-
-  return newSignup.save({
-    name,
-    email,
-    phoneNo,
-    card: cardPointer,
-  })
-}
+// export const createSignup = (cardId, name, email, phoneNo) => {
+//   const newSignup = new Signup()
+//   const cardPointer = new Card()
+//   cardPointer.id = cardId
+//
+//   newSignup.save({
+//     name,
+//     email,
+//     phoneNo,
+//     card: cardPointer,
+//   }, {
+//     success: obj => obj,
+//     error: err => err,
+//   })
+// }
 
 const cards = (new Parse.Query(Card)).ascending('createdAt')
 // if (__DEV__) {
