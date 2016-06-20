@@ -1,3 +1,6 @@
+import { styles as colors } from '../../common/constants/colors'
+import { CARD_WIDTH } from '../../common/constants/sizes'
+
 export default {
   container: {
     flex: 1,
@@ -12,5 +15,11 @@ export default {
   },
   buttonContainer: {
     height: 80,
+  },
+  input: {
+    height: 40,
+    width: CARD_WIDTH,
+    borderColor: colors.primary,
+    borderWidth: 1,
   },
 }

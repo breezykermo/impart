@@ -20,6 +20,8 @@ class App extends Component {
   static propTypes = {
     currentView: PropTypes.string,
     toDo: PropTypes.arrayOf(PropTypes.object).isRequired,
+    emailInput: PropTypes.string.isRequired,
+    updateEmailTextInput: PropTypes.func.isRequired,
     saidYes: PropTypes.func.isRequired,
     saidNo: PropTypes.func.isRequired,
     refreshCards: PropTypes.func.isRequired,
@@ -48,6 +50,8 @@ class App extends Component {
       goToView,
       popView,
       isLoading,
+      updateEmailTextInput,
+      emailInput,
     } = this.props
 
     let innerComponent
@@ -86,6 +90,8 @@ class App extends Component {
             saidNo(toDo[0])
             goToView(views.SWIPE)
           }}
+          onChangeTextHandler={updateEmailTextInput}
+          emailInput={emailInput}
           backHandler={popView}
         />
       )
@@ -109,6 +115,7 @@ export default connect(
       currentView: state.navigation.get('current'),
       toDo: cardsAsList,
       isLoading: state.cards.get('isFetching'),
+      emailInput: state.user.get('emailInput'),
     }
   },
   mapDispatchToProps([navigationActions, cardActions, userActions])

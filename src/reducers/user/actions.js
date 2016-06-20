@@ -18,9 +18,17 @@ export const fetchUserError = error => ({
   error,
 })
 
-// export const fetchUserFromParse = () => dispatch => {
-//
-// }
+export const UPDATE_EMAIL_TEXT_INPUT = 'UPDATE_EMAIL_TEXT_INPUT'
+export const updateEmailTextInput = text => ({
+  type: UPDATE_EMAIL_TEXT_INPUT,
+  text,
+})
+
+export const SET_USER_EMAIL = 'SET_USER_EMAIL'
+export const setUserEmail = email => ({
+  type: SET_USER_EMAIL,
+  email,
+})
 
 export const syncUser = () => dispatch => {
   Promise.resolve()

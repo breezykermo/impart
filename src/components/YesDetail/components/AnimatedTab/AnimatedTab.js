@@ -1,5 +1,9 @@
 import React, { PropTypes } from 'react'
-import { View, Text } from 'react-native'
+import {
+  View,
+  ScrollView,
+  Text,
+} from 'react-native'
 import styles from './AnimatedTab.styles.js'
 import { returnIconAsImage } from '../../../../util/media'
 
@@ -23,9 +27,9 @@ class AnimatedTab extends React.Component {
           </View>
         </View>
         {renderContent ? (
-          <View style={styles.content}>
+          <ScrollView style={styles.content}>
             {renderContent()}
-          </View>
+          </ScrollView>
         ) : null}
       </View>
     )

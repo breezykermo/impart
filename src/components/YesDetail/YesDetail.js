@@ -13,6 +13,8 @@ class YesDetail extends Component {
     acceptHandler: PropTypes.func.isRequired,
     rejectHandler: PropTypes.func.isRequired,
     backHandler: PropTypes.func.isRequired,
+    onChangeTextHandler: PropTypes.func.isRequired,
+    emailInput: PropTypes.string.isRequired,
   }
 
   state = {
@@ -22,7 +24,15 @@ class YesDetail extends Component {
 
   render() {
     let component
-    const { card, acceptHandler, rejectHandler, backHandler } = this.props
+    const {
+      card,
+      acceptHandler,
+      rejectHandler,
+      backHandler,
+      onChangeTextHandler,
+      emailInput,
+    } = this.props
+
     if (card) {
       component = (
         <View style={styles.container}>
@@ -56,7 +66,15 @@ class YesDetail extends Component {
         </View>
       )
     }
-    if (this.state.accepted) component = <Accepted backHandler={backHandler} />
+    if (this.state.accepted) {
+      component = (
+        <Accepted
+          backHandler={backHandler}
+          onChangeTextHandler={onChangeTextHandler}
+          inputText={emailInput}
+        />
+      )
+    }
     return component
   }
 }
