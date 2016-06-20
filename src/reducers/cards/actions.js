@@ -72,9 +72,10 @@ export const fetchFromParse = () => (dispatch, getState) => {
     .then(results => {
       console.log(`${results.length} cards retrieved`) // eslint-disable-line no-console
       // NB: filter by cards that haven't already been swiped
-      const filteredCards = results
+      const filteredResults = results
         .filter(card => !getState().cards.get('swiped').includes(card.id))
-      dispatch(cardFetchSuccess(filteredCards))
+      console.log(`${filteredResults.length} cards presented`)
+      dispatch(cardFetchSuccess(filteredResults))
     })
     .catch(err => dispatch(cardFetchError(err)))
 }

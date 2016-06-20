@@ -47,7 +47,6 @@ export default (state = defaultState, action) => {
       return defaultState
 
     case UPDATE_SWIPED:
-      console.log(action.cards)
       return state.set('swiped', action.cards)
 
     default:
