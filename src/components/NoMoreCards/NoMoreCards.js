@@ -18,12 +18,6 @@ const NoMoreCards = props => (
       />
     </View>
     <Text style={styles.text}>{i18n.noMoreOpportunites}</Text>
-    <View style={styles.buttonContainer}>
-      <Button
-        onPress={() => console.log('pressed')}
-        text="Press me!"
-      />
-    </View>
   </View>
 )
 NoMoreCards.propTypes = {
