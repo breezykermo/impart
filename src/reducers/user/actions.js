@@ -1,5 +1,8 @@
 import { local } from '../../api'
-import { fetchFromParse } from '../cards/actions'
+import {
+  fetchFromParse,
+} from '../cards/actions'
+import { Signup, Card, User } from '../../parse'
 
 export const FETCH_USER_START = 'FETCH_USER_START'
 export const fetchUserStart = () => ({
@@ -70,4 +73,29 @@ export const saveProfile = profile => dispatch => {
     .then(() => local.setPhoneNo(profile.phoneNo))
     .then(() => dispatch(fetchUserSuccess(profile)))
     .catch(err => { throw new Error(err) })
+}
+
+/* runtime Signup creation */
+
+export const SIGNUP_START = 'SIGNUP_START'
+export const signupStart = () => ({
+  type: SIGNUP_START,
+})
+
+export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
+export const signupSuccess = signup => ({
+  type: SIGNUP_SUCCESS,
+  signup,
+})
+
+export const SIGNUP_ERROR = 'SIGNUP_ERROR'
+export const signupError = error => ({
+  type: SIGNUP_ERROR,
+  error,
+})
+
+export const signup = (card, profile) => dispatch => {
+  // dispatch(signupStart())
+  Promise.resolve()
+    .then(f => f)
 }

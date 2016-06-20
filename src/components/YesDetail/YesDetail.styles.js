@@ -15,8 +15,9 @@ export default {
     paddingRight: 43,
   },
   headerText: [textStyles.h1, {
+    color: colors.primary,
+    backgroundColor: colors.whiteOpaque,
     position: 'absolute',
-    backgroundColor: colors.darkGrayOpaque,
     padding: 8,
     bottom: 8,
   }],

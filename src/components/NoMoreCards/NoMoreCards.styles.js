@@ -24,6 +24,9 @@ export default {
     lineHeight: 20,
     textAlign: 'center',
   }],
+  buttonContainer: {
+    height: 80,
+  },
   refreshButton: {
     padding: 5,
     borderWidth: 1,

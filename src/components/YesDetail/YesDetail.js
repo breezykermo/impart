@@ -65,7 +65,7 @@ class YesDetail extends Component {
     }
     if (this.state.accepted) {
       /* TODO: conditional request for profile fields if not filled */
-      component = <Profile backHandler={backHandler} />
+      component = <Profile card={card} backHandler={backHandler} />
     }
     return component
   }

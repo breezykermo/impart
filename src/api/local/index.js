@@ -18,18 +18,27 @@ export default {
   },
   getName() {
     return store.get(NAME_KEY)
+      .then(name => (
+        typeof name === 'string' ? name : ''
+      ))
   },
   setName(name) {
     return store.update(NAME_KEY, name)
   },
   getEmail() {
     return store.get(EMAIL_KEY)
+      .then(email => (
+        typeof email === 'string' ? email : ''
+      ))
   },
   setEmail(email) {
     return store.update(EMAIL_KEY, email)
   },
   getPhoneNo() {
     return store.get(PHONE_NO_KEY)
+      .then(phoneNo => (
+        typeof phoneNo === 'string' ? phoneNo : ''
+      ))
   },
   setPhoneNo(phoneNo) {
     return store.update(PHONE_NO_KEY, phoneNo)

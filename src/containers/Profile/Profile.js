@@ -27,6 +27,7 @@ const Profile = props => (
       <Button
         onPress={() => {
           props.saveProfile(props.form)
+          props.signup(props.card, props.form)
           props.backHandler()
         }}
         text="Submit details"
@@ -35,6 +36,10 @@ const Profile = props => (
   </View>
 )
 Profile.propTypes = {
+  /**
+   * Card for which user is inputting info
+   **/
+  card: PropTypes.object.isRequired,
   /**
    * Function that returns to previous screen.
    * NB: not necessary, if the pop action is a global use case.
@@ -52,7 +57,7 @@ Profile.propTypes = {
 
 export default connect(
   state => ({
-    form: state.user.get('form') || {},
+    form: state.user.get('form'),
   }),
   mapDispatchToProps(userActions)
 )(Profile)
