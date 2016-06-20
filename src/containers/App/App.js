@@ -21,8 +21,8 @@ class App extends Component {
     user: PropTypes.object.isRequired,
     currentView: PropTypes.string,
     toDo: PropTypes.arrayOf(PropTypes.object).isRequired,
-    saidYes: PropTypes.func.isRequired,
-    saidNo: PropTypes.func.isRequired,
+    swipeYes: PropTypes.func.isRequired,
+    swipeNo: PropTypes.func.isRequired,
     refreshCards: PropTypes.func.isRequired,
     fetchFromParse: PropTypes.func.isRequired,
     goToView: PropTypes.func.isRequired,
@@ -45,8 +45,8 @@ class App extends Component {
       toDo,
       currentView,
       refreshCards,
-      saidYes,
-      saidNo,
+      swipeYes,
+      swipeNo,
       goToView,
       popView,
       isLoading,
@@ -72,7 +72,7 @@ class App extends Component {
           renderNoMoreCards={() => <NoMoreCards refreshCards={refreshCards} />}
 
           handleYup={() => goToView(views.YES_DETAIL)}
-          handleNope={() => saidNo(toDo[0])}
+          handleNope={() => swipeNo(toDo[0])}
 
           resetState={f => f}
         />
@@ -83,10 +83,10 @@ class App extends Component {
           card={toDo[0]}
           userHasDetails={user.email !== '' && user.email !== undefined}
           acceptHandler={() => {
-            saidYes(toDo[0])
+            swipeYes(toDo[0])
           }}
           rejectHandler={() => {
-            saidNo(toDo[0])
+            swipeYes(toDo[0])
             goToView(views.SWIPE)
           }}
           backHandler={popView}

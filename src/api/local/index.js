@@ -1,5 +1,6 @@
 import store from 'react-native-simple-store'
 import {
+  SWIPED_CARDS_KEY,
   USER_KEY,
   NAME_KEY,
   EMAIL_KEY,
@@ -7,6 +8,22 @@ import {
 } from '../../common/constants/api'
 
 export default {
+  /* swipedCards cache */
+  addSwipedCard(card) {
+    this.getSwipedCards()
+      .then(cards => {
+        cards.push(card.id)
+        return store.update(SWIPED_CARDS_KEY, JSON.stringify(cards))
+      })
+  },
+  getSwipedCards() {
+    return store.get(SWIPED_CARDS_KEY)
+      .then(cards => {
+        if (!cards) cards = '[]' // eslint-disable-line no-param-reassign
+        return JSON.parse(cards)
+      })
+  },
+
   getUserId() {
     return store.get(USER_KEY)
       // .then(result => JSON.parse(result))

@@ -1,3 +1,4 @@
+export const SWIPED_CARDS_KEY = 'IMPART_SWIPED_CARDS_KEY'
 export const USER_KEY = 'IMPART_USER_KEY'
 export const NAME_KEY = 'IMPART_NAME_KEY'
 export const EMAIL_KEY = 'IMPART_EMAIL_KEY'

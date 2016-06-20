@@ -1,4 +1,5 @@
 import { goToView } from '../navigation/actions'
+import { local } from '../../api'
 import views from '../../navigation'
 import { allCards } from '../../parse'
 
@@ -20,18 +21,6 @@ export const cardFetchError = error => ({
   error,
 })
 
-// eslint-disable-next-line new-cap
-export const fetchFromParse = () => dispatch => {
-  dispatch(cardFetchStart())
-  Promise.resolve()
-    .then(() => allCards.find())
-    .then(results => {
-      console.log(`${results.length} cards retrieved`) // eslint-disable-line no-console
-      dispatch(cardFetchSuccess(results))
-    })
-    .catch(err => dispatch(cardFetchError(err)))
-}
-
 /** runtime action creators **/
 export const SAID_YES = 'SAID_YES'
 export const saidYes = card => ({
@@ -50,13 +39,37 @@ export const refreshCards = () => dispatch => {
   dispatch(fetchFromParse())
 }
 
-export const SWIPE_YES = 'SWIPE_YES'
+export const addToSwiped = card => dispatch => {
+  Promise.resolve()
+    .then(() => local.addSwipedCard(card))
+    .then(swipedCards => dispatch(updateSwiped(swipedCards)))
+    .catch(err => console.log('ERROR: card not added to local store'))
+}
+
 export const swipeYes = card => dispatch => {
   dispatch(saidYes(card))
+  dispatch(addToSwiped(card))
   dispatch(goToView(views.YES_DETAIL))
 }
 
-export const SWIPE_NO = 'SWIPE_NO'
 export const swipeNo = card => dispatch => {
   dispatch(saidNo(card))
+  dispatch(addToSwiped(card))
 }
+
+export const fetchFromParse = () => dispatch => {
+  dispatch(cardFetchStart())
+  Promise.resolve()
+    .then(() => allCards.find())
+    .then(results => {
+      console.log(`${results.length} cards retrieved`) // eslint-disable-line no-console
+      dispatch(cardFetchSuccess(results))
+    })
+    .catch(err => dispatch(cardFetchError(err)))
+}
+
+export const UPDATE_SWIPED = 'UPDATE_SWIPED'
+export const updateSwiped = cards => ({
+  type: UPDATE_SWIPED,
+  cards,
+})

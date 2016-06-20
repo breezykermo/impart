@@ -101,7 +101,9 @@ export const signup = (card, profile) => dispatch => {
         phoneNo: profile.phoneNo,
         card: cardPointer,
       }, {
-        success: savedSignup => dispatch(signupSuccess(savedSignup)),
+        success: savedSignup => {
+          dispatch(signupSuccess(savedSignup))
+        },
         error: (obj, err) => dispatch(signupError(err)),
       })
     })
