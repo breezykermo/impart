@@ -18,6 +18,7 @@ import styles from './App.styles'
 
 class App extends Component {
   static propTypes = {
+    user: PropTypes.object.isRequired,
     currentView: PropTypes.string,
     toDo: PropTypes.arrayOf(PropTypes.object).isRequired,
     saidYes: PropTypes.func.isRequired,
@@ -40,6 +41,7 @@ class App extends Component {
 
   render() {
     const {
+      user,
       toDo,
       currentView,
       refreshCards,
@@ -79,6 +81,7 @@ class App extends Component {
       innerComponent = (
         <YesDetail
           card={toDo[0]}
+          userHasDetails={user.email !== '' && user.email !== undefined}
           acceptHandler={() => {
             saidYes(toDo[0])
           }}
@@ -109,7 +112,7 @@ export default connect(
       currentView: state.navigation.get('current'),
       toDo: cardsAsList,
       isLoading: state.cards.get('isFetching'),
-      emailInput: state.user.get('emailInput'),
+      user: state.user.get('profile'),
     }
   },
   mapDispatchToProps([navigationActions, cardActions, userActions])

@@ -4,7 +4,7 @@ import { CARD_WIDTH, SCREEN_HEIGHT, NAV_HEIGHT } from '../../common/constants/si
 export default {
   container: {
     flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
     height: SCREEN_HEIGHT - NAV_HEIGHT,
     backgroundColor: colors.white,

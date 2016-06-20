@@ -9,6 +9,7 @@ import Profile from '../../containers/Profile'
 
 class YesDetail extends Component {
   static propTypes = {
+    userHasDetails: PropTypes.bool.isRequired,
     card: PropTypes.object.isRequired,
     acceptHandler: PropTypes.func.isRequired,
     rejectHandler: PropTypes.func.isRequired,

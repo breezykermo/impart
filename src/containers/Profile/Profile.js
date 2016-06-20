@@ -16,15 +16,21 @@ const Profile = props => (
       <Form
         style={styles.form}
         type={ProfileFormType}
-        value={props.profile}
-        onChange={props.updateProfile}
+        value={props.form}
+        onChange={props.updateForm}
         options={{
           auto: 'placeholders',
         }}
       />
     </View>
     <View style={styles.buttonContainer}>
-      <Button onPress={props.backHandler} text="Save Details" />
+      <Button
+        onPress={() => {
+          props.saveProfile(props.form)
+          props.backHandler()
+        }}
+        text="Submit details"
+      />
     </View>
   </View>
 )
@@ -37,16 +43,16 @@ Profile.propTypes = {
   /**
    * Update email input in state
    **/
-  updateProfile: PropTypes.func.isRequired,
+  updateForm: PropTypes.func.isRequired,
   /**
-   * Email input in state.
+   * State of Profile fields form
    **/
-  profile: PropTypes.object.isRequired,
+  form: PropTypes.object.isRequired,
 }
 
 export default connect(
   state => ({
-    profile: state.user.get('profile'),
+    form: state.user.get('form') || {},
   }),
   mapDispatchToProps(userActions)
 )(Profile)

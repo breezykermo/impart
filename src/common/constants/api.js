@@ -1,4 +1,7 @@
 export const USER_KEY = 'IMPART_USER_KEY'
+export const NAME_KEY = 'IMPART_NAME_KEY'
+export const EMAIL_KEY = 'IMPART_EMAIL_KEY'
+export const PHONE_NO_KEY = 'IMPART_PHONE_NO_KEY'
 
 /* PRODUCTION (Next Short Drinks) */
 export const PARSE_API_KEY = '8683A294D744F6A55879C13E8374A'
