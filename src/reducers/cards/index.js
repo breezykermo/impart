@@ -7,6 +7,7 @@ import {
   CARD_FETCH_START,
   CARD_FETCH_SUCCESS,
   CARD_FETCH_ERROR,
+  UPDATE_SWIPED,
 } from './actions'
 
 export default (state = defaultState, action) => {
@@ -44,6 +45,10 @@ export default (state = defaultState, action) => {
 
     case REFRESH_CARDS:
       return defaultState
+
+    case UPDATE_SWIPED:
+      console.log(action.cards)
+      return state.set('swiped', action.cards)
 
     default:
       return state

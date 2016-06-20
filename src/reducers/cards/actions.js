@@ -39,11 +39,18 @@ export const refreshCards = () => dispatch => {
   dispatch(fetchFromParse())
 }
 
+export const UPDATE_SWIPED = 'UPDATE_SWIPED'
+export const updateSwiped = cards => ({
+  type: UPDATE_SWIPED,
+  cards,
+})
+
 export const addToSwiped = card => dispatch => {
   Promise.resolve()
     .then(() => local.addSwipedCard(card))
     .then(swipedCards => dispatch(updateSwiped(swipedCards)))
-    .catch(err => console.log('ERROR: card not added to local store'))
+    // eslint-disable-next-line no-console
+    .catch(err => console.log(`ERROR: card not added to local store: ${err}`))
 }
 
 export const swipeYes = card => dispatch => {
@@ -64,12 +71,8 @@ export const fetchFromParse = () => dispatch => {
     .then(results => {
       console.log(`${results.length} cards retrieved`) // eslint-disable-line no-console
       dispatch(cardFetchSuccess(results))
+      return local.getSwipedCards()
     })
+    .then(cards => dispatch(updateSwiped(cards)))
     .catch(err => dispatch(cardFetchError(err)))
 }
-
-export const UPDATE_SWIPED = 'UPDATE_SWIPED'
-export const updateSwiped = cards => ({
-  type: UPDATE_SWIPED,
-  cards,
-})

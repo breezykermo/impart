@@ -8,12 +8,12 @@ import {
 } from '../../common/constants/api'
 
 export default {
-  /* swipedCards cache */
   addSwipedCard(card) {
-    this.getSwipedCards()
+    return this.getSwipedCards()
       .then(cards => {
         cards.push(card.id)
         return store.update(SWIPED_CARDS_KEY, JSON.stringify(cards))
+          .then(() => cards)
       })
   },
   getSwipedCards() {
