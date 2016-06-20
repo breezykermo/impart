@@ -4,12 +4,11 @@ import {
   Text,
   Image,
 } from 'react-native'
-import Button from '../Button'
 import i18n from '../../common/i18n'
 
 import styles from './NoMoreCards.styles'
 
-const NoMoreCards = props => (
+const NoMoreCards = () => (
   <View style={styles.container}>
     <View style={styles.iconContainer}>
       <Image

@@ -6,7 +6,6 @@ import { styles as textStyles } from '../../common/constants/text'
 export default {
   container: {
     flex: 1,
-    // justifyContent: 'center',
     alignItems: 'center',
     height: SCREEN_HEIGHT,
     width: SCREEN_WIDTH,
