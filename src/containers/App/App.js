@@ -7,6 +7,7 @@ import * as userActions from '../../reducers/user/actions'
 
 import React, { Component, PropTypes } from 'react'
 import { View } from 'react-native'
+import Loading from '../../components/Loading'
 import Nav from '../../components/Nav'
 import SwipeCards from 'react-native-swipe-cards'
 import Card from '../../components/Card'
@@ -26,6 +27,7 @@ class App extends Component {
     goToView: PropTypes.func.isRequired,
     popView: PropTypes.func.isRequired,
     syncUser: PropTypes.func.isRequired,
+    isLoading: PropTypes.bool.isRequired,
   }
 
   state = {
@@ -37,9 +39,23 @@ class App extends Component {
   }
 
   render() {
-    const { toDo, currentView, refreshCards, saidYes, saidNo, goToView, popView } = this.props
+    const {
+      toDo,
+      currentView,
+      refreshCards,
+      saidYes,
+      saidNo,
+      goToView,
+      popView,
+      isLoading,
+    } = this.props
+
     let innerComponent
-    if (currentView === views.SWIPE) {
+    if (isLoading) {
+      innerComponent = (
+        <Loading />
+      )
+    } else if ((currentView === views.SWIPE) && !isLoading) {
       innerComponent = (
         <SwipeCards
           style={styles.swipeCards}
@@ -92,6 +108,7 @@ export default connect(
     return {
       currentView: state.navigation.get('current'),
       toDo: cardsAsList,
+      isLoading: state.cards.get('isFetching'),
     }
   },
   mapDispatchToProps([navigationActions, cardActions, userActions])
