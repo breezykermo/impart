@@ -1,7 +1,7 @@
 import defaultState from './defaultState'
 import {
   FETCH_USER_SUCCESS,
-  UPDATE_EMAIL_TEXT_INPUT,
+  UPDATE_PROFILE,
 } from './actions'
 
 export default (state = defaultState, action) => {
@@ -9,8 +9,8 @@ export default (state = defaultState, action) => {
     case FETCH_USER_SUCCESS:
       return state.set('id', action.user)
 
-    case UPDATE_EMAIL_TEXT_INPUT:
-      return state.set('emailInput', action.text)
+    case UPDATE_PROFILE:
+      return state.set('profile', action.profile)
 
     default:
       return state

@@ -18,10 +18,10 @@ export const fetchUserError = error => ({
   error,
 })
 
-export const UPDATE_EMAIL_TEXT_INPUT = 'UPDATE_EMAIL_TEXT_INPUT'
-export const updateEmailTextInput = text => ({
-  type: UPDATE_EMAIL_TEXT_INPUT,
-  text,
+export const UPDATE_PROFILE = 'UPDATE_PROFILE'
+export const updateProfile = profile => ({
+  type: UPDATE_PROFILE,
+  profile,
 })
 
 export const SET_USER_EMAIL = 'SET_USER_EMAIL'

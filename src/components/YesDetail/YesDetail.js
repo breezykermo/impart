@@ -5,7 +5,7 @@ import i18n from '../../common/i18n'
 import { formatUrl } from '../../util/react'
 import AnimatedTab from './components/AnimatedTab'
 import ButtonRow from './components/ButtonRow'
-import Accepted from '../Accepted'
+import Profile from '../../containers/Profile'
 
 class YesDetail extends Component {
   static propTypes = {
@@ -13,8 +13,6 @@ class YesDetail extends Component {
     acceptHandler: PropTypes.func.isRequired,
     rejectHandler: PropTypes.func.isRequired,
     backHandler: PropTypes.func.isRequired,
-    onChangeTextHandler: PropTypes.func.isRequired,
-    emailInput: PropTypes.string.isRequired,
   }
 
   state = {
@@ -29,8 +27,6 @@ class YesDetail extends Component {
       acceptHandler,
       rejectHandler,
       backHandler,
-      onChangeTextHandler,
-      emailInput,
     } = this.props
 
     if (card) {
@@ -67,13 +63,8 @@ class YesDetail extends Component {
       )
     }
     if (this.state.accepted) {
-      component = (
-        <Accepted
-          backHandler={backHandler}
-          onChangeTextHandler={onChangeTextHandler}
-          inputText={emailInput}
-        />
-      )
+      /* TODO: conditional request for profile fields if not filled */
+      component = <Profile backHandler={backHandler} />
     }
     return component
   }
