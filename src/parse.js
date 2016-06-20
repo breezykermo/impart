@@ -13,14 +13,14 @@ Parse.serverURL = SERVER_URL
 export const Card = Parse.Object.extend('Card')
 
 let cards
-if (__DEV__) {
+// if (__DEV__) {
   // Live parse query
-  cards = (new Parse.Query(Card)).ascending('createdAt')
-} else {
-  // Mock parse query
-  const mockParseCards = createMockCards()
-  cards = { find: () => Promise.resolve(mockParseCards) }
-}
+cards = (new Parse.Query(Card)).ascending('createdAt')
+// } else {
+//   // Mock parse query
+//   const mockParseCards = createMockCards()
+//   cards = { find: () => Promise.resolve(mockParseCards) }
+// }
 
 export const allCards = cards
 export default Parse

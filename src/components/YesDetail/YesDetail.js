@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import { View, Text, Image } from 'react-native'
 import styles from './YesDetail.styles'
 import i18n from '../../common/i18n'
+import { formatUrl } from '../../util/react'
 import AnimatedTab from './components/AnimatedTab'
 import ButtonRow from './components/ButtonRow'
 import Accepted from '../Accepted'
@@ -26,7 +27,8 @@ class YesDetail extends Component {
       component = (
         <View style={styles.container}>
           <Image
-            source={require('../../media/no-user-image.gif')}
+            resizeMode="contain"
+            source={formatUrl(card.get('pictureUrl')) || require('../../media/no-user-image.gif')}
             style={styles.headerImage}
           >
             <Text style={styles.headerText}>{card.get('header')}</Text>

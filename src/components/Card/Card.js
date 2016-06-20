@@ -6,12 +6,14 @@ import {
 } from 'react-native'
 import DetailList from './components/DetailList'
 import styles from './Card.styles'
+import { formatUrl } from '../../util/react'
 
 const Card = ({ data }) => (
   <View style={styles.container}>
     <Image
-      source={require('../../media/no-user-image.gif')}
+      resizeMode="contain"
       style={styles.image}
+      source={formatUrl(data.get('pictureUrl')) || require('../../media/no-user-image.gif')}
     >
       {data.get('header') ? (
         <Text style={styles.headerText}>{data.get('header')}</Text>
