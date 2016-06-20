@@ -1,5 +1,4 @@
 import { styles as colors } from '../../common/constants/colors'
-import { Dimensions} from 'react-native'
 
 export default {
   container: {
@@ -11,15 +10,15 @@ export default {
     backgroundColor: 'transparent',
   },
   yup: {
-    borderColor: colors.white,
+    borderColor: colors.green,
   },
   yupText: {
-    color: colors.white,
+    color: colors.green,
   },
   nope: {
-    borderColor: colors.white,
+    borderColor: colors.red,
   },
   nopeText: {
-    color: colors.white,
+    color: colors.red,
   },
 }
