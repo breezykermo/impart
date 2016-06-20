@@ -64,15 +64,17 @@ export const swipeNo = card => dispatch => {
   dispatch(addToSwiped(card))
 }
 
-export const fetchFromParse = () => dispatch => {
+export const fetchFromParse = () => (dispatch, getState) => {
   dispatch(cardFetchStart())
-  Promise.resolve()
+  local.getSwipedCards()
+    .then(cards => dispatch(updateSwiped(cards)))
     .then(() => allCards.find())
     .then(results => {
       console.log(`${results.length} cards retrieved`) // eslint-disable-line no-console
-      dispatch(cardFetchSuccess(results))
-      return local.getSwipedCards()
+      // NB: filter by cards that haven't already been swiped
+      const filteredCards = results
+        .filter(card => !getState().cards.get('swiped').includes(card.id))
+      dispatch(cardFetchSuccess(filteredCards))
     })
-    .then(cards => dispatch(updateSwiped(cards)))
     .catch(err => dispatch(cardFetchError(err)))
 }
