@@ -26,7 +26,8 @@ export default {
     },
   },
   headerText: [textStyles.h1, {
-    backgroundColor: colors.darkGrayOpaque,
+    color: colors.primary,
+    backgroundColor: colors.whiteOpaque,
     position: 'absolute',
     bottom: 8,
     marginLeft: 15,
