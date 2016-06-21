@@ -8,6 +8,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "debug:ios": "node node_modules/react-native/local-cli/cli.js run-ios",
     "debug:ios:6+": "npm run debug:ios -- --simulator=\"iPhone 6 Plus\"",
+    "debug:ios:6s": "npm run debug:ios -- --simulator=\"iPhone 6s\"",
+    "debug:ios:6": "npm run debug:ios -- --simulator=\"iPhone 6\"",
     "debug:ios:5": "npm run debug:ios -- --simulator=\"iPhone 5\"",
     "debug:android": "adb reverse tcp:8081 tcp:8081 && node node_modules/react-native/local-cli/cli.js run-android",
     "bundle:ios": "node node_modules/react-native/local-cli/cli.js bundle --dev false --entry-file ./index.ios.js --platform ios --bundle-output ios/main.jsbundle",

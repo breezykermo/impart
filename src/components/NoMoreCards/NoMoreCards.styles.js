@@ -24,6 +24,7 @@ export default {
     textAlign: 'center',
   }],
   buttonContainer: {
+    marginTop: 20,
     height: 80,
   },
   refreshButton: {
