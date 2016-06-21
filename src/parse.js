@@ -36,7 +36,7 @@ export const User = Parse.User
 //   })
 // }
 
-const cards = (new Parse.Query(Card)).ascending('createdAt')
+const cards = (new Parse.Query(Card)).ascending('Order')
 // if (__DEV__) {
   // Live parse query
 // cards = (new Parse.Query(Card)).ascending('createdAt')

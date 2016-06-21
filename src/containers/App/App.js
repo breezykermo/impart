@@ -20,7 +20,7 @@ class App extends Component {
   static propTypes = {
     user: PropTypes.object.isRequired,
     currentView: PropTypes.string,
-    toDo: PropTypes.arrayOf(PropTypes.object).isRequired,
+    toDo: PropTypes.any.isRequired, /* immutable list */
     swipeYes: PropTypes.func.isRequired,
     swipeNo: PropTypes.func.isRequired,
     refreshCards: PropTypes.func.isRequired,
@@ -58,6 +58,7 @@ class App extends Component {
         <Loading />
       )
     } else if ((currentView === views.SWIPE) && !isLoading) {
+      console.log(toDo)
       innerComponent = (
         <SwipeCards
           style={styles.swipeCards}
@@ -104,16 +105,11 @@ class App extends Component {
 }
 
 export default connect(
-  state => {
-    const cardsAsObj = state.cards.get('toDo').toJS()
-    const cardsAsList = Object.keys(cardsAsObj)
-      .map(key => cardsAsObj[key])
-    return {
-      currentView: state.navigation.get('current'),
-      toDo: cardsAsList,
-      isLoading: state.cards.get('isFetching'),
-      user: state.user.get('profile'),
-    }
-  },
+  state => ({
+    currentView: state.navigation.get('current'),
+    toDo: state.cards.get('toDo').toJS(),
+    isLoading: state.cards.get('isFetching'),
+    user: state.user.get('profile'),
+  }),
   mapDispatchToProps([navigationActions, cardActions, userActions])
 )(App)
