@@ -30,6 +30,7 @@ local.properties
 
 # node.js
 #
+.deco/
 node_modules/
 npm-debug.log
 
