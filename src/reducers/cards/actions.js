@@ -36,7 +36,8 @@ export const saidNo = card => ({
 
 export const REFRESH_CARDS = 'REFRESH_CARDS'
 export const refreshCards = () => dispatch => {
-  dispatch(fetchFromParse())
+  local.clearSwipedCards()
+    .then(() => dispatch(fetchFromParse()))
 }
 
 export const UPDATE_SWIPED = 'UPDATE_SWIPED'

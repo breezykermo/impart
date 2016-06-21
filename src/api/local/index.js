@@ -23,6 +23,9 @@ export default {
         return JSON.parse(cards)
       })
   },
+  clearSwipedCards() {
+    return store.update(SWIPED_CARDS_KEY, '[]')
+  },
 
   getUserId() {
     return store.get(USER_KEY)
