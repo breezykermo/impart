@@ -1,4 +1,4 @@
-package com.charitytinder;
+package com.Impart;
 
 import com.facebook.react.ReactActivity;
 import com.react.rnspinkit.RNSpinkitPackage;
@@ -17,7 +17,7 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "CharityTinder";
+        return "Impart";
     }
 
     /**

@@ -19,7 +19,7 @@ export default function native() {
 
   const store = configureStore()
 
-  class CharityTinder extends React.Component {
+  class Impart extends React.Component {
     componentDidMount() {
       codePush.sync()
     }
@@ -33,5 +33,5 @@ export default function native() {
     }
   }
 
-  AppRegistry.registerComponent('CharityTinder', () => CharityTinder)
+  AppRegistry.registerComponent('Impart', () => Impart)
 }
