@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import {
+  ScrollView,
   View,
   Text,
   Image,
@@ -10,7 +11,7 @@ import i18n from '../../common/i18n'
 import styles from './NoMoreCards.styles'
 
 const NoMoreCards = props => (
-  <View style={styles.container}>
+  <ScrollView style={styles.container}>
     <View style={styles.iconContainer}>
       <Image
         style={styles.comeBackImage}
@@ -25,7 +26,7 @@ const NoMoreCards = props => (
         text="Again, again!"
       />
     </View>
-  </View>
+  </ScrollView>
 )
 NoMoreCards.propTypes = {
   refreshCards: PropTypes.func.isRequired,
