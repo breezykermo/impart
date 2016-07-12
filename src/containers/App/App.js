@@ -58,7 +58,6 @@ class App extends Component {
         <Loading />
       )
     } else if ((currentView === views.SWIPE) && !isLoading) {
-      console.log(toDo)
       innerComponent = (
         <SwipeCards
           style={styles.swipeCards}
