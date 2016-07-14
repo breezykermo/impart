@@ -1,4 +1,5 @@
 import { styles as colors } from '../../common/constants/colors'
+import { SCREEN_HEIGHT, SCREEN_WIDTH, NAV_HEIGHT } from '../../common/constants/sizes'
 
 export default {
   container: {
@@ -20,5 +21,14 @@ export default {
   },
   nopeText: {
     color: colors.red,
+  },
+
+  backgroundCard: {
+    position: 'absolute',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT - NAV_HEIGHT,
   },
 }

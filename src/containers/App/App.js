@@ -59,23 +59,28 @@ class App extends Component {
       )
     } else if ((currentView === views.SWIPE) && !isLoading) {
       innerComponent = (
-        <SwipeCards
-          style={styles.swipeCards}
-          yupStyle={styles.yup}
-          yupTextStyle={styles.yupText}
-          nopeStyle={styles.nope}
-          nopeTextStyle={styles.nopeText}
+        <View>
+          <View style={styles.backgroundCard}>
+            <Card data={toDo[1]} />
+          </View>
+          <SwipeCards
+            style={styles.swipeCards}
+            yupStyle={styles.yup}
+            yupTextStyle={styles.yupText}
+            nopeStyle={styles.nope}
+            nopeTextStyle={styles.nopeText}
 
-          card={toDo[0]}
-          loop={true}
-          renderCard={cardData => <Card data={cardData} />}
-          renderNoMoreCards={() => <NoMoreCards refreshCards={refreshCards} />}
+            card={toDo[0]}
+            loop={true}
+            renderCard={cardData => <Card data={cardData} />}
+            renderNoMoreCards={() => <NoMoreCards refreshCards={refreshCards} />}
 
-          handleYup={() => goToView(views.YES_DETAIL)}
-          handleNope={() => swipeNo(toDo[0])}
+            handleYup={() => goToView(views.YES_DETAIL)}
+            handleNope={() => swipeNo(toDo[0])}
 
-          resetState={f => f}
-        />
+            resetState={f => f}
+          />
+        </View>
       )
     } else if (currentView === views.YES_DETAIL) {
       innerComponent = (
