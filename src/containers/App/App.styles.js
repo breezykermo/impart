@@ -1,5 +1,7 @@
 import { styles as colors } from '../../common/constants/colors'
 import {
+  SCREEN_HEIGHT,
+  SCREEN_WIDTH,
   CARD_WIDTH,
   CARD_HEIGHT,
   CARD_INSET,
@@ -8,9 +10,11 @@ import {
 export default {
   container: {
     backgroundColor: colors.gray,
+    height: SCREEN_HEIGHT,
+    width: SCREEN_WIDTH,
   },
   swipeCards: {
-    margin: 0,
+    marginBottom: CARD_INSET,
     padding: 0,
     backgroundColor: 'transparent',
   },
@@ -27,9 +31,9 @@ export default {
     color: colors.red,
   },
   backgroundCardContainer: {
+    position: 'absolute',
     top: CARD_INSET,
     left: CARD_INSET,
-    position: 'absolute',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
