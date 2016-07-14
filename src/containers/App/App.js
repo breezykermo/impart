@@ -60,8 +60,8 @@ class App extends Component {
     } else if ((currentView === views.SWIPE) && !isLoading) {
       innerComponent = (
         <View>
-          <View style={styles.backgroundCard}>
-            <Card data={toDo[1]} />
+          <View style={styles.backgroundCardContainer}>
+            <Card styles={styles.backgroundCard} data={toDo[1]} />
           </View>
           <SwipeCards
             style={styles.swipeCards}

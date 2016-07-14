@@ -1,5 +1,9 @@
 import { styles as colors } from '../../common/constants/colors'
-import { SCREEN_HEIGHT, SCREEN_WIDTH, NAV_HEIGHT, STATUS_BAR_HEIGHT } from '../../common/constants/sizes'
+import {
+  CARD_WIDTH,
+  CARD_HEIGHT,
+  CARD_INSET,
+} from '../../common/constants/sizes'
 
 export default {
   container: {
@@ -22,14 +26,16 @@ export default {
   nopeText: {
     color: colors.red,
   },
-
-  backgroundCard: {
+  backgroundCardContainer: {
+    top: CARD_INSET,
+    left: CARD_INSET,
     position: 'absolute',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    width: SCREEN_WIDTH,
-    // marginTop: 18,
-    height: SCREEN_HEIGHT - NAV_HEIGHT - STATUS_BAR_HEIGHT,
+  },
+  backgroundCard: {
+    width: CARD_WIDTH,
+    height: CARD_HEIGHT,
   },
 }
