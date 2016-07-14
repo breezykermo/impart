@@ -22,7 +22,7 @@
     "immutable": "^3.8.1",
     "parse": "^1.8.5",
     "react": "^15.1.0",
-    "react-native": "^0.27.2",
+    "react-native": "^0.29.1",
     "react-native-code-push": "^1.12.2-beta",
     "react-native-device-info": "^0.9.3",
     "react-native-simple-store": "^1.0.1",

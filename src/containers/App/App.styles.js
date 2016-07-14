@@ -1,5 +1,5 @@
 import { styles as colors } from '../../common/constants/colors'
-import { SCREEN_HEIGHT, SCREEN_WIDTH, NAV_HEIGHT } from '../../common/constants/sizes'
+import { SCREEN_HEIGHT, SCREEN_WIDTH, NAV_HEIGHT, STATUS_BAR_HEIGHT } from '../../common/constants/sizes'
 
 export default {
   container: {
@@ -29,6 +29,7 @@ export default {
     justifyContent: 'center',
     alignItems: 'center',
     width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT - NAV_HEIGHT,
+    // marginTop: 18,
+    height: SCREEN_HEIGHT - NAV_HEIGHT - STATUS_BAR_HEIGHT,
   },
 }

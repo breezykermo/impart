@@ -15,7 +15,7 @@ export default {
     height: CARD_HEIGHT,
     width: CARD_WIDTH,
     marginBottom: 18,
-    marginTop: 18,
+    // marginTop: 18,
     /* SHADOW */
     shadowColor: colors.darkGray,
     shadowOpacity: 1,
