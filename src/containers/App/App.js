@@ -68,11 +68,8 @@ class App extends Component {
         ) : null}
           <SwipeCards
             style={styles.swipeCards}
-            yupStyle={styles.yup}
-            yupTextStyle={styles.yupText}
-            renderYup={() => <Text>Hello</Text>}
-            nopeStyle={styles.nope}
-            nopeTextStyle={styles.nopeText}
+            renderYup={() => null}
+            renderNope={() => null}
 
             card={toDo[0]}
             loop={true}

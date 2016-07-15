@@ -14,21 +14,10 @@ export default {
     width: SCREEN_WIDTH,
   },
   swipeCards: {
+    marginTop: CARD_INSET,
     marginBottom: CARD_INSET,
     padding: 0,
     backgroundColor: 'transparent',
-  },
-  yup: {
-    borderColor: colors.green,
-  },
-  yupText: {
-    color: colors.green,
-  },
-  nope: {
-    borderColor: colors.red,
-  },
-  nopeText: {
-    color: colors.red,
   },
   backgroundCardContainer: {
     position: 'absolute',
