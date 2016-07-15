@@ -1,18 +1,17 @@
-import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../common/constants/sizes'
+import { sizes, colors } from '../../common/constants'
 
 export default {
   screen: {
     position: 'absolute',
     top: 0,
-    // flex: 1,
-    width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT,
-    backgroundColor: '#fff',
+    width: sizes.SCREEN_WIDTH,
+    height: sizes.SCREEN_HEIGHT,
+    backgroundColor: colors.white,
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
   },
 };
