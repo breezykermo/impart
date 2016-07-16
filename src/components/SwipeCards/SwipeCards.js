@@ -21,24 +21,15 @@ class SwipeCards extends Component {
        and the new card will show up. */
     card: React.PropTypes.object,
     renderCards: React.PropTypes.func,
-    loop: React.PropTypes.bool,
     renderNoMoreCards: React.PropTypes.func,
-    showYup: React.PropTypes.bool,
-    renderYup: React.PropTypes.func,
-    showNope: React.PropTypes.bool,
-    renderNope: React.PropTypes.func,
+    yupImage: React.PropTypes.any,
+    nopeImage: React.PropTypes.any,
     handleYup: React.PropTypes.func,
     handleNope: React.PropTypes.func,
   };
   static defaultProps = {
-    loop: false,
     showYup: true,
     showNope: true,
-    style: StyleSheet.create({}),
-    yupStyle: StyleSheet.create({}),
-    yupTextStyle: StyleSheet.create({}),
-    nopeStyle: StyleSheet.create({}),
-    nopeTextStyle: StyleSheet.create({}),
   };
 
   state = {
