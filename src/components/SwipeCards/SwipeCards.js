@@ -165,30 +165,6 @@ class SwipeCards extends Component {
         <Animated.View style={[styles.screen, { opacity: this.state.screenOpacity }]} />
       {/* Cards, yup, nope and NoMoreCards */}
         <View style={[styles.container, this.props.style]}>
-          { this.props.renderNope
-            ? this.props.renderNope(pan)
-            : (
-                this.props.showNope
-                ? (
-                  <Animated.View style={[styles.nope, animatedNopeStyles]}>
-                    <Text style={styles.nopeText}>Nope!</Text>
-                  </Animated.View>
-                ) : null
-              )
-          }
-
-          { this.props.renderYup
-            ? this.props.renderYup(pan)
-            : (
-                this.props.showYup
-                ? (
-                  <Animated.View style={[styles.yup, animatedYupStyles]}>
-                    <Text style={styles.yupText}>Yup!</Text>
-                  </Animated.View>
-                ) : null
-              )
-          }
-
           { this.props.card
               ? (
               <Animated.View style={[styles.card, animatedCardstyles]} {...this._panResponder.panHandlers}>
@@ -196,6 +172,30 @@ class SwipeCards extends Component {
               </Animated.View>
               )
               : this.renderNoMoreCards() }
+
+              { this.props.renderNope
+                ? this.props.renderNope(pan)
+                : (
+                    this.props.showNope
+                    ? (
+                      <Animated.View style={[styles.nope, animatedNopeStyles]}>
+                        <Text style={styles.nopeText}>Nope!</Text>
+                      </Animated.View>
+                    ) : null
+                  )
+              }
+
+              { this.props.renderYup
+                ? this.props.renderYup(pan)
+                : (
+                    this.props.showYup
+                    ? (
+                      <Animated.View style={[styles.yup, animatedYupStyles]}>
+                        <Text style={styles.yupText}>Yup!</Text>
+                      </Animated.View>
+                    ) : null
+                  )
+              }
         </View>
     </View>
     );
