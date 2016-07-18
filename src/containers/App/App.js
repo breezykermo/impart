@@ -11,6 +11,7 @@ import Loading from '../../components/Loading'
 import Nav from '../../components/Nav'
 import SwipeCards from '../../components/SwipeCards'
 import Card from '../../components/Card'
+import YesNoImage from '../../components/YesNoImage'
 import NoMoreCards from '../../components/NoMoreCards'
 import YesDetail from '../../components/YesDetail'
 
@@ -68,7 +69,8 @@ class App extends Component {
         ) : null}
           <SwipeCards
             style={styles.swipeCards}
-
+            renderYup={pan => <YesNoImage type="yes" pan={pan} />}
+            renderNope={pan => <YesNoImage type="no" pan={pan} />}
 
             card={toDo[0]}
             renderCard={cardData => <Card data={cardData} />}
