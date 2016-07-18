@@ -14,8 +14,8 @@ export default {
      * if slightly overpadded */
     height: CARD_HEIGHT,
     width: CARD_WIDTH,
-    marginBottom: 18,
-    marginTop: 18,
+    // marginBottom: 18,
+    // marginTop: 18,
     /* SHADOW */
     shadowColor: colors.darkGray,
     shadowOpacity: 1,

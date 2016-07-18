@@ -6,11 +6,12 @@ import * as cardActions from '../../reducers/cards/actions'
 import * as userActions from '../../reducers/user/actions'
 
 import React, { Component, PropTypes } from 'react'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import Loading from '../../components/Loading'
 import Nav from '../../components/Nav'
-import SwipeCards from 'react-native-swipe-cards'
+import SwipeCards from '../../components/SwipeCards'
 import Card from '../../components/Card'
+import YesNoImage from '../../components/YesNoImage'
 import NoMoreCards from '../../components/NoMoreCards'
 import YesDetail from '../../components/YesDetail'
 
@@ -59,23 +60,26 @@ class App extends Component {
       )
     } else if ((currentView === views.SWIPE) && !isLoading) {
       innerComponent = (
-        <SwipeCards
-          style={styles.swipeCards}
-          yupStyle={styles.yup}
-          yupTextStyle={styles.yupText}
-          nopeStyle={styles.nope}
-          nopeTextStyle={styles.nopeText}
+        <View>
+          {/* TODO: abstract this backdrop out??? */}
+        {toDo.length != 0 ? (
+          <View style={styles.backgroundCardContainer}>
+            <Card styles={styles.backgroundCard} data={toDo[1] || toDo[0]} />
+          </View>
+        ) : null}
+          <SwipeCards
+            style={styles.swipeCards}
+            renderYup={pan => <YesNoImage type="yes" pan={pan} />}
+            renderNope={pan => <YesNoImage type="no" pan={pan} />}
 
-          card={toDo[0]}
-          loop={true}
-          renderCard={cardData => <Card data={cardData} />}
-          renderNoMoreCards={() => <NoMoreCards refreshCards={refreshCards} />}
+            card={toDo[0]}
+            renderCard={cardData => <Card data={cardData} />}
+            renderNoMoreCards={() => <NoMoreCards refreshCards={refreshCards} />}
 
-          handleYup={() => goToView(views.YES_DETAIL)}
-          handleNope={() => swipeNo(toDo[0])}
-
-          resetState={f => f}
-        />
+            handleYup={() => goToView(views.YES_DETAIL)}
+            handleNope={() => swipeNo(toDo[0])}
+          />
+        </View>
       )
     } else if (currentView === views.YES_DETAIL) {
       innerComponent = (

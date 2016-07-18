@@ -1,5 +1,16 @@
-# React Native Redux Boiler
+# Impart
 
-Sensible boiler. Intend to keep this up to date.
-
-Note: DevTools require [React Native Debugger](https://github.com/jhen0409/react-native-debugger), an Electron desktop app for Mac.
+#### React Native (on iPhone Simulator)
+```bash
+npm i
+npm start
+```
+```bash
+npm run debug:ios:6+
+```
+#### Server (via Docker)
+```bash
+cd ParseServer
+sh run.sh
+sh initialize.sh
+```
