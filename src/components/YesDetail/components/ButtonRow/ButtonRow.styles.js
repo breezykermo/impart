@@ -2,7 +2,7 @@ import { SCREEN_HEIGHT } from '../../../../common/constants/sizes'
 
 export default {
   buttonContainer: {
-    height: SCREEN_HEIGHT / 6,
+    height: SCREEN_HEIGHT / 8,
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',

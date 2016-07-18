@@ -7,7 +7,7 @@ export default {
     backgroundColor: colors.white,
   },
   headerImage: {
-    height: SCREEN_HEIGHT / 3,
+    height: SCREEN_HEIGHT / 4,
     width: SCREEN_WIDTH,
     justifyContent: 'center',
     alignItems: 'center',
@@ -24,6 +24,13 @@ export default {
   body: {
     height: SCREEN_HEIGHT * (4 / 6), // 4/6th
     flex: 1,
+  },
+  detailList: {
+    marginTop: -15,
+    padding: 5,
+  },
+  detail: {
+    marginBottom: -4,
   },
   longDesc: textStyles.copy,
 }

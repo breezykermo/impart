@@ -1,4 +1,4 @@
-import { styles as textStyles } from '../../../../common/constants/text'
+import { styles as textStyles } from '../../common/constants/text'
 
 export default {
   container: {

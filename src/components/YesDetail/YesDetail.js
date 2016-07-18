@@ -3,7 +3,8 @@ import { View, Text, Image } from 'react-native'
 import styles from './YesDetail.styles'
 import i18n from '../../common/i18n'
 import { formatUrl } from '../../util/react'
-import AnimatedTab from './components/AnimatedTab'
+import DetailList from '../DetailList'
+import DrawerTab from './components/DrawerTab'
 import ButtonRow from './components/ButtonRow'
 import Profile from '../../containers/Profile'
 
@@ -50,16 +51,20 @@ class YesDetail extends Component {
               rejectHandler()
             }}
           />
-          <View style={styles.body}>
-            <AnimatedTab title={i18n.details} icon="dropup" />
-            <AnimatedTab
-              title={i18n.description}
-              icon="dropdown"
-              renderContent={() => (
-                <Text style={styles.longDesc}>{card.get('longDesc')}</Text>
-              )}
-            />
-          </View>
+          <DrawerTab
+            topHeight={55}
+            topHeightAfterPress={285}
+            headerOne={i18n.details}
+            renderContentOne={() => (
+              <DetailList
+                containerStyles={styles.detailList}
+                itemStyles={styles.detail}
+                data={card}
+              />
+            )}
+            headerTwo={i18n.description}
+            renderContentTwo={() => (<Text style={styles.longDesc}>{card.get('longDesc')}</Text>)}
+          />
         </View>
       )
     }

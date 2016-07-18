@@ -4,7 +4,7 @@ import {
   Text,
   Image,
 } from 'react-native'
-import DetailList from './components/DetailList'
+import DetailList from '../DetailList'
 import styles from './Card.styles'
 import { formatUrl } from '../../util/react'
 
