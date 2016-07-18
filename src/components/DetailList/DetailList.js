@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import styles from './DetailList.styles'
 import Detail from '../Detail'
 

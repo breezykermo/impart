@@ -1,5 +1,5 @@
-import { styles as textStyles } from '../../../../common/constants/text'
-import { CARD_WIDTH } from '../../../../common/constants/sizes'
+import { styles as textStyles } from '../../common/constants/text'
+import { CARD_WIDTH } from '../../common/constants/sizes'
 import DeviceInfo from 'react-native-device-info'
 
 const deviceType = DeviceInfo.getModel()
