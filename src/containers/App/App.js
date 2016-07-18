@@ -68,8 +68,7 @@ class App extends Component {
         ) : null}
           <SwipeCards
             style={styles.swipeCards}
-            yupImage={null}
-            nopeImage={null}
+
 
             card={toDo[0]}
             renderCard={cardData => <Card data={cardData} />}

@@ -1,4 +1,13 @@
-import { sizes, colors } from '../../common/constants'
+import { sizes, colors, textStyles } from '../../common/constants'
+
+const yupNopeCore = {
+  position: 'absolute',
+  top: ((sizes.CARD_HEIGHT / 2) - 5),
+  left: ((sizes.CARD_WIDTH / 2) - 8),
+  borderRadius: 3,
+  borderWidth: 1,
+  padding: 10,
+}
 
 export default {
   screen: {
@@ -14,4 +23,16 @@ export default {
     alignItems: 'center',
     backgroundColor: colors.white,
   },
+  yup: [yupNopeCore, {
+    borderColor: colors.green,
+  }],
+  yupText: [textStyles.h1, {
+    color: colors.green,
+  }],
+  nope: [yupNopeCore, {
+    borderColor: colors.red,
+  }],
+  nopeText: [textStyles.h1, {
+    color: colors.red,
+  }],
 };

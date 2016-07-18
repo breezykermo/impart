@@ -168,10 +168,10 @@ class SwipeCards extends Component {
           { this.props.renderNope
             ? this.props.renderNope(pan)
             : (
-                this.props.showNope && this.props.renderNope
+                this.props.showNope
                 ? (
-                  <Animated.View style={animatedNopeStyles}>
-                    {this.props.renderNope()}
+                  <Animated.View style={[styles.nope, animatedNopeStyles]}>
+                    <Text style={styles.nopeText}>Nope!</Text>
                   </Animated.View>
                 ) : null
               )
@@ -180,10 +180,10 @@ class SwipeCards extends Component {
           { this.props.renderYup
             ? this.props.renderYup(pan)
             : (
-                this.props.showYup && this.props.renderYup
+                this.props.showYup
                 ? (
-                  <Animated.View style={animatedYupStyles}>
-                    {this.props.renderYup()}
+                  <Animated.View style={[styles.yup, animatedYupStyles]}>
+                    <Text style={styles.yupText}>Yup!</Text>
                   </Animated.View>
                 ) : null
               )
