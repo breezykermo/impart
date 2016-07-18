@@ -4,7 +4,6 @@ import { styles as colors } from '../../common/constants/colors'
 export default {
   container: {
     backgroundColor: colors.white,
-    flex: 8,
     flexDirection: 'row',
     height: 73,
     paddingTop: STATUS_BAR_HEIGHT,

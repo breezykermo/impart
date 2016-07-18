@@ -9,6 +9,7 @@ import { returnIconAsImage } from '../../../../util/media'
 
 class AnimatedTab extends React.Component {
   static propTypes = {
+    containerStyle: View.propTypes.style,
     title: PropTypes.string,
     icon: PropTypes.string,
     renderContent: PropTypes.func,
@@ -17,9 +18,9 @@ class AnimatedTab extends React.Component {
   state = {}
 
   render() {
-    const { title, icon, renderContent } = this.props
+    const { title, icon, renderContent, containerStyle } = this.props
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, containerStyle]}>
         <View style={styles.header}>
           <Text style={styles.titleText}>{title.toUpperCase()}</Text>
           <View style={styles.iconContainer}>

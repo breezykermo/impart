@@ -7,7 +7,7 @@ export default {
     backgroundColor: colors.white,
   },
   headerImage: {
-    height: SCREEN_HEIGHT / 3,
+    height: SCREEN_HEIGHT / 4,
     width: SCREEN_WIDTH,
     justifyContent: 'center',
     alignItems: 'center',
