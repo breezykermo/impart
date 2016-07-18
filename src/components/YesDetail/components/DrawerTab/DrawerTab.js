@@ -71,10 +71,10 @@ class SlinkyTabs extends React.Component {
                 {returnIconAsImage('dropdown', styles.icon)}
               </View>
             </View>
-            <ScrollView style={styles.content}>
-              {renderContentOne()}
-            </ScrollView>
           </TouchableOpacity>
+          <ScrollView style={styles.content}>
+            {renderContentOne()}
+          </ScrollView>
         </Animated.View>
 
         <Animated.View style={[styles.tabContainer]}>
@@ -85,10 +85,10 @@ class SlinkyTabs extends React.Component {
                 {returnIconAsImage('dropup', styles.icon)}
               </View>
             </View>
-            <ScrollView style={styles.content}>
-              {renderContentTwo()}
-            </ScrollView>
           </TouchableOpacity>
+          <ScrollView style={styles.content}>
+            {renderContentTwo()}
+          </ScrollView>
         </Animated.View>
       </View>
     )

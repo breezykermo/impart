@@ -25,5 +25,12 @@ export default {
     height: SCREEN_HEIGHT * (4 / 6), // 4/6th
     flex: 1,
   },
+  detailList: {
+    marginTop: -15,
+    padding: 5,
+  },
+  detail: {
+    marginBottom: -5,
+  },
   longDesc: textStyles.copy,
 }
