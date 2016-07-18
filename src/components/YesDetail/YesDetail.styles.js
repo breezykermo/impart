@@ -30,7 +30,7 @@ export default {
     padding: 5,
   },
   detail: {
-    marginBottom: -5,
+    marginBottom: -4,
   },
   longDesc: textStyles.copy,
 }
