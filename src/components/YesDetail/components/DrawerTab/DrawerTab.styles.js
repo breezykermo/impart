@@ -1,15 +1,17 @@
-import { styles as textStyles } from '../../../../common/constants/text'
-import { styles as colors } from '../../../../common/constants/colors'
+import { colors, textStyles } from '../../../../common/constants'
+
 export default {
-  container: {
+  container: {},
+  tabContainer: {
     justifyContent: 'flex-start',
     borderTopWidth: 1,
     borderTopColor: colors.gray,
     paddingLeft: 36,
     paddingRight: 36,
-    paddingBottom: 20,
+    // paddingBottom: 10,
   },
   header: {
+    backgroundColor: colors.white,
     paddingTop: 20,
     paddingBottom: 20,
     flexDirection: 'row',

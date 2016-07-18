@@ -3,8 +3,7 @@ import { View, Text, Image } from 'react-native'
 import styles from './YesDetail.styles'
 import i18n from '../../common/i18n'
 import { formatUrl } from '../../util/react'
-import SlinkyTabs from './components/SlinkyTabs'
-import AnimatedTab from './components/AnimatedTab'
+import DrawerTab from './components/DrawerTab'
 import ButtonRow from './components/ButtonRow'
 import Profile from '../../containers/Profile'
 
@@ -51,12 +50,14 @@ class YesDetail extends Component {
               rejectHandler()
             }}
           />
-        <SlinkyTabs
-          headerOne={i18n.details}
-          renderContentOne={() => null}
-          headerTwo={i18n.description}
-          renderContentTwo={() => (<Text style={styles.longDesc}>{card.get('longDesc')}</Text>)}
-        />
+          <DrawerTab
+            topHeight={60}
+            topHeightAfterPress={285}
+            headerOne={i18n.details}
+            renderContentOne={() => (<Text style={styles.longDesc}>{card.get('longDesc')}</Text>)}
+            headerTwo={i18n.description}
+            renderContentTwo={() => (<Text style={styles.longDesc}>{card.get('longDesc')}</Text>)}
+          />
         </View>
       )
     }
@@ -67,22 +68,5 @@ class YesDetail extends Component {
     return component
   }
 }
-/***
-<View style={styles.body}>
-  <AnimatedTab
-    containerStyle={{ flex: 1, backgroundColor: '#f9f9f9' }}
-    title={i18n.description}
-    icon="dropdown"
-    renderContent={() => (
-      <Text style={styles.longDesc}>{card.get('longDesc')}</Text>
-    )}
-  />
-  <AnimatedTab
-    containerStyle={{ flex: 1 }}
-    title={i18n.details}
-    icon="dropup"
-  />
-</View>
-***/
 
 export default YesDetail

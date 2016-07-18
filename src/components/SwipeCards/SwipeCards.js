@@ -1,17 +1,14 @@
 /* Gratefully ported from https://github.com/brentvatne/react-native-animated-demo-tinder */
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
-  StyleSheet,
   Text,
   View,
   Animated,
   PanResponder,
-  Image,
-  Dimensions,
-} from 'react-native';
-import clamp from 'clamp';
+} from 'react-native'
+import clamp from 'clamp' // eslint-i
 import styles from './SwipeCards.styles'
-import Defaults from './Defaults.js';
+import Defaults from './Defaults.js'
 
 var SWIPE_THRESHOLD = 120;
 
