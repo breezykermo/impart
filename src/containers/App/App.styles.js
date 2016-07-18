@@ -10,8 +10,8 @@ import {
 export default {
   container: {
     backgroundColor: colors.gray,
-    height: SCREEN_HEIGHT,
-    width: SCREEN_WIDTH,
+    // height: SCREEN_HEIGHT,
+    // width: SCREEN_WIDTH,
   },
   swipeCards: {
     marginTop: CARD_INSET,

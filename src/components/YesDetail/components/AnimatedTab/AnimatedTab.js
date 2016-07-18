@@ -10,7 +10,7 @@ import { returnIconAsImage } from '../../../../util/media'
 class AnimatedTab extends React.Component {
   static propTypes = {
     containerStyle: View.propTypes.style,
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
     icon: PropTypes.string,
     renderContent: PropTypes.func,
   }
@@ -22,7 +22,7 @@ class AnimatedTab extends React.Component {
     return (
       <View style={[styles.container, containerStyle]}>
         <View style={styles.header}>
-          <Text style={styles.titleText}>{title.toUpperCase()}</Text>
+          <Text style={styles.titleText}>{(title || 'AnimatedTab').toUpperCase()}</Text>
           <View style={styles.iconContainer}>
             {returnIconAsImage(icon || 'dropdown', styles.icon)}
           </View>

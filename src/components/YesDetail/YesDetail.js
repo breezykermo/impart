@@ -51,7 +51,12 @@ class YesDetail extends Component {
               rejectHandler()
             }}
           />
-        <SlinkyTabs style={styles.body} />
+        <SlinkyTabs
+          headerOne={i18n.details}
+          renderContentOne={() => null}
+          headerTwo={i18n.description}
+          renderContentTwo={() => (<Text style={styles.longDesc}>{card.get('longDesc')}</Text>)}
+        />
         </View>
       )
     }
