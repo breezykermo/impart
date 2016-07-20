@@ -1,4 +1,7 @@
-import React, { PropTypes, Component } from 'react'
+import React, {
+  PropTypes,
+  Component,
+} from 'react'
 import { View, Text, Image } from 'react-native'
 import styles from './YesDetail.styles'
 import i18n from '../../common/i18n'
