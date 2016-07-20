@@ -8,7 +8,10 @@ export default {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  button: {
+  buttonOne: {
+    flex: 1,
+  },
+  buttonTwo: {
     flex: 1,
   },
 }

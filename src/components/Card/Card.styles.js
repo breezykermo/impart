@@ -21,13 +21,13 @@ export default {
     shadowOpacity: 1,
     shadowRadius: 2,
     shadowOffset: {
-      height: 5,
-      width: 2,
+      height: 2,
+      width: 1,
     },
   },
   headerText: [textStyles.h1, {
-    color: colors.primary,
-    backgroundColor: colors.white,
+    color: colors.white,
+    backgroundColor: 'transparent',
     position: 'absolute',
     bottom: 8,
     marginLeft: 15,
@@ -40,6 +40,7 @@ export default {
     justifyContent: 'center',
     alignItems: 'center',
     width: CARD_WIDTH - 2, // -2 for border
+    height: 240,
     /* NB: height is automatically set via image proportions */
   },
   body: {},

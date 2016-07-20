@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import { View, Text, Image } from 'react-native'
 import styles from './YesDetail.styles'
 import i18n from '../../common/i18n'
-import { formatUrl } from '../../util/react'
+import { getImageObj } from '../../util/react'
 import DetailList from '../DetailList'
 import DrawerTab from './components/DrawerTab'
 import ButtonRow from './components/ButtonRow'
@@ -36,7 +36,7 @@ class YesDetail extends Component {
         <View style={styles.container}>
           <Image
             resizeMode="contain"
-            source={formatUrl(card.get('pictureUrl')) || require('../../media/no-user-image.gif')}
+            source={getImageObj(card.get('pictureUrl'), true)}
             style={styles.headerImage}
           >
             <Text style={styles.headerText}>{card.get('header')}</Text>
@@ -53,7 +53,7 @@ class YesDetail extends Component {
           />
           <DrawerTab
             topHeight={55}
-            topHeightAfterPress={285}
+            topHeightAfterPress={300}
             headerOne={i18n.details}
             renderContentOne={() => (
               <DetailList

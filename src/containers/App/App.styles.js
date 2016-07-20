@@ -21,8 +21,8 @@ export default {
   },
   backgroundCardContainer: {
     position: 'absolute',
-    top: CARD_INSET,
-    left: CARD_INSET,
+    top: CARD_INSET + 4,
+    left: CARD_INSET + 2,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',

@@ -37,6 +37,7 @@ class SlinkyTabs extends React.Component {
   state = {
     firstHeight: new Animated.Value(this.props.topHeight), // eslint-disable-line new-cap
     open: false,
+    iconRotate: new Animated.Value(0),
   }
 
   _press() {
@@ -66,9 +67,9 @@ class SlinkyTabs extends React.Component {
         <Animated.View style={[styles.tabContainer, { height: this.state.firstHeight }]}>
           <TouchableOpacity onPress={this._press}>
             <View style={styles.header}>
-              <Text style={styles.titleText}>{headerOne.toUpperCase()}</Text>
+              <Text style={styles.titleText}>{headerOne}</Text>
               <View style={styles.iconContainer}>
-                {returnIconAsImage('dropdown', styles.icon)}
+                {returnIconAsImage('dropdown', [styles.icon, { transform: [{ rotate: '0deg' }] }])}
               </View>
             </View>
           </TouchableOpacity>
@@ -77,10 +78,10 @@ class SlinkyTabs extends React.Component {
           </ScrollView>
         </Animated.View>
 
-        <Animated.View style={[styles.tabContainer]}>
+        <Animated.View style={[styles.containerTwo]}>
           <TouchableOpacity onPress={this._press}>
-            <View style={styles.header}>
-              <Text style={styles.titleText}>{headerTwo.toUpperCase()}</Text>
+            <View style={styles.headerTwo}>
+              <Text style={styles.titleTextTwo}>{headerTwo}</Text>
               <View style={styles.iconContainer}>
                 {returnIconAsImage('dropup', styles.icon)}
               </View>

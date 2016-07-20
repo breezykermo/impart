@@ -9,6 +9,6 @@ keep the app updated with new opportunities.`,
 You'll get the opportunity to sign up all over again!!!! Woohoo.`,
   rejectButton: 'No, Thanks',
   acceptButton: 'Sign Up',
-  details: 'details',
-  description: 'description',
+  details: 'Details',
+  description: 'Description',
 }

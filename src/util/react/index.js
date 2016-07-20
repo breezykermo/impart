@@ -1,1 +1,1 @@
-export { formatUrl } from './formatUrl'
+export { getImageObj } from './getImageObj'

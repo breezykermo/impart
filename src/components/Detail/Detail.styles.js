@@ -11,7 +11,9 @@ export default {
     alignItems: 'center',
   },
   iconContainer: {
-    // flex: 1,
+    // TODO: shift image up to the top of the container (within each row)
+    // position: 'absolute',
+    // top: 0,
     justifyContent: 'center',
     alignItems: 'center',
     width: 21,

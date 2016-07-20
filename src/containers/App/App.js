@@ -62,7 +62,7 @@ class App extends Component {
       innerComponent = (
         <View>
           {/* TODO: abstract this backdrop out??? */}
-        {toDo.length != 0 ? (
+        {toDo.length !== 0 ? (
           <View style={styles.backgroundCardContainer}>
             <Card styles={styles.backgroundCard} data={toDo[1] || toDo[0]} />
           </View>
