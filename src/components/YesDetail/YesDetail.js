@@ -2,7 +2,12 @@ import React, {
   PropTypes,
   Component,
 } from 'react'
-import { View, Text, Image } from 'react-native'
+import {
+  View,
+  Text,
+  Image,
+  requireNativeComponent,
+} from 'react-native'
 import styles from './YesDetail.styles'
 import i18n from '../../common/i18n'
 import { getImageObj } from '../../util/react'
@@ -10,6 +15,10 @@ import DetailList from '../DetailList'
 import DrawerTab from './components/DrawerTab'
 import ButtonRow from './components/ButtonRow'
 import Profile from '../../containers/Profile'
+
+import buttonStyles from '../Button/Button.styles'
+const IDButton = requireNativeComponent('IdentityButton', null)
+
 
 class YesDetail extends Component {
   static propTypes = {
@@ -53,6 +62,13 @@ class YesDetail extends Component {
               this.setState({ accepted: false })
               rejectHandler()
             }}
+            renderButtonTwo={() => (
+              <IDButton
+                style={[buttonStyles.container, {
+                  borderWidth: 0,
+                }]}
+              />
+            )}
           />
           <DrawerTab
             topHeight={55}

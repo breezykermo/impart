@@ -9,10 +9,10 @@
 #import "RCTViewManager.h"
 #import "IdentityKit.h"
 
-@interface RCTIdentity: RCTViewManager
+@interface IdentityButton: RCTViewManager
 @end
 
-@implementation RCTIdentity
+@implementation IdentityButton
 
 RCT_EXPORT_MODULE()
 
@@ -21,7 +21,13 @@ RCT_EXPORT_MODULE()
   IDButton *button = [[IDButton alloc] initWithFrame:CGRectMake(0, 0, 110, 40)];
   UIView *wrapper = [[UIView alloc] init];
   [wrapper addSubview:button];
-  return wrapper;
+  return button;
 }
+
+RCT_EXPORT_VIEW_PROPERTY(clientID, NSString)
+RCT_EXPORT_VIEW_PROPERTY(clientSecret, NSString)
+RCT_EXPORT_VIEW_PROPERTY(redirectURL, NSString)
+RCT_EXPORT_VIEW_PROPERTY(applicationName, NSString)
+
 
 @end

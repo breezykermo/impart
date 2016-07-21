@@ -6,8 +6,4 @@
 //  Copyright © 2016 Facebook. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 
-@interface RCTIdentityKit : NSObject
-
-@end
