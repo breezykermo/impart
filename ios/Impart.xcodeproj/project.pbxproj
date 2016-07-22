@@ -13,7 +13,6 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* ImpartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ImpartTests.m */; };
-		0A904FDA1D402E6B00868A95 /* RCTIdentityKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A904FD91D402E6B00868A95 /* RCTIdentityKit.m */; };
 		0A904FEF1D402F0200868A95 /* IDApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A904FEB1D402F0200868A95 /* IDApi.m */; };
 		0A904FF01D402F0200868A95 /* IDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A904FED1D402F0200868A95 /* IDButton.m */; };
 		0A9050121D402F2700868A95 /* NSData+NXOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A904FF31D402F2700868A95 /* NSData+NXOAuth2.m */; };
@@ -29,6 +28,8 @@
 		0A90501C1D402F2700868A95 /* NXOAuth2PostBodyPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A90500B1D402F2700868A95 /* NXOAuth2PostBodyPart.m */; };
 		0A90501D1D402F2700868A95 /* NXOAuth2PostBodyStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A90500D1D402F2700868A95 /* NXOAuth2PostBodyStream.m */; };
 		0A90501E1D402F2700868A95 /* NXOAuth2Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A90500F1D402F2700868A95 /* NXOAuth2Request.m */; };
+		0ABF14411D425DC7005982DA /* RNIDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABF14401D425DC7005982DA /* RNIDButton.m */; };
+		0ABF14471D4267BA005982DA /* RNIDButtonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABF14461D4267BA005982DA /* RNIDButtonManager.m */; };
 		0C377D6F9DFC495C85434B63 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F974BB516C495E990680C7 /* libCodePush.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
@@ -109,6 +110,13 @@
 			remoteGlobalIDString = D42CB3511B2538DE00FD0AE2;
 			remoteInfo = RNSpinkit;
 		};
+		0ADCDCA71D41CD6500ED5277 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0ADCDCA31D41CD6500ED5277 /* RNIdentityKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0ADCDC8A1D41C28A00ED5277;
+			remoteInfo = RNIdentityKit;
+		};
 		139105C01AF99BAD00B5F7CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */;
@@ -156,8 +164,6 @@
 		00E356EE1AD99517003FC87E /* ImpartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ImpartTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImpartTests.m; sourceTree = "<group>"; };
-		0A904FD81D402E6B00868A95 /* RCTIdentityKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTIdentityKit.h; sourceTree = "<group>"; };
-		0A904FD91D402E6B00868A95 /* RCTIdentityKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTIdentityKit.m; sourceTree = "<group>"; };
 		0A904FEA1D402F0200868A95 /* IDApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDApi.h; path = Impart/IdentityKit/Classes/IDApi.h; sourceTree = "<group>"; };
 		0A904FEB1D402F0200868A95 /* IDApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDApi.m; path = Impart/IdentityKit/Classes/IDApi.m; sourceTree = "<group>"; };
 		0A904FEC1D402F0200868A95 /* IDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDButton.h; path = Impart/IdentityKit/Classes/IDButton.h; sourceTree = "<group>"; };
@@ -195,6 +201,11 @@
 		0A90500F1D402F2700868A95 /* NXOAuth2Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2Request.m; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2Request.m; sourceTree = "<group>"; };
 		0A9050101D402F2700868A95 /* NXOAuth2TrustDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2TrustDelegate.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2TrustDelegate.h; sourceTree = "<group>"; };
 		0A9050111D402F2700868A95 /* OAuth2Client_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuth2Client_Prefix.pch; path = Impart/IdentityKit/Classes/OAuth2Client/OAuth2Client_Prefix.pch; sourceTree = "<group>"; };
+		0ABF143F1D425DC7005982DA /* RNIDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNIDButton.h; sourceTree = "<group>"; };
+		0ABF14401D425DC7005982DA /* RNIDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNIDButton.m; sourceTree = "<group>"; };
+		0ABF14451D4267BA005982DA /* RNIDButtonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNIDButtonManager.h; sourceTree = "<group>"; };
+		0ABF14461D4267BA005982DA /* RNIDButtonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNIDButtonManager.m; sourceTree = "<group>"; };
+		0ADCDCA31D41CD6500ED5277 /* RNIdentityKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNIdentityKit.xcodeproj; path = ../../../Inflection/RNIdentityKit/RNIdentityKit.xcodeproj; sourceTree = "<group>"; };
 		0CBA02A1416A4076B262FCD5 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
@@ -382,6 +393,14 @@
 			name = NXOAuth2;
 			sourceTree = "<group>";
 		};
+		0ADCDCA41D41CD6500ED5277 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0ADCDCA81D41CD6500ED5277 /* libRNIdentityKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		139105B71AF99BAD00B5F7CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,8 +428,10 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				0A904FD81D402E6B00868A95 /* RCTIdentityKit.h */,
-				0A904FD91D402E6B00868A95 /* RCTIdentityKit.m */,
+				0ABF143F1D425DC7005982DA /* RNIDButton.h */,
+				0ABF14401D425DC7005982DA /* RNIDButton.m */,
+				0ABF14451D4267BA005982DA /* RNIDButtonManager.h */,
+				0ABF14461D4267BA005982DA /* RNIDButtonManager.m */,
 			);
 			name = Impart;
 			sourceTree = "<group>";
@@ -434,6 +455,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				0ADCDCA31D41CD6500ED5277 /* RNIdentityKit.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -534,7 +556,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 610;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -604,6 +626,10 @@
 					ProjectRef = 3668E11904BA49F09F4A9D67 /* RNDeviceInfo.xcodeproj */;
 				},
 				{
+					ProductGroup = 0ADCDCA41D41CD6500ED5277 /* Products */;
+					ProjectRef = 0ADCDCA31D41CD6500ED5277 /* RNIdentityKit.xcodeproj */;
+				},
+				{
 					ProductGroup = 0A3E1CE91D38325F00BBDA0D /* Products */;
 					ProjectRef = E7BFC373EEAC4210A4240EA3 /* RNSpinkit.xcodeproj */;
 				},
@@ -671,6 +697,13 @@
 			fileType = archive.ar;
 			path = libRNSpinkit.a;
 			remoteRef = 0A3E1CF81D38325F00BBDA0D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0ADCDCA81D41CD6500ED5277 /* libRNIdentityKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNIdentityKit.a;
+			remoteRef = 0ADCDCA71D41CD6500ED5277 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		139105C11AF99BAD00B5F7CC /* libRCTSettings.a */ = {
@@ -762,14 +795,15 @@
 				0A9050161D402F2700868A95 /* NXOAuth2Account.m in Sources */,
 				0A9050191D402F2700868A95 /* NXOAuth2Connection.m in Sources */,
 				0A90501E1D402F2700868A95 /* NXOAuth2Request.m in Sources */,
-				0A904FDA1D402E6B00868A95 /* RCTIdentityKit.m in Sources */,
 				0A904FEF1D402F0200868A95 /* IDApi.m in Sources */,
 				0A9050181D402F2700868A95 /* NXOAuth2Client.m in Sources */,
+				0ABF14471D4267BA005982DA /* RNIDButtonManager.m in Sources */,
 				0A90501C1D402F2700868A95 /* NXOAuth2PostBodyPart.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				0A9050171D402F2700868A95 /* NXOAuth2AccountStore.m in Sources */,
 				0A90501D1D402F2700868A95 /* NXOAuth2PostBodyStream.m in Sources */,
 				0A9050141D402F2700868A95 /* NSURL+NXOAuth2.m in Sources */,
+				0ABF14411D425DC7005982DA /* RNIDButton.m in Sources */,
 				0A904FF01D402F0200868A95 /* IDButton.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				0A9050131D402F2700868A95 /* NSString+NXOAuth2.m in Sources */,
@@ -820,6 +854,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Impart.app/Impart";
 			};
@@ -839,6 +874,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Impart.app/Impart";
 			};
@@ -864,6 +900,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Impart;
 			};
 			name = Debug;
@@ -887,6 +924,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Impart;
 			};
 			name = Release;
@@ -911,6 +949,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;

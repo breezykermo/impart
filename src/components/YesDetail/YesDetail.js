@@ -6,7 +6,6 @@ import {
   View,
   Text,
   Image,
-  requireNativeComponent,
 } from 'react-native'
 import styles from './YesDetail.styles'
 import i18n from '../../common/i18n'
@@ -15,9 +14,9 @@ import DetailList from '../DetailList'
 import DrawerTab from './components/DrawerTab'
 import ButtonRow from './components/ButtonRow'
 import Profile from '../../containers/Profile'
+import IDButton from '../react-native-identity-kit'
 
 import buttonStyles from '../Button/Button.styles'
-const IDButton = requireNativeComponent('IdentityButton', null)
 
 
 class YesDetail extends Component {
