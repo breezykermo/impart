@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import {
+  View,
   requireNativeComponent,
 } from 'react-native'
 
@@ -7,8 +8,7 @@ const RNIDButton = requireNativeComponent('RNIDButton', IDButton)
 
 class IDButton extends React.Component {
   static propTypes = {
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
+    style: View.propTypes.style,
   };
 
   static defaultProps = {
@@ -18,8 +18,8 @@ class IDButton extends React.Component {
   render() {
     return (
       <RNIDButton
-        height={this.props.height}
-        width={this.props.width}
+        style={this.props.style}
+        backgroundColor={this.props.style.backgroundColor || 'red'}
       />
     )
   }

@@ -23,6 +23,8 @@
               RedirectURL:(NSString *)redirectURL
           ApplicationName:(NSString *)applicationName;
 
+- (void)configureButton;
+
 - (void)_setVerified;
 
 - (void)_setUnverified;

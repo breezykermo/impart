@@ -18,8 +18,7 @@ RCT_EXPORT_MODULE()
 {
   if (self = [super init]) {
     _eventDispatcher = eventDispatcher;
-    // NB: We need a wrapper view to initialize with a given frame in this init method.
-    [self addSubview:[[IDButton alloc] initWithFrame:CGRectMake(0, 0, 110, 40)]];
+    [super configureButton];
   }
   return self;
 }

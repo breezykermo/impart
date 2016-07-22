@@ -9,7 +9,7 @@
 #import <RCTBridge.h>
 #import "IdentityKit.h"
 
-@interface RNIDButton : UIView <RCTBridgeModule>
+@interface RNIDButton : IDButton <RCTBridgeModule>
 
 - (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher;
 

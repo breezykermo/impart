@@ -64,7 +64,9 @@ class YesDetail extends Component {
             renderButtonTwo={() => (
               <IDButton
                 style={[buttonStyles.container, {
-                  borderWidth: 0,
+                  borderColor: 'transparent',
+                  height: 63,
+                  backgroundColor: 'red',
                 }]}
               />
             )}
