@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
-import {
+import ReactNative, {
   View,
+  NativeModules,
   requireNativeComponent,
 } from 'react-native'
 
@@ -9,17 +10,32 @@ const RNIDButton = requireNativeComponent('RNIDButton', IDButton)
 class IDButton extends React.Component {
   static propTypes = {
     style: View.propTypes.style,
+    clientID: PropTypes.string.isRequired,
+    clientSecret: PropTypes.string.isRequired,
+    redirectURL: PropTypes.string.isRequired,
+    applicationName: PropTypes.string.isRequired,
+    scopes: PropTypes.arrayOf(PropTypes.string).isRequired,
   };
 
   static defaultProps = {
     aProp: '',
   };
 
+  componentDidMount() {
+    NativeModules.RNIDButtonManager.initialize(ReactNative.findNodeHandle(this))
+  }
+
   render() {
     return (
       <RNIDButton
+        ref="idButton"
         style={this.props.style}
         backgroundColor={this.props.style.backgroundColor || 'red'}
+        clientID={this.props.clientID}
+        clientSecret={this.props.clientSecret}
+        redirectURL={this.props.redirectURL}
+        applicationName={this.props.applicationName}
+        scopes={this.props.scopes}
       />
     )
   }

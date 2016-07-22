@@ -33,34 +33,41 @@
               RedirectURL:(NSString *)redirectURL
           ApplicationName:(NSString *)applicationName
 {
-    _iDApi = [IDApi sharedInstance];
-    _iDApi.clientID = clientID;
-    _iDApi.clientSecret = clientSecret;
-    _iDApi.redirectURL = redirectURL;
-    _iDApi.applicationName = applicationName;
-    /* establish transparent pointers to _iDApi */
-    _clientID = _iDApi.clientID;
-    _clientSecret = _iDApi.clientSecret;
-    _redirectURL = _iDApi.redirectURL;
-    _applicationName = _iDApi.applicationName;
-    /* configure with handlers */
-    [_iDApi setupWithSuccessBlock:^(NSNotification *aNotification){
-                                        NSLog(@"Success, received new account");
-                                        [self _setVerified];
-                                    }
-              AccountRemovedBlock:^(NSNotification *aNotification){
-                                        NSLog(@"Success, removed account");
-                                        [self _setUnverified];
-                                    }
-                        ErrorBlock:^(NSError *error){
-                                        NSLog(@"Error! %@", error.localizedDescription);
-                                        [self _setUnverified];
-                                    }];
-    /* Check OAuth store for cached account */
-    [_iDApi checkVerified];
-    if (_iDApi.verified) {
-        [self _setVerified];
-    }
+  _iDApi = [IDApi sharedInstance];
+  _iDApi.clientID = clientID;
+  _iDApi.clientSecret = clientSecret;
+  _iDApi.redirectURL = redirectURL;
+  _iDApi.applicationName = applicationName;
+  /* establish transparent pointers to _iDApi */
+  _clientID = _iDApi.clientID;
+  _clientSecret = _iDApi.clientSecret;
+  _redirectURL = _iDApi.redirectURL;
+  _applicationName = _iDApi.applicationName;
+  /* configure with handlers (calling custom handlers if specified) */
+  NotifiedBlock defaultHandler = ^(NSNotification *aNotification){};
+  NotifiedBlock successHandler = self.successHandler ? self.successHandler : defaultHandler;
+  NotifiedBlock accountRemovedHandler = self.accountRemovedHandler ? self.accountRemovedHandler : defaultHandler;
+  void (^errorHandler)(NSError*) = self.errorHandler ? self.errorHandler : ^void(NSError*error){};
+  [_iDApi setupWithSuccessBlock:^(NSNotification *aNotification){
+                                      NSLog(@"Success, received new account");
+                                      successHandler(aNotification);
+                                      [self _setVerified];
+                                  }
+            AccountRemovedBlock:^(NSNotification *aNotification){
+                                      NSLog(@"Success, removed account");
+                                      accountRemovedHandler(aNotification);
+                                      [self _setUnverified];
+                                  }
+                      ErrorBlock:^(NSError *error){
+                                      NSLog(@"Error! %@", error.localizedDescription);
+                                      errorHandler(error);
+                                      [self _setUnverified];
+                                  }];
+  /* Check OAuth store for cached account */
+  [_iDApi checkVerified];
+  if (_iDApi.verified) {
+      [self _setVerified];
+  }
 }
 
 # pragma mark - Helpers

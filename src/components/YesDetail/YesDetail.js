@@ -66,8 +66,12 @@ class YesDetail extends Component {
                 style={[buttonStyles.container, {
                   borderColor: 'transparent',
                   height: 63,
-                  backgroundColor: 'red',
                 }]}
+                clientID="something"
+                clientSecret="what"
+                redirectURL="another"
+                applicationName="hail"
+                scopes={['name', 'email']}
               />
             )}
           />

@@ -15,6 +15,9 @@
 @property (strong, nonatomic) NSString *clientSecret;
 @property (strong, nonatomic) NSString *redirectURL;
 @property (strong, nonatomic) NSString *applicationName;
+@property (strong, nonatomic) NotifiedBlock successHandler;
+@property (strong, nonatomic) NotifiedBlock accountRemovedHandler;
+@property (strong, nonatomic) void (^errorHandler)(NSError*);
 @property (strong, nonatomic) NSArray<NSString*> *scopes;
 @property (strong, nonatomic) IDApi *iDApi;
 
