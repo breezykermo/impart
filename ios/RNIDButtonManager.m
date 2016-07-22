@@ -10,7 +10,12 @@
 #import "RNIDButton.h"
 #import "RCTUIManager.h"
 
-@implementation RNIDButtonManager
+@implementation RNIDButtonManager {
+  // NB: need to cache this value, as the initialize
+  // method that is called from the JS thread overwrites
+  // whatever is set via props with "Verify"
+  NSString* cachedTitle;
+}
 
 RCT_EXPORT_MODULE()
 
@@ -56,6 +61,11 @@ RCT_CUSTOM_VIEW_PROPERTY(backgroundColor, UIColor, IDButton)
   [view setBackgroundColor:(json ? [RCTConvert UIColor:json] : [UIColor redColor])];
 }
 
+RCT_CUSTOM_VIEW_PROPERTY(buttonText, NSString, IDButton)
+{
+  cachedTitle = (json ? [RCTConvert NSString:json]: @"Verify");
+}
+
 
 RCT_EXPORT_METHOD(initialize:(nonnull NSNumber *)reactTag)
 {
@@ -84,6 +94,10 @@ RCT_EXPORT_METHOD(initialize:(nonnull NSNumber *)reactTag)
                       ClientSecret:idButton.clientSecret
                        RedirectURL:idButton.redirectURL
                    ApplicationName:idButton.applicationName];
+       
+       // Set title from props after configureClientId has been called
+       [idButton setTitle:cachedTitle forState:UIControlStateNormal];
+
      } else {
        RCTLogError(@"react-native-identity-kit: Cannot render IDButton. You need to pass clientID, clientSecret, redirectURL and applicationName to the IDButton component.");
      }
