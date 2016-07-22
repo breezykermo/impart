@@ -7,14 +7,11 @@ import ReactNative, {
 
 const RNIDButton = requireNativeComponent('RNIDButton', IDButton)
 
-const defaultStyles = {
-  // flex: 1,
-  height: 63,
-}
-
 class IDButton extends React.Component {
   static propTypes = {
     style: View.propTypes.style,
+    backgroundColor: PropTypes.string,
+    buttonText: PropTypes.string,
     clientID: PropTypes.string.isRequired,
     clientSecret: PropTypes.string.isRequired,
     redirectURL: PropTypes.string.isRequired,
@@ -23,7 +20,8 @@ class IDButton extends React.Component {
   };
 
   static defaultProps = {
-    aProp: '',
+    style: { height: 63 },
+    backgroundColor: 'mediumseagreen',
   };
 
   componentDidMount() {
@@ -34,8 +32,9 @@ class IDButton extends React.Component {
     return (
       <RNIDButton
         ref="idButton"
-        style={[defaultStyles, this.props.style]}
-        backgroundColor={this.props.style.backgroundColor || 'red'}
+        style={this.props.style}
+        backgroundColor={this.props.backgroundColor}
+        buttonText={this.props.buttonText}
         clientID={this.props.clientID}
         clientSecret={this.props.clientSecret}
         redirectURL={this.props.redirectURL}

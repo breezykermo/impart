@@ -38,7 +38,6 @@
     NSString *baseUrl = [[url absoluteString] componentsSeparatedByString:@"?"][0];
     NSArray *rParamString = [[[url absoluteString] componentsSeparatedByString:@"?"][1] componentsSeparatedByString:@"&"];
 
-    NSLog([baseUrl lowercaseString]);
     if ([[baseUrl lowercaseString] isEqualToString:_redirectURL]) {
         // Parse params of callback URL
         NSMutableDictionary *rParams = [[NSMutableDictionary alloc] init];
@@ -67,7 +66,6 @@
     BOOL found = NO;
     NSArray *existingAccounts = [[NXOAuth2AccountStore sharedStore] accounts];
     for (NXOAuth2Account *account in existingAccounts) {
-        NSLog(account.accountType);
         if ([account.accountType isEqualToString:_applicationName]) {
             cachedAccount = account;
             found = YES;
@@ -95,10 +93,10 @@
     }
     [[NXOAuth2AccountStore sharedStore] setClientID:_clientID
                                              secret:_clientSecret
-//                                   authorizationURL:[NSURL URLWithString:@"http://localhost:5000/oauth/authorize"]
-//                                           tokenURL:[NSURL URLWithString:@"http://localhost:5000/oauth/token"]
-                                   authorizationURL:[NSURL URLWithString:@"https://www.staging.identity.com/oauth/authorize"]
-                                           tokenURL:[NSURL URLWithString:@"https://www.staging.identity.com/oauth/token"]
+                                   authorizationURL:[NSURL URLWithString:@"http://localhost:5000/oauth/authorize"]
+                                           tokenURL:[NSURL URLWithString:@"http://localhost:5000/oauth/token"]
+//                                   authorizationURL:[NSURL URLWithString:@"https://www.staging.identity.com/oauth/authorize"]
+//                                           tokenURL:[NSURL URLWithString:@"https://www.staging.identity.com/oauth/token"]
                                         redirectURL:[NSURL URLWithString:_redirectURL]
                                      forAccountType:_applicationName];
 

@@ -17,6 +17,7 @@ import Profile from '../../containers/Profile'
 import IDButton from '../react-native-identity-kit'
 
 import buttonStyles from '../Button/Button.styles'
+import { colors } from '../../common/constants'
 
 
 class YesDetail extends Component {
@@ -65,12 +66,15 @@ class YesDetail extends Component {
               <IDButton
                 style={[buttonStyles.container, {
                   borderColor: 'transparent',
+                  height: 63,
                 }]}
-                clientID="af9feaa47b3c4e759bcea5e5a0968d8ad13e663b3215cc48056cb2aa53cb05d7"
-                clientSecret="b79982d8c5a9866c93fef1840aaa8f6f73baf83fff00ed8905f280b73401daf8"
-                redirectURL="egidkit://oidc/cb"
+                backgroundColor={colors.primary}
+                buttonText="Sign me up!"
+                clientID="c231041a5d71e700dd9d014c8e6e50b287dbb3780d0e5b002589f57485078818"
+                clientSecret="805ad7c5795e4ce1a839ef2ef0d64cd9b5a8967a548c803e04195774668626fa"
+                redirectURL="impartapp://oidc/cb"
                 applicationName="MobileSDK"
-                scopes={['name', 'email']}
+                scopes={['email']}
               />
             )}
           />
