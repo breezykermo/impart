@@ -7,6 +7,11 @@ import ReactNative, {
 
 const RNIDButton = requireNativeComponent('RNIDButton', IDButton)
 
+const defaultStyles = {
+  // flex: 1,
+  height: 63,
+}
+
 class IDButton extends React.Component {
   static propTypes = {
     style: View.propTypes.style,
@@ -29,7 +34,7 @@ class IDButton extends React.Component {
     return (
       <RNIDButton
         ref="idButton"
-        style={this.props.style}
+        style={[defaultStyles, this.props.style]}
         backgroundColor={this.props.style.backgroundColor || 'red'}
         clientID={this.props.clientID}
         clientSecret={this.props.clientSecret}

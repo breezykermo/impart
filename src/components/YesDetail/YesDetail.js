@@ -65,12 +65,11 @@ class YesDetail extends Component {
               <IDButton
                 style={[buttonStyles.container, {
                   borderColor: 'transparent',
-                  height: 63,
                 }]}
-                clientID="something"
-                clientSecret="what"
-                redirectURL="another"
-                applicationName="hail"
+                clientID="af9feaa47b3c4e759bcea5e5a0968d8ad13e663b3215cc48056cb2aa53cb05d7"
+                clientSecret="b79982d8c5a9866c93fef1840aaa8f6f73baf83fff00ed8905f280b73401daf8"
+                redirectURL="egidkit://oidc/cb"
+                applicationName="MobileSDK"
                 scopes={['name', 'email']}
               />
             )}

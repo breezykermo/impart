@@ -87,6 +87,17 @@
     return image;
 }
 
+- (UIColor *)darkerColorForColor:(UIColor *)c
+{
+  CGFloat r, g, b, a;
+  if ([c getRed:&r green:&g blue:&b alpha:&a])
+    return [UIColor colorWithRed:MAX(r - 0.2, 0.0)
+                           green:MAX(g - 0.2, 0.0)
+                            blue:MAX(b - 0.2, 0.0)
+                           alpha:a];
+  return nil;
+}
+
 #pragma mark - Defaults (Class methods)
 
 - (UIColor *)defaultBackgroundColor
@@ -147,6 +158,19 @@
     [self addTarget:self action:@selector(didClick) forControlEvents:UIControlEventTouchUpInside];
     /* Always unverified by default: IDApi checkVerified method will check cache and setVerified if appropriate. */
     [self _setUnverified];
+}
+
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state
+{
+  [super setTitleColor:color forState:state];
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+  [self setBackgroundImage:[self imageWithColor:[UIColor clearColor]] forState:UIControlStateNormal];
+  [super setBackgroundColor:backgroundColor];
+  [self setBackgroundImage:[self imageWithColor:[self darkerColorForColor:backgroundColor]] forState:UIControlStateHighlighted];
+  [self setBackgroundImage:[self imageWithColor:[self darkerColorForColor:backgroundColor]] forState:UIControlStateDisabled];
 }
 
 - (UIImage *)idkit_imageNamed: (NSString *)name

@@ -46,6 +46,16 @@ RCT_CUSTOM_VIEW_PROPERTY(scopes, NSString, IDButton)
   [view setScopes:(json ? [RCTConvert NSArray:json] : @[])];
 }
 
+RCT_CUSTOM_VIEW_PROPERTY(textColor, UIColor, IDButton)
+{
+  [view setTitleColor:(json ? [RCTConvert UIColor:json] : [UIColor blueColor]) forState:UIControlStateNormal];
+}
+
+RCT_CUSTOM_VIEW_PROPERTY(backgroundColor, UIColor, IDButton)
+{
+  [view setBackgroundColor:(json ? [RCTConvert UIColor:json] : [UIColor redColor])];
+}
+
 
 RCT_EXPORT_METHOD(initialize:(nonnull NSNumber *)reactTag)
 {
