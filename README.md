@@ -23,7 +23,7 @@ To initialize the server with the example cards, run the following:
 sh initialize.sh
 ```
 
-To view the Parse dashboard, go to [localhost:4040](http://localhost:4040), and login with the username "admin" and the password "super_secure_password" when prompted.
+To view the Parse dashboard, go to [localhost:4040](http://localhost:4040). (NB: it might take a couple of seconds for the container to start up after you have run the command). You can login with the username "admin" and the password "super_secure_password" when prompted.
 
 Note that the app is configured to read remotely hosted image URLs that are sent with the rest of the card information from the server. However, the example card images are bundled with the app, in the `src/offline` folder. The app maps these local filenames (those prefixed with `local::` on the server) to the images bundled in the app through the `src/offline/imageMap.js` object.
 
