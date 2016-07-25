@@ -97,6 +97,8 @@ RCT_EXPORT_METHOD(initialize:(nonnull NSNumber *)reactTag)
        
        // Set title from props after configureClientId has been called
        [idButton setTitle:cachedTitle forState:UIControlStateNormal];
+       [idButton setTitle:cachedTitle forState:UIControlStateHighlighted];
+       [idButton setTitle:cachedTitle forState:UIControlStateDisabled];
 
      } else {
        RCTLogError(@"react-native-identity-kit: Cannot render IDButton. You need to pass clientID, clientSecret, redirectURL and applicationName to the IDButton component.");
