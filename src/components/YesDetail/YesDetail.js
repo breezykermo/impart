@@ -1,5 +1,12 @@
-import React, { PropTypes, Component } from 'react'
-import { View, Text, Image } from 'react-native'
+import React, {
+  PropTypes,
+  Component,
+} from 'react'
+import {
+  View,
+  Text,
+  Image,
+} from 'react-native'
 import styles from './YesDetail.styles'
 import i18n from '../../common/i18n'
 import { getImageObj } from '../../util/react'
@@ -7,6 +14,11 @@ import DetailList from '../DetailList'
 import DrawerTab from './components/DrawerTab'
 import ButtonRow from './components/ButtonRow'
 import Profile from '../../containers/Profile'
+import IDButton from '../react-native-identity-kit'
+
+import buttonStyles from '../Button/Button.styles'
+import { colors } from '../../common/constants'
+
 
 class YesDetail extends Component {
   static propTypes = {
@@ -50,6 +62,21 @@ class YesDetail extends Component {
               this.setState({ accepted: false })
               rejectHandler()
             }}
+            renderButtonTwo={() => (
+              <IDButton
+                buttonText="Sign me up!"
+                clientID="c231041a5d71e700dd9d014c8e6e50b287dbb3780d0e5b002589f57485078818"
+                clientSecret="805ad7c5795e4ce1a839ef2ef0d64cd9b5a8967a548c803e04195774668626fa"
+                redirectURL="impartapp://oidc/cb"
+                applicationName="MobileSDK"
+                scopes={['email']}
+                backgroundColor={colors.primary}
+                style={[buttonStyles.container, {
+                  borderColor: 'transparent',
+                  height: 63,
+                }]}
+              />
+            )}
           />
           <DrawerTab
             topHeight={55}
