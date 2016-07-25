@@ -30,12 +30,12 @@ RCT_EXPORT_VIEW_PROPERTY(onTokenRetrieval, RCTBubblingEventBlock)
 
 #pragma mark - RNIDButtonDelegate
 
-- (void)idApiTokenRetrieveSuccess:(NSString *)token {
+- (void)idButton:(RNIDButton *)button didReceiveAccessToken:(NSString *)token {
   NSLog(@"<RNIDButtonManager.m> Received token: %@", token);
 //  if (!)
 }
 
-- (void)idApiDidReceiveUserInfo:(id)json {
+- (void)idButton:(RNIDButton *)button didReceiveUserInfo:(id)json {
   NSLog(@"<RNIDButtonManager.m> We got the info: %@", json);
 }
 
