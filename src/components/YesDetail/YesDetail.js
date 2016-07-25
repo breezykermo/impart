@@ -65,15 +65,14 @@ class YesDetail extends Component {
             renderButtonTwo={() => (
               <IDButton
                 buttonText="Sign me up!"
-                clientID="c231041a5d71e700dd9d014c8e6e50b287dbb3780d0e5b002589f57485078818"
-                clientSecret="805ad7c5795e4ce1a839ef2ef0d64cd9b5a8967a548c803e04195774668626fa"
+                clientID="a876f8a480f76e7284590dd4573aba644e7fc51f8f4e56d4e73518f55104de87"
+                clientSecret="8cbb86a35234d141b5708b7e5d3e85427e15961974791041116e54eda6a57da4"
                 redirectURL="impartapp://oidc/cb"
                 applicationName="MobileSDK"
                 scopes={['email']}
                 // backgroundColor={colors.primary}
                 style={[buttonStyles.container, {
-                  backgroundColor: 'purple',
-                  borderColor: 'transparent',
+                  backgroundColor: colors.primary,
                   height: 63,
                 }]}
               />

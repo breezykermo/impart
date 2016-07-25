@@ -11,11 +11,11 @@
 
 @protocol RNIDButtonDelegate <NSObject>
 @optional
-- (void)idApiTokenRetrieveSuccess:(NSString *)token;
+- (void)idApiDidReceiveAccessToken:(NSString *)token;
 @optional
-- (void)idApiAccountRemoved:(NSNotification *)aNotification;
+- (void)idApiDidRemoveAccount:(NSNotification *)aNotification;
 @optional
-- (void)idApiError:(NSError *)error;
+- (void)idApiDidReceiveError:(NSError *)error;
 @optional
 - (void)idApiHasCachedToken:(NSString *)token;
 @optional
@@ -47,7 +47,6 @@
 
 - (void)_setVerified;
 - (void)_setUnverified;
-- (void)removeAccessToken;
 - (void)requestUserInfoWithHandler:(void (^)(NSURLResponse *response, NSData *responseData, NSError *error))handler;
 
 @end

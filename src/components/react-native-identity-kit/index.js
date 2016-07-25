@@ -45,7 +45,4 @@ class IDButton extends React.Component {
   }
 }
 
-// Need to add this line to make install available through RNPM
-// NativeModules.RNIDButton // eslint-disable-line no-unused-expressions
-
 export default IDButton

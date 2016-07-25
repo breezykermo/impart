@@ -22,6 +22,14 @@ RCT_EXPORT_MODULE()
   return button;
 }
 
+- (void)idApiTokenRetrieveSuccess:(NSString *)token {
+  NSLog(@"<RNIDButtonManager.m> Received token: %@", token);
+}
+
+- (void)idApiDidReceiveUserInfo:(id)json {
+  NSLog(@"<RNIDButtonManager.m> We got the info: %@", json);
+}
+
 RCT_CUSTOM_VIEW_PROPERTY(clientID, NSString, RNIDButton)
 {
   [view setClientID:(json ? [RCTConvert NSString:json] : @"")];
@@ -49,7 +57,7 @@ RCT_CUSTOM_VIEW_PROPERTY(scopes, NSString, RNIDButton)
 
 RCT_CUSTOM_VIEW_PROPERTY(textColor, UIColor, RNIDButton)
 {
-  [view setTitleColor:(json ? [RCTConvert UIColor:json] : [UIColor greenColor]) forState:UIControlStateNormal];
+  [view setTitleColor:(json ? [RCTConvert UIColor:json] : [UIColor whiteColor]) forState:UIControlStateNormal];
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(buttonText, NSString, RNIDButton)
