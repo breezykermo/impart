@@ -8,16 +8,22 @@
 
 #import "RNIDButton.h"
 
-@implementation RNIDButton {
-  RCTEventDispatcher *_eventDispatcher;
-}
+@implementation RNIDButton
 
 RCT_EXPORT_MODULE()
 
-- (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher
+- (NSString *)getToken
+{
+  if (_iDApi.accessToken) {
+    return _iDApi.accessToken;
+  } else {
+    return nil;
+  }
+}
+
+- (instancetype)init
 {
   if (self = [super init]) {
-    _eventDispatcher = eventDispatcher;
     [self addTarget:self action:@selector(didClickUnverified) forControlEvents:UIControlEventTouchUpInside];
     _verified = NO;
   }
@@ -40,44 +46,73 @@ RCT_EXPORT_MODULE()
   _redirectURL = _iDApi.redirectURL;
   _applicationName = _iDApi.applicationName;
   [_iDApi setupWithSuccessBlock:^(NSNotification *aNotification){
-            NSLog(@"Success, received new account");
+            NSLog(@"<IdentityKit/IDButton.m> Success, received new account");
+            if ([self.buttonDelegate respondsToSelector:@selector(idApiTokenRetrieveSuccess:)]) {
+              [self.buttonDelegate idApiTokenRetrieveSuccess:self.iDApi.accessToken];
+            }
             [self _setVerified];
           }
           AccountRemovedBlock:^(NSNotification *aNotification){
-            NSLog(@"Success, removed account");
+            NSLog(@"<IdentityKit/IDButton.m> Success, removed account");
+            if ([self.buttonDelegate respondsToSelector:@selector(idApiAccountRemoved:)]) {
+              [self.buttonDelegate idApiAccountRemoved:aNotification];
+            }
             [self _setUnverified];
           }
           ErrorBlock:^(NSError *error){
-           NSLog(@"Error! %@", error.localizedDescription);
-           [self _setUnverified];
+            NSLog(@"<IdentityKit/IDButton.m> Error! %@", error.localizedDescription);
+            if ([self.buttonDelegate respondsToSelector:@selector(idApiError:)]) {
+              [self.buttonDelegate idApiError:error];
+            }
+            [self _setUnverified];
           }];
   /* Check OAuth store for cached account */
   [_iDApi checkVerified];
   if (_iDApi.verified) {
-    // TODO: relay token to JS thread
+    if ([self.buttonDelegate respondsToSelector:@selector(idApiHasCachedToken:)]) {
+      [self.buttonDelegate idApiHasCachedToken:_iDApi.accessToken];
+    }
     [self _setVerified];
   }
 }
 
 - (void)_setVerified
 {
-  NSLog(@"Setting verified");
+  NSLog(@"<IdentityKit/IDButton.m> Setting verified");
+  if ([self.buttonDelegate respondsToSelector:@selector(idButtonDidBecomeVerified:)]) {
+    [self.buttonDelegate idButtonDidBecomeVerified:self];
+  }
   [self addTarget:self action:@selector(didClickVerified) forControlEvents:UIControlEventTouchUpInside];
   self.verified = YES;
 }
 
 - (void)didClickVerified {
   if (_iDApi.accessToken != nil) {
-    NSLog(@"Something has gone funny, you don't have a token yet");
+    NSLog(@"<IdentityKit/IDButton.m> Something has gone funny, you don't have a token yet");
     [self _setUnverified];
     [self didClickUnverified];
   }
-//  [_iDApi requestUserInfoWithHandler:handler];
+  [_iDApi requestUserInfoWithHandler:^void (NSURLResponse *response, NSData *responseData, NSError *error) {
+    // TODO: relay UserInfo to JS thread
+    NSError *jsonError;
+    id jsonDictionaryOrArray = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&jsonError];
+    if(jsonError) {
+      NSLog(@"<IdentityKit/IDButton.m> JSON error: %@", [jsonError localizedDescription]);
+    } else {
+      NSLog(@"<IdentityKit/IDButton.m> JSON received: %@", jsonDictionaryOrArray);
+      if ([self.buttonDelegate respondsToSelector:@selector(idApiDidReceiveUserInfo:)]) {
+        [self.buttonDelegate idApiDidReceiveUserInfo:jsonDictionaryOrArray];
+      }
+    }
+  }];
 }
 
 - (void)_setUnverified
 {
-  NSLog(@"Setting unverified");
+  NSLog(@"<IdentityKit/IDButton.m> Setting unverified");
+  if ([self.buttonDelegate respondsToSelector:@selector(idButtonDidBecomeUnverified:)]) {
+    [self.buttonDelegate idButtonDidBecomeUnverified:self];
+  }
   [self addTarget:self action:@selector(didClickUnverified) forControlEvents:UIControlEventTouchUpInside];
   self.verified = NO;
 }
@@ -97,5 +132,24 @@ RCT_EXPORT_MODULE()
   
   [_iDApi requestAccessWithScopes:_scopes];
 }
+
+- (void)removeAccessToken
+{
+  /* TODO: delete token at API, using delete route */
+  [self.iDApi removeAccountwithBrowserCookie:YES];
+  [self _setUnverified];
+}
+
+- (void)requestUserInfoWithHandler:(void (^)(NSURLResponse *response, NSData *responseData, NSError *error))handler
+{
+  NSString *token = [self getToken];
+  if (token != nil) {
+    [_iDApi requestUserInfoWithHandler:handler];
+  } else {
+    NSLog(@"<IdentityKit/IDButton.m> Could not find accessToken, make sure you retrieve it first.");
+    return;
+  }
+}
+
 
 @end

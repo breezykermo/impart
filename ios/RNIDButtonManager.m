@@ -7,15 +7,9 @@
 //
 
 #import "RNIDButtonManager.h"
-#import "RNIDButton.h"
 #import "RCTUIManager.h"
 
-@implementation RNIDButtonManager {
-  // NB: need to cache this value, as the initialize
-  // method that is called from the JS thread overwrites
-  // whatever is set via props with "Verify"
-  NSString* cachedTitle;
-}
+@implementation RNIDButtonManager
 
 RCT_EXPORT_MODULE()
 
@@ -23,7 +17,7 @@ RCT_EXPORT_MODULE()
 
 - (UIView *)view
 {
-  return [[RNIDButton alloc] initWithEventDispatcher:self.bridge.eventDispatcher];
+  return [[RNIDButton alloc] init];
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(clientID, NSString, IDButton)
@@ -53,17 +47,21 @@ RCT_CUSTOM_VIEW_PROPERTY(scopes, NSString, IDButton)
 
 RCT_CUSTOM_VIEW_PROPERTY(textColor, UIColor, IDButton)
 {
-  [view setTitleColor:(json ? [RCTConvert UIColor:json] : [UIColor blueColor]) forState:UIControlStateNormal];
+  [view setTitleColor:(json ? [RCTConvert UIColor:json] : [UIColor greenColor]) forState:UIControlStateNormal];
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(backgroundColor, UIColor, IDButton)
 {
-  [view setBackgroundColor:(json ? [RCTConvert UIColor:json] : [UIColor redColor])];
+  [view setBackgroundColor:(json ? [RCTConvert UIColor:json] : [UIColor greenColor])];
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(buttonText, NSString, IDButton)
 {
-  cachedTitle = (json ? [RCTConvert NSString:json]: @"Verify");
+//  cachedTitle = (json ? [RCTConvert NSString:json]: @"Verify");
+  NSString *title = (json ? [RCTConvert NSString:json]: @"Verify");
+  [view setTitle:title forState:UIControlStateNormal];
+  [view setTitle:title forState:UIControlStateHighlighted];
+  [view setTitle:title forState:UIControlStateDisabled];
 }
 
 
@@ -72,8 +70,6 @@ RCT_EXPORT_METHOD(initialize:(nonnull NSNumber *)reactTag)
   [self.bridge.uiManager addUIBlock:
    ^(__unused RCTUIManager *uiManager, NSDictionary *viewRegistry){
      RNIDButton *idButton = viewRegistry[reactTag];
-     
-//     NSLog(@"id: %@, secret: %@, redirect: %@, name: %@", idButton.clientID, idButton.clientSecret, idButton.redirectURL, idButton.applicationName);
      
      if (![idButton.scopes isKindOfClass:[NSArray class]]) {
        BOOL legit = (idButton.scopes.count > 0);
@@ -94,11 +90,6 @@ RCT_EXPORT_METHOD(initialize:(nonnull NSNumber *)reactTag)
                       ClientSecret:idButton.clientSecret
                        RedirectURL:idButton.redirectURL
                    ApplicationName:idButton.applicationName];
-       
-       // Set title from props after configureClientId has been called
-       [idButton setTitle:cachedTitle forState:UIControlStateNormal];
-       [idButton setTitle:cachedTitle forState:UIControlStateHighlighted];
-       [idButton setTitle:cachedTitle forState:UIControlStateDisabled];
 
      } else {
        RCTLogError(@"react-native-identity-kit: Cannot render IDButton. You need to pass clientID, clientSecret, redirectURL and applicationName to the IDButton component.");

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RNIDButton.h"
 #import "RCTViewManager.h"
 
-@interface RNIDButtonManager : RCTViewManager
+@interface RNIDButtonManager : RCTViewManager <RNIDButtonDelegate>
 
 @end

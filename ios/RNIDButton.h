@@ -9,7 +9,26 @@
 #import <RCTBridge.h>
 #import "IdentityKit.h"
 
+@protocol RNIDButtonDelegate <NSObject>
+@optional
+- (void)idApiTokenRetrieveSuccess:(NSString *)token;
+@optional
+- (void)idApiAccountRemoved:(NSNotification *)aNotification;
+@optional
+- (void)idApiError:(NSError *)error;
+@optional
+- (void)idApiHasCachedToken:(NSString *)token;
+@optional
+- (void)idButtonDidBecomeVerified:(UIButton *)button;
+@optional
+- (void)idButtonDidBecomeUnverified:(UIButton *)button;
+@optional
+- (void)idApiDidReceiveUserInfo:(id)json;
+@end
+
 @interface RNIDButton : UIButton <RCTBridgeModule>
+
+@property (nonatomic, assign) id<RNIDButtonDelegate> buttonDelegate;
 
 @property (strong, nonatomic) NSString *clientID;
 @property (strong, nonatomic) NSString *clientSecret;
@@ -19,7 +38,7 @@
 @property (nonatomic, assign) BOOL verified;
 @property (strong, nonatomic) IDApi *iDApi;
 
-- (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher;
+- (NSString *)getToken;
 
 - (void)configureClientId:(NSString *)clientID
              ClientSecret:(NSString *)clientSecret
@@ -28,5 +47,7 @@
 
 - (void)_setVerified;
 - (void)_setUnverified;
+- (void)removeAccessToken;
+- (void)requestUserInfoWithHandler:(void (^)(NSURLResponse *response, NSData *responseData, NSError *error))handler;
 
 @end
