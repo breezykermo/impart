@@ -10,6 +10,6 @@
 #import "RNIDButton.h"
 #import "RCTViewManager.h"
 
-@interface RNIDButtonManager : RCTViewManager <RNIDButtonDelegate>
+@interface RNIDButtonManager : RCTViewManager
 
 @end

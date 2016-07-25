@@ -11,19 +11,19 @@
 
 @protocol RNIDButtonDelegate <NSObject>
 @optional
-- (void)idApiDidReceiveAccessToken:(NSString *)token;
+- (void)idButton:(UIButton *)button didReceiveAccessToken:(NSString *)token;
 @optional
-- (void)idApiDidRemoveAccount:(NSNotification *)aNotification;
+- (void)idButton:(UIButton *)button didRemoveAccount:(NSNotification *)aNotification;
 @optional
-- (void)idApiDidReceiveError:(NSError *)error;
+- (void)idButton:(UIButton *)button didReceiveError:(NSError *)error;
 @optional
-- (void)idApiHasCachedToken:(NSString *)token;
+- (void)idButton:(UIButton *)button hasCachedToken:(NSString *)token;
+@optional
+- (void)idButton:(UIButton *)button didReceiveUserInfo:(id)json;
 @optional
 - (void)idButtonDidBecomeVerified:(UIButton *)button;
 @optional
 - (void)idButtonDidBecomeUnverified:(UIButton *)button;
-@optional
-- (void)idApiDidReceiveUserInfo:(id)json;
 @end
 
 @interface RNIDButton : UIButton <RCTBridgeModule>

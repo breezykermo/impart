@@ -8,10 +8,16 @@
 
 #import "RNIDButtonManager.h"
 #import "RCTUIManager.h"
+#import "UIView+React.h"
+
+@interface RNIDButtonManager() <RNIDButtonDelegate>
+@end
 
 @implementation RNIDButtonManager
 
 RCT_EXPORT_MODULE()
+
+RCT_EXPORT_VIEW_PROPERTY(onTokenRetrieval, RCTBubblingEventBlock)
 
 @synthesize bridge = _bridge;
 
@@ -22,8 +28,11 @@ RCT_EXPORT_MODULE()
   return button;
 }
 
+#pragma mark - RNIDButtonDelegate
+
 - (void)idApiTokenRetrieveSuccess:(NSString *)token {
   NSLog(@"<RNIDButtonManager.m> Received token: %@", token);
+//  if (!)
 }
 
 - (void)idApiDidReceiveUserInfo:(id)json {

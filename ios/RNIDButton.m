@@ -47,8 +47,8 @@ RCT_EXPORT_MODULE()
   _applicationName = _iDApi.applicationName;
   [_iDApi setupWithSuccessBlock:^(NSNotification *aNotification){
                         NSLog(@"<IdentityKit/IDButton.m> Success, received new account");
-                        if ([self.delegate respondsToSelector:@selector(idApiDidReceiveAccessToken:)]) {
-                          [self.delegate idApiDidReceiveAccessToken:self.iDApi.accessToken];
+                        if ([self.delegate respondsToSelector:@selector(idButton:didReceiveAccessToken:)]) {
+                          [self.delegate idButton:self didReceiveAccessToken:self.iDApi.accessToken];
                         }
                         [self _setVerified];
                         // Simulate verified click so that user doesn't have to do it twice.
@@ -56,22 +56,22 @@ RCT_EXPORT_MODULE()
                       }
                       AccountRemovedBlock:^(NSNotification *aNotification){
                         NSLog(@"<IdentityKit/IDButton.m> Success, removed account");
-                        if ([self.delegate respondsToSelector:@selector(idApiDidRemoveAccount:)]) {
-                          [self.delegate idApiDidRemoveAccount:aNotification];
+                        if ([self.delegate respondsToSelector:@selector(idButton:didRemoveAccount:)]) {
+                          [self.delegate idButton:self didRemoveAccount:aNotification];
                         }
                       }
                       ErrorBlock:^(NSError *error){
                         NSLog(@"<IdentityKit/IDButton.m> Error! %@", error.localizedDescription);
-                        if ([self.delegate respondsToSelector:@selector(idApiDidReceiveError:)]) {
-                         [self.delegate idApiDidReceiveError:error];
+                        if ([self.delegate respondsToSelector:@selector(idButton:didReceiveError:)]) {
+                         [self.delegate idButton:self didReceiveError:error];
                         }
                         [self _setUnverified];
                       }];
   /* Check OAuth store for cached account */
   [_iDApi checkVerified];
   if (_iDApi.verified) {
-    if ([self.delegate respondsToSelector:@selector(idApiHasCachedToken:)]) {
-      [self.delegate idApiHasCachedToken:_iDApi.accessToken];
+    if ([self.delegate respondsToSelector:@selector(idButton:hasCachedToken:)]) {
+      [self.delegate idButton:self hasCachedToken:_iDApi.accessToken];
     }
     [self _setVerified];
   }
@@ -99,8 +99,8 @@ RCT_EXPORT_MODULE()
     if(jsonError) {
       NSLog(@"<IdentityKit/IDButton.m> JSON error: %@", [jsonError localizedDescription]);
     } else {
-      if ([self.delegate respondsToSelector:@selector(idApiDidReceiveUserInfo:)]) {
-        [self.delegate idApiDidReceiveUserInfo:jsonDictionaryOrArray];
+      if ([self.delegate respondsToSelector:@selector(idButton:didReceiveUserInfo:)]) {
+        [self.delegate idButton:self didReceiveUserInfo:jsonDictionaryOrArray];
       }
     }
   }];
