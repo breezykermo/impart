@@ -70,8 +70,9 @@ class YesDetail extends Component {
                 redirectURL="impartapp://oidc/cb"
                 applicationName="MobileSDK"
                 scopes={['email']}
-                backgroundColor={colors.primary}
+                // backgroundColor={colors.primary}
                 style={[buttonStyles.container, {
+                  backgroundColor: 'purple',
                   borderColor: 'transparent',
                   height: 63,
                 }]}

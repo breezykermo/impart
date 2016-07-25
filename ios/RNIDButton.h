@@ -28,7 +28,7 @@
 
 @interface RNIDButton : UIButton <RCTBridgeModule>
 
-@property (nonatomic, assign) id<RNIDButtonDelegate> buttonDelegate;
+@property (nonatomic, assign) id<RNIDButtonDelegate> delegate;
 
 @property (strong, nonatomic) NSString *clientID;
 @property (strong, nonatomic) NSString *clientSecret;

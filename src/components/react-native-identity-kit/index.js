@@ -20,8 +20,10 @@ class IDButton extends React.Component {
   };
 
   static defaultProps = {
-    style: { height: 63 },
-    backgroundColor: 'mediumseagreen',
+    style: {
+      height: 63,
+      backgroundColor: 'purple',
+    },
   };
 
   componentDidMount() {
@@ -31,9 +33,7 @@ class IDButton extends React.Component {
   render() {
     return (
       <RNIDButton
-        ref="idButton"
         style={this.props.style}
-        backgroundColor={this.props.backgroundColor}
         buttonText={this.props.buttonText}
         clientID={this.props.clientID}
         clientSecret={this.props.clientSecret}

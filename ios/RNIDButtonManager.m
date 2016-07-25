@@ -17,45 +17,42 @@ RCT_EXPORT_MODULE()
 
 - (UIView *)view
 {
-  return [[RNIDButton alloc] init];
+  RNIDButton *button = [[RNIDButton alloc] init];
+  button.delegate = self;
+  return button;
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(clientID, NSString, IDButton)
+RCT_CUSTOM_VIEW_PROPERTY(clientID, NSString, RNIDButton)
 {
   [view setClientID:(json ? [RCTConvert NSString:json] : @"")];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(clientSecret, NSString, IDButton)
+RCT_CUSTOM_VIEW_PROPERTY(clientSecret, NSString, RNIDButton)
 {
   [view setClientSecret:(json ? [RCTConvert NSString:json] : @"")];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(redirectURL, NSString, IDButton)
+RCT_CUSTOM_VIEW_PROPERTY(redirectURL, NSString, RNIDButton)
 {
   [view setRedirectURL:(json ? [RCTConvert NSString:json] : @"")];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(applicationName, NSString, IDButton)
+RCT_CUSTOM_VIEW_PROPERTY(applicationName, NSString, RNIDButton)
 {
   [view setApplicationName:(json ? [RCTConvert NSString:json] : @"")];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(scopes, NSString, IDButton)
+RCT_CUSTOM_VIEW_PROPERTY(scopes, NSString, RNIDButton)
 {
   [view setScopes:(json ? [RCTConvert NSArray:json] : @[])];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(textColor, UIColor, IDButton)
+RCT_CUSTOM_VIEW_PROPERTY(textColor, UIColor, RNIDButton)
 {
   [view setTitleColor:(json ? [RCTConvert UIColor:json] : [UIColor greenColor]) forState:UIControlStateNormal];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(backgroundColor, UIColor, IDButton)
-{
-  [view setBackgroundColor:(json ? [RCTConvert UIColor:json] : [UIColor greenColor])];
-}
-
-RCT_CUSTOM_VIEW_PROPERTY(buttonText, NSString, IDButton)
+RCT_CUSTOM_VIEW_PROPERTY(buttonText, NSString, RNIDButton)
 {
 //  cachedTitle = (json ? [RCTConvert NSString:json]: @"Verify");
   NSString *title = (json ? [RCTConvert NSString:json]: @"Verify");
