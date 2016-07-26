@@ -1,4 +1,4 @@
-import { goToView } from '../navigation/actions'
+import { goToView, popView } from '../navigation/actions'
 import { local } from '../../api'
 import views from '../../navigation'
 import { allCards } from '../../parse'
@@ -54,15 +54,20 @@ export const addToSwiped = card => dispatch => {
     .catch(err => console.log(`ERROR: card not added to local store: ${err}`))
 }
 
-export const swipeYes = card => dispatch => {
-  dispatch(saidYes(card))
-  dispatch(addToSwiped(card))
-  dispatch(goToView(views.YES_DETAIL))
-}
-
 export const swipeNo = card => dispatch => {
   dispatch(saidNo(card))
   dispatch(addToSwiped(card))
+}
+
+export const selectYes = card => dispatch => {
+  dispatch(saidYes(card))
+  dispatch(addToSwiped(card))
+  dispatch(popView())
+}
+
+export const selectNo = card => dispatch => {
+  dispatch(swipeNo(card))
+  dispatch(popView())
 }
 
 export const fetchFromParse = () => (dispatch, getState) => {

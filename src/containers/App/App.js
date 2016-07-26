@@ -22,8 +22,9 @@ class App extends Component {
     user: PropTypes.object.isRequired,
     currentView: PropTypes.string,
     toDo: PropTypes.any.isRequired, /* immutable list */
-    swipeYes: PropTypes.func.isRequired,
     swipeNo: PropTypes.func.isRequired,
+    selectYes: PropTypes.func.isRequired,
+    selectNo: PropTypes.func.isRequired,
     refreshCards: PropTypes.func.isRequired,
     fetchFromParse: PropTypes.func.isRequired,
     goToView: PropTypes.func.isRequired,
@@ -46,7 +47,8 @@ class App extends Component {
       toDo,
       currentView,
       refreshCards,
-      swipeYes,
+      selectYes,
+      selectNo,
       swipeNo,
       goToView,
       popView,
@@ -87,11 +89,10 @@ class App extends Component {
           card={toDo[0]}
           userHasDetails={user.email !== '' && user.email !== undefined}
           acceptHandler={() => {
-            swipeYes(toDo[0])
+            selectYes(toDo[0])
           }}
           rejectHandler={() => {
-            swipeYes(toDo[0])
-            goToView(views.SWIPE)
+            selectNo(toDo[0])
           }}
           backHandler={popView}
         />

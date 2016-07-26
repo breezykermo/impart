@@ -48,7 +48,7 @@ class IDButton extends React.Component {
     })
 
     NativeAppEventEmitter.addListener('didReceiveAccessToken', body => {
-      this.props.onAccessToken(body)
+      this.props.onAccessToken(body.token)
     })
 
     NativeAppEventEmitter.addListener('didRecieveError', body => {
