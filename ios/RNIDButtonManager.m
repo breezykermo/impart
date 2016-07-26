@@ -10,14 +10,14 @@
 #import "RCTUIManager.h"
 #import "UIView+React.h"
 
-@interface RNIDButtonManager() <RNIDButtonDelegate>
+@interface RNIDButtonManager() <IDButtonDelegate>
 @end
 
 @implementation RNIDButtonManager
 
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_VIEW_PROPERTY(onTokenRetrieval, RCTBubblingEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(onAccessTokenRetrieval, RCTBubblingEventBlock)
 
 @synthesize bridge = _bridge;
 
@@ -32,11 +32,23 @@ RCT_EXPORT_VIEW_PROPERTY(onTokenRetrieval, RCTBubblingEventBlock)
 
 - (void)idButton:(RNIDButton *)button didReceiveAccessToken:(NSString *)token {
   NSLog(@"<RNIDButtonManager.m> Received token: %@", token);
-//  if (!)
+  if (!button.onAccessToken) {
+    return;
+  }
+  button.onAccessToken(@{@"token": token});
 }
 
 - (void)idButton:(RNIDButton *)button didReceiveUserInfo:(id)json {
   NSLog(@"<RNIDButtonManager.m> We got the info: %@", json);
+  NSDictionary *jsonObject = (NSDictionary *)json;
+  NSDictionary *scopes = (NSDictionary *)[jsonObject objectForKey:@"scopes"];
+  NSLog(@"Key 'scopes': %@", scopes);
+//  NSLog(@"Key 'signed_request': %@", [jsonObject objectForKey:@"signed_request"]);
+  if (!button.onUserInfo) {
+    return;
+  }
+  NSLog(@"presumably calling JS thread...");
+  button.onUserInfo(@{ @"scopes": @"here" });
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(clientID, NSString, RNIDButton)

@@ -75,6 +75,8 @@ class YesDetail extends Component {
                   backgroundColor: colors.primary,
                   height: 63,
                 }]}
+                onAccessToken={token => console.log(`Token in JS: ${token}`)}
+                onUserInfo={json => console.log(`Info in JS: ${json}`)}
               />
             )}
           />

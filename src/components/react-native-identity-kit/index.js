@@ -17,6 +17,8 @@ class IDButton extends React.Component {
     redirectURL: PropTypes.string.isRequired,
     applicationName: PropTypes.string.isRequired,
     scopes: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onAccessToken: PropTypes.func,
+    onUserInfo: PropTypes.func,
   };
 
   static defaultProps = {
@@ -26,13 +28,30 @@ class IDButton extends React.Component {
     },
   };
 
+  constructor(props) {
+    super(props)
+    this._onAccessToken = this._onAccessToken.bind(this)
+  }
+
   componentDidMount() {
     NativeModules.RNIDButtonManager.initialize(ReactNative.findNodeHandle(this))
+  }
+
+  _onAccessToken(event: Event) {
+    if (!this.props.onAccessToken) return
+    this.props.onAccessToken(event.nativeEvent.token)
+  }
+
+  _onUserInfo(event: Event) {
+    if (!this.props.onUserInfo) return
+    this.props.onUserInfo(event.nativeEvent.scopes)
   }
 
   render() {
     return (
       <RNIDButton
+        onUserInfo={this._onUserInfo}
+        onAccessToken={this._onAccessToken}
         style={this.props.style}
         buttonText={this.props.buttonText}
         clientID={this.props.clientID}
