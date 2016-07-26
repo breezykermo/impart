@@ -1,6 +1,6 @@
 # Impart
 
-*Impart* is a React Native application that demonstrates use of IdentityKit, the iOS SDK for the [identity.com](https://www.identity.com) verification flow. *Impart* is based on the Tinder-swipe model, allowing you to browse and sign up for volunteer opportunities in your area.
+*Impart* is a React Native application that demonstrates use of IdentityKit, the iOS SDK for the [identity.com](https://www.identity.com) verification flow. *Impart* is based on the Tinder-swipe model, allowing you to browse and sign up for available volunteer opportunities.
 
 ## Getting Started
 
@@ -26,6 +26,24 @@ sh initialize.sh
 To view the Parse dashboard, go to [localhost:4040](http://localhost:4040). (NB: it might take a couple of seconds for the container to start up after you have run the command). You can login with the username "admin" and the password "super_secure_password" when prompted.
 
 Note that the app is configured to read remotely hosted image URLs that are sent with the rest of the card information from the server. However, the example card images are bundled with the app, in the `src/offline` folder. The app maps these local filenames (those prefixed with `local::` on the server) to the images bundled in the app through the `src/offline/imageMap.js` object.
+
+#### Running the server with [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
+
+Docker Toolbox runs Docker in a virtual machine rather than locally on your Mac, and so to run this application with it you have to make a couple of adjustments to the startup script. Firstly, make sure that the docker environment variables are available in your path by running:
+```bash
+eval ${docker-machine env default}
+```
+Run `docker ps` to confirm that the terminal has the docker environment variables.
+
+Open `src/ParseServer/run.sh`, and replace 'localhost' with '${docker-machine ip default}'. Docker Toolbox runs docker containers in a virtual machine, and so the application runs on a different IP address than your computer's local.
+
+Navigate to the 'ParseSever' directory in terminal and run:
+```bash
+sh run.sh
+sh initialize.sh
+```
+
+The Parse dashboard should now be available at port 4040 of the IP address of the virtual machine that is running Docker. You can discover this by running `docker-machine ip default` in a terminal shell.
 
 ### Running on iPhone Simulator
 Install the dependencies:
