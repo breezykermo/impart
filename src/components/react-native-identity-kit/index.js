@@ -31,18 +31,21 @@ class IDButton extends React.Component {
   constructor(props) {
     super(props)
     this._onAccessToken = this._onAccessToken.bind(this)
+    this._onUserInfo = this._onUserInfo.bind(this)
   }
 
   componentDidMount() {
     NativeModules.RNIDButtonManager.initialize(ReactNative.findNodeHandle(this))
   }
 
-  _onAccessToken(event: Event) {
+  _onAccessToken(event) {
+    console.log(event)
     if (!this.props.onAccessToken) return
     this.props.onAccessToken(event.nativeEvent.token)
   }
 
-  _onUserInfo(event: Event) {
+  _onUserInfo(event) {
+    console.log(event)
     if (!this.props.onUserInfo) return
     this.props.onUserInfo(event.nativeEvent.scopes)
   }

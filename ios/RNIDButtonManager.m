@@ -10,6 +10,8 @@
 #import "RCTUIManager.h"
 #import "UIView+React.h"
 
+static RNIDButton *globalButton;
+
 @interface RNIDButtonManager() <IDButtonDelegate>
 @end
 
@@ -25,6 +27,7 @@ RCT_EXPORT_VIEW_PROPERTY(onAccessTokenRetrieval, RCTBubblingEventBlock)
 {
   RNIDButton *button = [[RNIDButton alloc] init];
   button.delegate = self;
+  globalButton = button;
   return button;
 }
 
@@ -32,10 +35,10 @@ RCT_EXPORT_VIEW_PROPERTY(onAccessTokenRetrieval, RCTBubblingEventBlock)
 
 - (void)idButton:(RNIDButton *)button didReceiveAccessToken:(NSString *)token {
   NSLog(@"<RNIDButtonManager.m> Received token: %@", token);
-  if (!button.onAccessToken) {
+  if (!globalButton.onAccessToken) {
     return;
   }
-  button.onAccessToken(@{@"token": token});
+  globalButton.onAccessToken(@{@"token": token});
 }
 
 - (void)idButton:(RNIDButton *)button didReceiveUserInfo:(id)json {
@@ -43,12 +46,13 @@ RCT_EXPORT_VIEW_PROPERTY(onAccessTokenRetrieval, RCTBubblingEventBlock)
   NSDictionary *jsonObject = (NSDictionary *)json;
   NSDictionary *scopes = (NSDictionary *)[jsonObject objectForKey:@"scopes"];
   NSLog(@"Key 'scopes': %@", scopes);
+  NSLog(@"BUTTON USER INFO: %@", globalButton.onUserInfo);
 //  NSLog(@"Key 'signed_request': %@", [jsonObject objectForKey:@"signed_request"]);
-  if (!button.onUserInfo) {
+  if (!globalButton.onUserInfo) {
     return;
   }
   NSLog(@"presumably calling JS thread...");
-  button.onUserInfo(@{ @"scopes": @"here" });
+  globalButton.onUserInfo(@{ @"scopes": @"here" });
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(clientID, NSString, RNIDButton)
