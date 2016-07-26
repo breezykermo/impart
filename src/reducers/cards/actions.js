@@ -1,6 +1,5 @@
-import { goToView, popView } from '../navigation/actions'
+import { popView } from '../navigation/actions'
 import { local } from '../../api'
-import views from '../../navigation'
 import { allCards } from '../../parse'
 
 /** FETCH action creators **/
@@ -80,7 +79,7 @@ export const fetchFromParse = () => (dispatch, getState) => {
       // NB: filter by cards that haven't already been swiped
       const filteredResults = results
         .filter(card => !getState().cards.get('swiped').includes(card.id))
-      console.log(`${filteredResults.length} cards presented`)
+      console.log(`${filteredResults.length} cards presented`) // eslint-disable-line no-console
       dispatch(cardFetchSuccess(filteredResults))
     })
     .catch(err => dispatch(cardFetchError(err)))

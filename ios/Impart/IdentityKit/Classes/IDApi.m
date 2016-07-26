@@ -93,10 +93,15 @@
     }
     [[NXOAuth2AccountStore sharedStore] setClientID:_clientID
                                              secret:_clientSecret
+                                /* LOCAL DEVELOPMENT */
                                    authorizationURL:[NSURL URLWithString:@"http://localhost:5000/oauth/authorize"]
                                            tokenURL:[NSURL URLWithString:@"http://localhost:5000/oauth/token"]
-//                                   authorizationURL:[NSURL URLWithString:@"https://www.staging.identity.com/oauth/authorize"]
-//                                           tokenURL:[NSURL URLWithString:@"https://www.staging.identity.com/oauth/token"]
+                                /* STAGING SERVER */
+//                                   authorizationURL:[NSURL URLWithString:@"https://staging.identity.com/oauth/authorize"]
+//                                           tokenURL:[NSURL URLWithString:@"https://staging.identity.com/oauth/token"]
+                                /* PRODUCTION SERVER */
+//                                   authorizationURL:[NSURL URLWithString:@"https://www.identity.com/oauth/authorize"]
+//                                           tokenURL:[NSURL URLWithString:@"https://www.identity.com/oauth/token"]
                                         redirectURL:[NSURL URLWithString:_redirectURL]
                                      forAccountType:_applicationName];
 

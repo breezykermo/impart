@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text } from 'react-native'
-import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../common/constants/sizes'
+import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../../common/constants/sizes'
 
 const ICON_HEIGHT = 100
 const ICON_WIDTH = 100
@@ -13,8 +13,8 @@ const styles = {
   },
 }
 
-const YupNope = () => {
-  return <Text style={styles.container}>Happy days</Text>
-}
+const YupNope = () => (
+  <Text style={styles.container}>Happy days</Text>
+)
 
 export default YupNope

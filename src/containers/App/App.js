@@ -6,7 +6,7 @@ import * as cardActions from '../../reducers/cards/actions'
 import * as userActions from '../../reducers/user/actions'
 
 import React, { Component, PropTypes } from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import Loading from '../../components/Loading'
 import Nav from '../../components/Nav'
 import SwipeCards from '../../components/SwipeCards'

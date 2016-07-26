@@ -61,7 +61,7 @@ npm run debug:ios:6+
 
 ## Configuring with ID SDK
 
-This example project uses a [RN Native Module](https://facebook.github.io/react-native/docs/native-modules-ios.html) to bridge IdentityKit to the Javascript thread in which the application logic is running.
+This example project uses a [Native Module](https://facebook.github.io/react-native/docs/native-modules-ios.html) to bridge IdentityKit to the Javascript thread in which the application logic is running.
 
 The configuration for the IDButton that is being used can be found in `src/components/YesDetail/YesDetail.js`, in the `IDButton` component.
 
@@ -77,6 +77,29 @@ The component takes the following props:
 | scopes | Array <String> | The scopes that you want the user to verify. The default is the single email scope. | √ |
 | backgroundColor | String | The button's background color as a HEX string. Default is the ID green. | |
 | styles | View.propTypes.style | Custom styles that you want to pass down to the button to override the default configuration. | |
+
+#### Running the SDK with identity.com 
+
+The SDK is configured to open to [http://localhost:5000]() for development purposes, as the [identity.com development configuration](https://github.com/identity-dev/identity) runs at this port. If you want to change the SDK to read from either the staging or production server, open `ios/Impart/IdentityKit/Classes/IDApi.m`, and comment out the following lines:
+
+```objective-c
+authorizationURL:[NSURL URLWithString:@"http://localhost:5000/oauth/authorize"]
+tokenURL:[NSURL URLWithString:@"http://localhost:5000/oauth/token"]
+```
+
+Then uncomment either the lines that point to the staging server:
+
+```objective-c
+authorizationURL:[NSURL URLWithString:@"https://staging.identity.com/oauth/authorize"]
+tokenURL:[NSURL URLWithString:@"https://staging.identity.com//oauth/token"]
+```
+
+or the lines that point to the production server:
+
+```objective-c
+authorizationURL:[NSURL URLWithString:@"https://www.identity.com/oauth/authorize"]
+tokenURL:[NSURL URLWithString:@"https://www.identity.com//oauth/token"]
+```
 
 #### Native Bridge
 

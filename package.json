@@ -14,7 +14,7 @@
     "debug:android": "adb reverse tcp:8081 tcp:8081 && node node_modules/react-native/local-cli/cli.js run-android",
     "bundle:ios": "node node_modules/react-native/local-cli/cli.js bundle --dev false --entry-file ./index.ios.js --platform ios --bundle-output ios/main.jsbundle",
     "bundle:android": "node node_modules/react-native/local-cli/cli.js bundle --dev false --entry-file ./index.android.js --platform android --bundle-output android/app/src/main/assets/index.android.bundle",
-    "lint": "eslint src/**/*.js",
+    "lint": "eslint .",
     "test": "mocha --require react-native-mock/mock.js --compilers js:scripts/test/compile.js --recursive src/**/*.spec.js",
     "test:watch": "npm run test -- --watch"
   },

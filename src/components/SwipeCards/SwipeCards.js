@@ -1,4 +1,5 @@
 /* Gratefully ported from https://github.com/brentvatne/react-native-animated-demo-tinder */
+/* eslint-disable */
 import React, { Component } from 'react'
 import {
   Text,
@@ -198,5 +199,5 @@ class SwipeCards extends Component {
     );
   }
 }
-
+/* eslint-enable */
 export default SwipeCards

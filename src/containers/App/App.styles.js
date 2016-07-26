@@ -1,7 +1,5 @@
 import { styles as colors } from '../../common/constants/colors'
 import {
-  SCREEN_HEIGHT,
-  SCREEN_WIDTH,
   CARD_WIDTH,
   CARD_HEIGHT,
   CARD_INSET,

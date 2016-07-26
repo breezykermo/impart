@@ -35,4 +35,4 @@ export default {
   nopeText: [textStyles.h1, {
     color: colors.red,
   }],
-};
+}
