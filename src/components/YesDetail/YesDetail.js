@@ -13,7 +13,6 @@ import { getImageObj } from '../../util/react'
 import DetailList from '../DetailList'
 import DrawerTab from './components/DrawerTab'
 import ButtonRow from './components/ButtonRow'
-import NoMoreCards from '../NoMoreCards'
 import IDButton from '../react-native-identity-kit'
 
 import buttonStyles from '../Button/Button.styles'
@@ -23,7 +22,7 @@ import { colors } from '../../common/constants'
 class YesDetail extends Component {
   static propTypes = {
     userHasDetails: PropTypes.bool.isRequired,
-    card: PropTypes.object.isRequired,
+    card: PropTypes.object,
     acceptHandler: PropTypes.func.isRequired,
     rejectHandler: PropTypes.func.isRequired,
     backHandler: PropTypes.func.isRequired,
@@ -68,7 +67,7 @@ class YesDetail extends Component {
                 onUserInfo={json => {
                   // TODO: do something with JSON
                   console.log(`Receieved user info : ${JSON.stringify(json)}`)
-                  // acceptHandler()
+                  acceptHandler()
                 }}
               />
             )}
@@ -90,7 +89,7 @@ class YesDetail extends Component {
         </View>
       )
     } else {
-      component = <NoMoreCards />
+      component = null
     }
     return component
   }

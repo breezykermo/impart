@@ -42,34 +42,48 @@ class IDButton extends React.Component {
 
   constructor(props) {
     super(props)
-
-    NativeAppEventEmitter.addListener('didReceiveUserInfo', body => {
-      this.props.onUserInfo(body)
-    })
-
-    NativeAppEventEmitter.addListener('didReceiveAccessToken', body => {
-      this.props.onAccessToken(body.token)
-    })
-
-    NativeAppEventEmitter.addListener('didRecieveError', body => {
-      this.props.onError(body)
-    })
-
-    NativeAppEventEmitter.addListener('hasCachedToken', body => {
-      this.props.onCachedToken(body)
-    })
-
-    NativeAppEventEmitter.addListener('didBecomeVerified', () => {
-      this.props.onVerified()
-    })
-
-    NativeAppEventEmitter.addListener('didBecomeUnverified', () => {
-      this.props.onUnverified()
-    })
+    this.s1 = null
+    this.s2 = null
+    this.s3 = null
+    this.s4 = null
+    this.s5 = null
+    this.s6 = null
   }
 
   componentDidMount() {
     NativeModules.RNIDButtonManager.initialize(ReactNative.findNodeHandle(this))
+    this.s1 = NativeAppEventEmitter.addListener('didReceiveUserInfo', body => {
+      this.props.onUserInfo(body)
+    })
+
+    this.s2 = NativeAppEventEmitter.addListener('didReceiveAccessToken', body => {
+      this.props.onAccessToken(body.token)
+    })
+
+    this.s3 = NativeAppEventEmitter.addListener('didRecieveError', body => {
+      this.props.onError(body)
+    })
+
+    this.s4 = NativeAppEventEmitter.addListener('hasCachedToken', body => {
+      this.props.onCachedToken(body)
+    })
+
+    this.s5 = NativeAppEventEmitter.addListener('didBecomeVerified', () => {
+      this.props.onVerified()
+    })
+
+    this.s6 = NativeAppEventEmitter.addListener('didBecomeUnverified', () => {
+      this.props.onUnverified()
+    })
+  }
+
+  componentWillUnmount() {
+    this.s1.remove()
+    this.s2.remove()
+    this.s3.remove()
+    this.s4.remove()
+    this.s5.remove()
+    this.s6.remove()
   }
 
   render() {
