@@ -49,6 +49,11 @@ class YesDetail extends Component {
           <ButtonRow
             rejectHandler={rejectHandler}
             renderButtonTwo={(localAcceptHandler, text) => (
+              /**
+                IDButton
+                --------
+                used for easy access of the identity.com verification flow
+              **/
               <IDButton
                 buttonText={text}
                 clientID="a876f8a480f76e7284590dd4573aba644e7fc51f8f4e56d4e73518f55104de87"
@@ -62,11 +67,19 @@ class YesDetail extends Component {
                   height: 63,
                 }]}
                 onAccessToken={token => {
+                  // eslint-disable-next-line no-console
                   console.log(`Received access token : ${token}`)
+                  // NB: This access token is cached on the native side until it is
+                  //     explicitly removed or expires. However you can also store
+                  //     it on the JS thread if you need more ready access to it.
                 }}
                 onUserInfo={json => {
-                  // TODO: do something with JSON
+                  // eslint-disable-next-line no-console
                   console.log(`Receieved user info : ${JSON.stringify(json)}`)
+                  // NB: This is where you would dispatch the redux action creator
+                  //     to store the user info on the server. Here I'm just calling
+                  //     the accept handler, which caches the card ID in local storage
+                  //     and pops the view back to swipe.
                   acceptHandler()
                 }}
               />
