@@ -3,6 +3,7 @@ import ReactNative, {
   View,
   NativeModules,
   requireNativeComponent,
+  NativeAppEventEmitter,
 } from 'react-native'
 
 const RNIDButton = requireNativeComponent('RNIDButton', IDButton)
@@ -30,31 +31,23 @@ class IDButton extends React.Component {
 
   constructor(props) {
     super(props)
-    this._onAccessToken = this._onAccessToken.bind(this)
-    this._onUserInfo = this._onUserInfo.bind(this)
+
+    NativeAppEventEmitter.addListener('didReceiveUserInfo', body => {
+      this.props.onUserInfo(body)
+    })
+
+    NativeAppEventEmitter.addListener('didReceiveAccessToken', body => {
+      this.props.onAccessToken(body)
+    })
   }
 
   componentDidMount() {
     NativeModules.RNIDButtonManager.initialize(ReactNative.findNodeHandle(this))
   }
 
-  _onAccessToken(event) {
-    console.log(event)
-    if (!this.props.onAccessToken) return
-    this.props.onAccessToken(event.nativeEvent.token)
-  }
-
-  _onUserInfo(event) {
-    console.log(event)
-    if (!this.props.onUserInfo) return
-    this.props.onUserInfo(event.nativeEvent.scopes)
-  }
-
   render() {
     return (
       <RNIDButton
-        onUserInfo={this._onUserInfo}
-        onAccessToken={this._onAccessToken}
         style={this.props.style}
         buttonText={this.props.buttonText}
         clientID={this.props.clientID}

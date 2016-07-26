@@ -8,7 +8,8 @@
 
 #import "RNIDButtonManager.h"
 #import "RCTUIManager.h"
-#import "UIView+React.h"
+#import "RCTBridge.h"
+#import "RCTEventDispatcher.h"
 
 static RNIDButton *globalButton;
 
@@ -35,10 +36,10 @@ RCT_EXPORT_VIEW_PROPERTY(onAccessTokenRetrieval, RCTBubblingEventBlock)
 
 - (void)idButton:(RNIDButton *)button didReceiveAccessToken:(NSString *)token {
   NSLog(@"<RNIDButtonManager.m> Received token: %@", token);
-  if (!globalButton.onAccessToken) {
-    return;
-  }
-  globalButton.onAccessToken(@{@"token": token});
+//  if (!globalButton.onAccessToken) {
+//    return;
+//  }
+  [self.bridge.eventDispatcher sendAppEventWithName:@"didReceiveAccessToken" body:(@{@"token": token})];
 }
 
 - (void)idButton:(RNIDButton *)button didReceiveUserInfo:(id)json {
@@ -46,13 +47,14 @@ RCT_EXPORT_VIEW_PROPERTY(onAccessTokenRetrieval, RCTBubblingEventBlock)
   NSDictionary *jsonObject = (NSDictionary *)json;
   NSDictionary *scopes = (NSDictionary *)[jsonObject objectForKey:@"scopes"];
   NSLog(@"Key 'scopes': %@", scopes);
-  NSLog(@"BUTTON USER INFO: %@", globalButton.onUserInfo);
+//  NSLog(@"BUTTON USER INFO: %@", globalButton.onUserInfo);
 //  NSLog(@"Key 'signed_request': %@", [jsonObject objectForKey:@"signed_request"]);
-  if (!globalButton.onUserInfo) {
-    return;
-  }
-  NSLog(@"presumably calling JS thread...");
-  globalButton.onUserInfo(@{ @"scopes": @"here" });
+//  if (!globalButton.onUserInfo) {
+//    return;
+//  }
+//  NSLog(@"presumably calling JS thrdead...");
+//  globalButton.onUserInfo(@{ @"scopes": @"here" });
+  [self.bridge.eventDispatcher sendAppEventWithName:@"didReceiveUserInfo" body:(@{@"scopes": scopes})];
 }
 
 RCT_CUSTOM_VIEW_PROPERTY(clientID, NSString, RNIDButton)

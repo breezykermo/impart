@@ -107,7 +107,9 @@
 - (void)_setUnverified
 {
   NSLog(@"<IdentityKit/IDButton.m> Setting unverified");
-  [self.iDApi removeAccountwithBrowserCookie:YES];
+  if (_iDApi.verified) {
+    [self.iDApi removeAccountwithBrowserCookie:YES];
+  }
   [self addTarget:self action:@selector(didClickUnverified) forControlEvents:UIControlEventTouchUpInside];
   self.verified = NO;
   if ([self.delegate respondsToSelector:@selector(idButtonDidBecomeUnverified:)]) {
