@@ -8,11 +8,7 @@
 
 #import <RCTBridge.h>
 #import "IdentityKit.h"
-#import "RCTComponent.h"
 
 @interface RNIDButton : IDButton <RCTBridgeModule>
-
-@property (nonatomic, assign) RCTBubblingEventBlock onAccessToken;
-@property (nonatomic, assign) RCTBubblingEventBlock onUserInfo;
 
 @end

@@ -32,30 +32,44 @@ RCT_EXPORT_VIEW_PROPERTY(onAccessTokenRetrieval, RCTBubblingEventBlock)
   return button;
 }
 
-#pragma mark - RNIDButtonDelegate
+#pragma mark - Notify JS thread of delegate events
 
 - (void)idButton:(RNIDButton *)button didReceiveAccessToken:(NSString *)token {
   NSLog(@"<RNIDButtonManager.m> Received token: %@", token);
-//  if (!globalButton.onAccessToken) {
-//    return;
-//  }
   [self.bridge.eventDispatcher sendAppEventWithName:@"didReceiveAccessToken" body:(@{@"token": token})];
 }
 
 - (void)idButton:(RNIDButton *)button didReceiveUserInfo:(id)json {
-  NSLog(@"<RNIDButtonManager.m> We got the info: %@", json);
-  NSDictionary *jsonObject = (NSDictionary *)json;
-  NSDictionary *scopes = (NSDictionary *)[jsonObject objectForKey:@"scopes"];
-  NSLog(@"Key 'scopes': %@", scopes);
-//  NSLog(@"BUTTON USER INFO: %@", globalButton.onUserInfo);
-//  NSLog(@"Key 'signed_request': %@", [jsonObject objectForKey:@"signed_request"]);
-//  if (!globalButton.onUserInfo) {
-//    return;
-//  }
-//  NSLog(@"presumably calling JS thrdead...");
-//  globalButton.onUserInfo(@{ @"scopes": @"here" });
+  NSLog(@"<RNIDButtonManager.m> Received user info: %@", json);
+  NSDictionary *scopes = (NSDictionary *)[(NSDictionary *)json objectForKey:@"scopes"];
   [self.bridge.eventDispatcher sendAppEventWithName:@"didReceiveUserInfo" body:(@{@"scopes": scopes})];
 }
+
+- (void)idButton:(UIButton *)button didReceiveError:(NSError *)error
+{
+  NSLog(@"<RNIDButtonManager.m> Received error: %@", error);
+  [self.bridge.eventDispatcher sendAppEventWithName:@"didReceiveError" body:(@{@"error": error})];
+}
+
+- (void)idButton:(UIButton *)button hasCachedToken:(NSString *)token
+{
+  NSLog(@"<RNIDButtonManager.m> Has cached token: %@", token);
+  [self.bridge.eventDispatcher sendAppEventWithName:@"hasCachedToken" body:(@{@"token": token})];
+}
+
+- (void)idButtonDidBecomeVerified:(UIButton *)button
+{
+  NSLog(@"<RNIDButtonManager.m> ID Button became verified.");
+  [self.bridge.eventDispatcher sendAppEventWithName:@"didBecomeVerified" body:nil];
+}
+
+- (void)idButtonDidBecomeUnverified:(UIButton *)button
+{
+  NSLog(@"<RNIDButtonManager.m> ID Button became unverified.");
+  [self.bridge.eventDispatcher sendAppEventWithName:@"didBecomeUnverified" body:nil];
+}
+
+#pragma mark - JS Props
 
 RCT_CUSTOM_VIEW_PROPERTY(clientID, NSString, RNIDButton)
 {
@@ -96,6 +110,7 @@ RCT_CUSTOM_VIEW_PROPERTY(buttonText, NSString, RNIDButton)
   [view setTitle:title forState:UIControlStateDisabled];
 }
 
+#pragma mark - Initialization
 
 RCT_EXPORT_METHOD(initialize:(nonnull NSNumber *)reactTag)
 {

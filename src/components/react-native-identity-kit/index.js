@@ -18,8 +18,13 @@ class IDButton extends React.Component {
     redirectURL: PropTypes.string.isRequired,
     applicationName: PropTypes.string.isRequired,
     scopes: PropTypes.arrayOf(PropTypes.string).isRequired,
+    /* Lifecycle events */
     onAccessToken: PropTypes.func,
     onUserInfo: PropTypes.func,
+    onError: PropTypes.func,
+    onCachedToken: PropTypes.func,
+    onVerified: PropTypes.func,
+    onUnverified: PropTypes.func,
   };
 
   static defaultProps = {
@@ -27,6 +32,12 @@ class IDButton extends React.Component {
       height: 63,
       backgroundColor: 'purple',
     },
+    onAccessToken: () => ({}),
+    onUserInfo: () => ({}),
+    onError: () => ({}),
+    onCachedToken: () => ({}),
+    onVerified: () => ({}),
+    onUnverified: () => ({}),
   };
 
   constructor(props) {
@@ -38,6 +49,22 @@ class IDButton extends React.Component {
 
     NativeAppEventEmitter.addListener('didReceiveAccessToken', body => {
       this.props.onAccessToken(body)
+    })
+
+    NativeAppEventEmitter.addListener('didRecieveError', body => {
+      this.props.onError(body)
+    })
+
+    NativeAppEventEmitter.addListener('hasCachedToken', body => {
+      this.props.onCachedToken(body)
+    })
+
+    NativeAppEventEmitter.addListener('didBecomeVerified', () => {
+      this.props.onVerified()
+    })
+
+    NativeAppEventEmitter.addListener('didBecomeUnverified', () => {
+      this.props.onUnverified()
     })
   }
 
