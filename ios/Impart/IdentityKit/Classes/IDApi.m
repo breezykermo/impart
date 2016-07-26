@@ -94,14 +94,14 @@
     [[NXOAuth2AccountStore sharedStore] setClientID:_clientID
                                              secret:_clientSecret
                                 /* LOCAL DEVELOPMENT */
-                                   authorizationURL:[NSURL URLWithString:@"http://localhost:5000/oauth/authorize"]
-                                           tokenURL:[NSURL URLWithString:@"http://localhost:5000/oauth/token"]
+                                   // authorizationURL:[NSURL URLWithString:@"http://localhost:5000/oauth/authorize"]
+                                   //         tokenURL:[NSURL URLWithString:@"http://localhost:5000/oauth/token"]
                                 /* STAGING SERVER */
 //                                   authorizationURL:[NSURL URLWithString:@"https://staging.identity.com/oauth/authorize"]
 //                                           tokenURL:[NSURL URLWithString:@"https://staging.identity.com/oauth/token"]
                                 /* PRODUCTION SERVER */
-//                                   authorizationURL:[NSURL URLWithString:@"https://www.identity.com/oauth/authorize"]
-//                                           tokenURL:[NSURL URLWithString:@"https://www.identity.com/oauth/token"]
+                                  authorizationURL:[NSURL URLWithString:@"https://www.identity.com/oauth/authorize"]
+                                          tokenURL:[NSURL URLWithString:@"https://www.identity.com/oauth/token"]
                                         redirectURL:[NSURL URLWithString:_redirectURL]
                                      forAccountType:_applicationName];
 
@@ -189,7 +189,9 @@
     }
     NSLog(@"account: %@", _nxAccount.description);
     [NXOAuth2Request performMethod:@"GET"
-                        onResource:[NSURL URLWithString:@"http://localhost:5000/oauth/me"]
+//                        onResource:[NSURL URLWithString:@"http://localhost:5000/oauth/me"]
+//                        onResource:[NSURL URLWithString:@"https://staging.identity.com/oauth/me"]
+                        onResource:[NSURL URLWithString:@"https://www.identity.com/oauth/me"]
                    usingParameters:@{@"access_token": _accessToken, @"client_id": _clientID}
                        withAccount:_nxAccount
                sendProgressHandler:nil
@@ -200,11 +202,10 @@
 {
     // TODO: For whatever reason, this doesn't seem to retrieve any cookies in SFSafariViewController
     if (browserCookie) {
-//        NSLog(@"...cookies");
-//        NSLog(@"Cookies: %@", [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]);
         for(NSHTTPCookie *cookie in [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]) {
-//            NSLog(@"cookie domain: %@", [cookie domain]);
-            if([[cookie domain] isEqualToString:@"localhost:5000"]) {
+            // if([[cookie domain] isEqualToString:@"localhost:5000"]) {
+            // if([[cookie domain] isEqualToString:@"staging.identity.com"]) {
+            if([[cookie domain] isEqualToString:@"identity.com"]) {
                 [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
             }
         }

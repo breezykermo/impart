@@ -56,10 +56,10 @@ class YesDetail extends Component {
               **/
               <IDButton
                 buttonText={text}
-                clientID="a876f8a480f76e7284590dd4573aba644e7fc51f8f4e56d4e73518f55104de87"
-                clientSecret="8cbb86a35234d141b5708b7e5d3e85427e15961974791041116e54eda6a57da4"
+                clientID="f1938688ee9cc7634598c0b23e933f6df1df3afe480ac0f9832e80dc8ef83373"
+                clientSecret="3068614f49331f28b89cc6caae2e1d601a8bc591de711189e8e2ce5a63c0cafd"
                 redirectURL="impartapp://oidc/cb"
-                applicationName="MobileSDK"
+                applicationName="Impart App"
                 scopes={['email']}
                 // backgroundColor={colors.primary}
                 style={[buttonStyles.container, {

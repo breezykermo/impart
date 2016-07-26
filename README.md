@@ -101,6 +101,8 @@ authorizationURL:[NSURL URLWithString:@"https://www.identity.com/oauth/authorize
 tokenURL:[NSURL URLWithString:@"https://www.identity.com//oauth/token"]
 ```
 
+You must also replace the two other instance of 'localhost:5000' in this same file with the appropraite base URL for staging or production.
+
 #### Native Bridge
 
 The code that bridges the native IdentityKit can be found in `ios/RNIDButtonManager.{h|m}`. This bridged module is then wrapped in an easy-to-use component in `src/components/react-native-identity-kit`.

@@ -41,8 +41,13 @@ RCT_EXPORT_VIEW_PROPERTY(onAccessTokenRetrieval, RCTBubblingEventBlock)
 
 - (void)idButton:(RNIDButton *)button didReceiveUserInfo:(id)json {
   NSLog(@"<RNIDButtonManager.m> Received user info: %@", json);
-  NSDictionary *scopes = (NSDictionary *)[(NSDictionary *)json objectForKey:@"scopes"];
-  [self.bridge.eventDispatcher sendAppEventWithName:@"didReceiveUserInfo" body:(@{@"scopes": scopes})];
+  NSDictionary *scopes;
+  NSString *error;
+  if ((scopes = (NSDictionary *)[(NSDictionary *)json objectForKey:@"scopes"])) {
+    [self.bridge.eventDispatcher sendAppEventWithName:@"didReceiveUserInfo" body:(@{@"scopes": scopes})];
+  } else if ((error = (NSString *)[(NSDictionary *)json objectForKey:@"error"])) {
+    [self.bridge.eventDispatcher sendAppEventWithName:@"didReceiveError" body:(@{@"error": error})];
+  }
 }
 
 - (void)idButton:(UIButton *)button didReceiveError:(NSError *)error
