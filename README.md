@@ -31,11 +31,11 @@ Note that the app is configured to read remotely hosted image URLs that are sent
 
 Docker Toolbox runs Docker in a virtual machine rather than locally on your Mac, and so to run this application with it you have to make a couple of adjustments to the startup script. Firstly, make sure that the docker environment variables are available in your path by running:
 ```bash
-eval ${docker-machine env default}
+eval $(docker-machine env default)
 ```
 Run `docker ps` to confirm that the terminal has the docker environment variables.
 
-Open `src/ParseServer/run.sh`, and replace 'localhost' with '${docker-machine ip default}'. Docker Toolbox runs docker containers in a virtual machine, and so the application runs on a different IP address than your computer's local.
+Open `src/ParseServer/run.sh`, and replace 'localhost' with '$(docker-machine ip default)'. Docker Toolbox runs docker containers in a virtual machine, and so the application runs on a different IP address than your computer's local.
 
 Navigate to the 'ParseSever' directory in terminal and run:
 ```bash
