@@ -1,5 +1,6 @@
 import Parse from 'parse/react-native'
-// import { createMockCards } from './mocks'
+import { fromJS } from 'immutable'
+import mockParseCards from './offline/data/cards.js'
 import {
   SERVER_URL,
   PARSE_API_KEY,
@@ -11,40 +12,29 @@ Parse.initialize(PARSE_API_KEY, PARSE_JS_KEY)
 Parse.serverURL = SERVER_URL
 
 export const Card = Parse.Object.extend('Card')
-export const Signup = Parse.Object.extend('Signup')
-export const User = Parse.User
 
-/**
- * Returns a Promise that will return the newly saved object.
- * NB: This doesn't work at the moment, as you need to use
- * Parse Users and authentication to write data, which I don't
- * want to do right now.
- */
-// export const createSignup = (cardId, name, email, phoneNo) => {
-//   const newSignup = new Signup()
-//   const cardPointer = new Card()
-//   cardPointer.id = cardId
-//
-//   newSignup.save({
-//     name,
-//     email,
-//     phoneNo,
-//     card: cardPointer,
-//   }, {
-//     success: obj => obj,
-//     error: err => err,
-//   })
-// }
+let cards
+if (__DEV__) {
+  console.log('RUNNING WITH LIVE SERVER') // eslint-disable-line no-console
+  cards = (new Parse.Query(Card)).ascending('Order')
+} else {
+  console.log('RUNNING WITH OFFLINE CACHE') // eslint-disable-line no-console
+  cards = {
+    find: () => Promise.resolve(mockParseCards
+      .map(card => {
+        const c = new Card()
+        Object.keys(card).forEach(key => {
+          if (key !== 'objectId') {
+            c.set(key, card[key])
+          }
+        })
+        return c
+      })
+    ),
+  }
+}
 
-const cards = (new Parse.Query(Card)).ascending('Order')
-// if (__DEV__) {
-  // Live parse query
-// cards = (new Parse.Query(Card)).ascending('createdAt')
-// } else {
-//   // Mock parse query
-//   const mockParseCards = createMockCards()
-//   cards = { find: () => Promise.resolve(mockParseCards) }
-// }
+// cards.find().then(res => console.log(res))
 
 export const allCards = cards
 export default Parse

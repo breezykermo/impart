@@ -82,5 +82,5 @@ export const fetchFromParse = () => (dispatch, getState) => {
       console.log(`${filteredResults.length} cards presented`) // eslint-disable-line no-console
       dispatch(cardFetchSuccess(filteredResults))
     })
-    .catch(err => dispatch(cardFetchError(err)))
+    .catch(err => dispatch(cardFetchError(err.message)))
 }

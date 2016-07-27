@@ -16,7 +16,8 @@
     "bundle:android": "node node_modules/react-native/local-cli/cli.js bundle --dev false --entry-file ./index.android.js --platform android --bundle-output android/app/src/main/assets/index.android.bundle",
     "lint": "eslint .",
     "test": "mocha --require react-native-mock/mock.js --compilers js:scripts/test/compile.js --recursive src/**/*.spec.js",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "dumpFromParse": "babel-node src/offline/scripts/dumpDataFromParse.js > src/offline/data/cards.js"
   },
   "dependencies": {
     "immutable": "^3.8.1",
