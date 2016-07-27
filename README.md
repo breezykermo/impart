@@ -45,6 +45,16 @@ sh initialize.sh
 
 The Parse dashboard should now be available at port 4040 of the IP address of the virtual machine that is running Docker. You can discover this by running `docker-machine ip default` in a terminal shell.
 
+#### Offline Mode
+
+Impart is also set up to run without a server, for in app demos. The configuration and files are in `src/offline`. Offline mode will run if the `__DEV__` variable is not defined (i.e., whenever React Native is not running on a simulator in development). See `src/parse.js` for more details.
+
+To load the cards in the current server to the app's offline state, run:
+```bash
+npm run dumpFromParse
+```
+This will make a request to the server, and store the received data `src/offline/data/cards.js`, which can be readily loaded in offline mode through the logic in `src/parse.js`.
+
 ### Running on iPhone Simulator
 Install the dependencies:
 ```bash
