@@ -11,7 +11,6 @@
 
 #import "RCTBundleURLProvider.h"
 #import "RCTRootView.h"
-#import "CodePush.h"
 
 #import "IDApi.h"
 
@@ -21,13 +20,8 @@
 {
   NSURL *jsCodeLocation;
 
-#ifdef DEBUG
-    [[RCTBundleURLProvider sharedSettings] setDefaults];
-    jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
-    // jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
-#else
-    jsCodeLocation = [CodePush bundleURL];
-#endif
+  [[RCTBundleURLProvider sharedSettings] setDefaults];
+  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"Impart"
