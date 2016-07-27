@@ -117,4 +117,23 @@ You must also replace the two other instance of 'localhost:5000' in this same fi
 
 The code that bridges the native IdentityKit can be found in `ios/RNIDButtonManager.{h|m}`. This bridged module is then wrapped in an easy-to-use component in `src/components/react-native-identity-kit`.
 
-## 
+## Structure of React Native source code
+The majority of the React Native source code is in the `src` directory. This directory has the following structure.
+    
+├ **api**         _____interface with local storage and the Parse server.     
+├ **common**      _____shared between components, constants etc.     
+├ **components**  _____components, each in its own folder     
+├ **containers**  _____wrapper containers that manage components     
+├ **media**       _____icons and other app related media.     
+├ **navigation**  _____navigation config. The navigation is just a simple configured reducer.      
+├ **offline**     _____resources and scripts for running the app in offline mode.     
+├ **reducers**    _____redux reducers that manage the application state.     
+├ **store**       _____redux store, middleware configuration.     
+├ **util**        _____general util functions.     
+├ **parse.js**    _____configuration and initialization for the Parse server.     
+├ **entry.js**    _____app entry point.
+
+## Credits
+
+Developed Lachlan Kermode 2016. Hit up lachlankermode@live.com if you have any questions, queries or concerns. 
+
