@@ -134,6 +134,7 @@ The majority of the React Native source code is in the `src` directory. This dir
 ├ **entry.js**    _____app entry point.
 
 ## Credits
+June-July 2016.
 
-Developed Lachlan Kermode 2016. Hit up lachlankermode@live.com if you have any questions, queries or concerns. 
+Designed An Nguyen (<an@inflection.com>), developed Lachlan Kermode (<lachlankermode@live.com>). Hit us up if you have any questions, queries or concerns. 
 
