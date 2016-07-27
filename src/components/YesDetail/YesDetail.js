@@ -83,6 +83,9 @@ class YesDetail extends Component {
                   acceptHandler()
                 }}
               />
+              /**
+                End of IDButton
+              **/
             )}
           />
           <DrawerTab

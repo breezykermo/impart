@@ -19,11 +19,10 @@ const NoMoreCards = props => (
       />
     </View>
     <Text style={styles.text}>{i18n.noMoreOpportunites}</Text>
-    <Text style={styles.text}>{i18n.againAgain}</Text>
     <View style={styles.buttonContainer}>
       <Button
         onPress={props.refreshCards}
-        text="Again, again!"
+        text={i18n.discoverMore}
       />
     </View>
   </ScrollView>
