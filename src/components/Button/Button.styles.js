@@ -27,9 +27,11 @@ const coreText = textStyles.copyButton
 
 export default {
   container: [coreContainer, {
+    paddingLeft: 0,
+    paddingRight: 0,
     backgroundColor: colors.white,
   }],
-  text: coreText,
+  text: [coreText],
   containerActive: [coreContainer, {
     backgroundColor: colors.primary,
   }],

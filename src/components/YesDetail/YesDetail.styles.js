@@ -36,4 +36,8 @@ export default {
     marginBottom: -4,
   },
   longDesc: textStyles.copy,
+  idButton: {
+    height: 63,
+    backgroundColor: colors.primary,
+  },
 }

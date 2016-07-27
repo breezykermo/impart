@@ -16,7 +16,6 @@ import ButtonRow from './components/ButtonRow'
 import IDButton from '../react-native-identity-kit'
 
 import buttonStyles from '../Button/Button.styles'
-import { colors } from '../../common/constants'
 
 
 class YesDetail extends Component {
@@ -62,10 +61,7 @@ class YesDetail extends Component {
                 applicationName="Impart App"
                 scopes={['email']}
                 // backgroundColor={colors.primary}
-                style={[buttonStyles.container, {
-                  backgroundColor: colors.primary,
-                  height: 63,
-                }]}
+                style={[buttonStyles.container, styles.idButton]}
                 onAccessToken={token => {
                   // eslint-disable-next-line no-console
                   console.log(`Received access token : ${token}`)
