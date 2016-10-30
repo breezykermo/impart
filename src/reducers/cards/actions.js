@@ -34,7 +34,7 @@ export const saidNo = card => ({
 })
 
 export const REFRESH_CARDS = 'REFRESH_CARDS'
-export const refreshCards = () => dispatch => {
+export const refreshCards = () => (dispatch) => {
   local.clearSwipedCards()
     .then(() => dispatch(fetchFromParse()))
 }
@@ -45,7 +45,7 @@ export const updateSwiped = cards => ({
   cards,
 })
 
-export const addToSwiped = card => dispatch => {
+export const addToSwiped = card => (dispatch) => {
   Promise.resolve()
     .then(() => local.addSwipedCard(card))
     .then(swipedCards => dispatch(updateSwiped(swipedCards)))
@@ -53,18 +53,18 @@ export const addToSwiped = card => dispatch => {
     .catch(err => console.log(`ERROR: card not added to local store: ${err}`))
 }
 
-export const swipeNo = card => dispatch => {
+export const swipeNo = card => (dispatch) => {
   dispatch(saidNo(card))
   dispatch(addToSwiped(card))
 }
 
-export const selectYes = card => dispatch => {
+export const selectYes = card => (dispatch) => {
   dispatch(saidYes(card))
   dispatch(addToSwiped(card))
   dispatch(popView())
 }
 
-export const selectNo = card => dispatch => {
+export const selectNo = card => (dispatch) => {
   dispatch(swipeNo(card))
   dispatch(popView())
 }
@@ -74,7 +74,7 @@ export const fetchFromParse = () => (dispatch, getState) => {
   local.getSwipedCards()
     .then(cards => dispatch(updateSwiped(cards)))
     .then(() => allCards.find())
-    .then(results => {
+    .then((results) => {
       console.log(`${results.length} cards retrieved`) // eslint-disable-line no-console
       // NB: filter by cards that haven't already been swiped
       const filteredResults = results
