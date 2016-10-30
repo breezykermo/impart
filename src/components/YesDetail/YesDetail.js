@@ -13,25 +13,25 @@ import { getImageObj } from '../../util/react'
 import DetailList from '../DetailList'
 import DrawerTab from './components/DrawerTab'
 import ButtonRow from './components/ButtonRow'
-import IDButton from '../react-native-identity-kit'
+// import IDButton from '../react-native-identity-kit'
 
-import buttonStyles from '../Button/Button.styles'
+// import buttonStyles from '../Button/Button.styles'
 
 
 class YesDetail extends Component {
   static propTypes = {
-    userHasDetails: PropTypes.bool.isRequired,
+    // userHasDetails: PropTypes.bool.isRequired,
     card: PropTypes.object,
-    acceptHandler: PropTypes.func.isRequired,
+    // acceptHandler: PropTypes.func.isRequired,
     rejectHandler: PropTypes.func.isRequired,
-    backHandler: PropTypes.func.isRequired,
+    // backHandler: PropTypes.func.isRequired,
   }
 
   render() {
     let component
     const {
       card,
-      acceptHandler,
+      // acceptHandler,
       rejectHandler,
     } = this.props
 
@@ -48,11 +48,11 @@ class YesDetail extends Component {
           <ButtonRow
             rejectHandler={rejectHandler}
             renderButtonTwo={(localAcceptHandler, text) => (
+              <Text>{text}</Text>
               /**
                 IDButton
                 --------
                 used for easy access of the identity.com verification flow
-              **/
               <IDButton
                 buttonText={text}
                 clientID="f1938688ee9cc7634598c0b23e933f6df1df3afe480ac0f9832e80dc8ef83373"
@@ -79,9 +79,11 @@ class YesDetail extends Component {
                   acceptHandler()
                 }}
               />
+            **/
               /**
                 End of IDButton
               **/
+
             )}
           />
           <DrawerTab

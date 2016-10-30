@@ -14,10 +14,10 @@ Parse.serverURL = SERVER_URL
 export const Card = Parse.Object.extend('Card')
 
 let cards
-if (__DEV__) {
-  console.log('RUNNING WITH LIVE SERVER') // eslint-disable-line no-console
-  cards = (new Parse.Query(Card)).ascending('Order')
-} else {
+// if (__DEV__) {
+//   console.log('RUNNING WITH LIVE SERVER') // eslint-disable-line no-console
+//   cards = (new Parse.Query(Card)).ascending('Order')
+// } else {
   console.log('RUNNING WITH OFFLINE CACHE') // eslint-disable-line no-console
   cards = {
     find: () => Promise.resolve(mockParseCards
@@ -32,7 +32,7 @@ if (__DEV__) {
       })
     ),
   }
-}
+// }
 
 // cards.find().then(res => console.log(res))
 

@@ -1,9 +1,6 @@
 package com.impart;
 
 import com.facebook.react.ReactActivity;
-import com.react.rnspinkit.RNSpinkitPackage;
-import com.learnium.RNDeviceInfo.RNDeviceInfo;
-import com.microsoft.codepush.react.CodePush;
 
 public class MainActivity extends ReactActivity {
 

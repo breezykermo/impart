@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -12,23 +13,6 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* ImpartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ImpartTests.m */; };
-		0A904FEF1D402F0200868A95 /* IDApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A904FEB1D402F0200868A95 /* IDApi.m */; };
-		0A904FF01D402F0200868A95 /* IDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A904FED1D402F0200868A95 /* IDButton.m */; };
-		0A9050121D402F2700868A95 /* NSData+NXOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A904FF31D402F2700868A95 /* NSData+NXOAuth2.m */; };
-		0A9050131D402F2700868A95 /* NSString+NXOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A904FF51D402F2700868A95 /* NSString+NXOAuth2.m */; };
-		0A9050141D402F2700868A95 /* NSURL+NXOAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A904FF71D402F2700868A95 /* NSURL+NXOAuth2.m */; };
-		0A9050151D402F2700868A95 /* NXOAuth2AccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A904FFA1D402F2700868A95 /* NXOAuth2AccessToken.m */; };
-		0A9050161D402F2700868A95 /* NXOAuth2Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A904FFC1D402F2700868A95 /* NXOAuth2Account.m */; };
-		0A9050171D402F2700868A95 /* NXOAuth2AccountStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A904FFF1D402F2700868A95 /* NXOAuth2AccountStore.m */; };
-		0A9050181D402F2700868A95 /* NXOAuth2Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9050011D402F2700868A95 /* NXOAuth2Client.m */; };
-		0A9050191D402F2700868A95 /* NXOAuth2Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9050041D402F2700868A95 /* NXOAuth2Connection.m */; };
-		0A90501A1D402F2700868A95 /* NXOAuth2Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9050071D402F2700868A95 /* NXOAuth2Constants.m */; };
-		0A90501B1D402F2700868A95 /* NXOAuth2FileStreamWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9050091D402F2700868A95 /* NXOAuth2FileStreamWrapper.m */; };
-		0A90501C1D402F2700868A95 /* NXOAuth2PostBodyPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A90500B1D402F2700868A95 /* NXOAuth2PostBodyPart.m */; };
-		0A90501D1D402F2700868A95 /* NXOAuth2PostBodyStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A90500D1D402F2700868A95 /* NXOAuth2PostBodyStream.m */; };
-		0A90501E1D402F2700868A95 /* NXOAuth2Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A90500F1D402F2700868A95 /* NXOAuth2Request.m */; };
-		0ABF14411D425DC7005982DA /* RNIDButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABF14401D425DC7005982DA /* RNIDButton.m */; };
-		0ABF14471D4267BA005982DA /* RNIDButtonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABF14461D4267BA005982DA /* RNIDButtonManager.m */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -38,8 +22,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		204EC2406CFE47FC927C75E6 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31500389B559456CAA6C0545 /* libRNDeviceInfo.a */; };
-		560D57D825D5465EAC4900CE /* libRNSpinkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78FF83E824E242589E0EA6AE /* libRNSpinkit.a */; };
+		6A98291AEBF74D50A240B7C2 /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 081C9E3CBC6442C8A01C97CA /* libRNDeviceInfo.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -86,26 +69,61 @@
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = Impart;
 		};
-		0A3E1CC01D382B3200BBDA0D /* PBXContainerItemProxy */ = {
+		0AB4D4081DC6831900AE4195 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3668E11904BA49F09F4A9D67 /* RNDeviceInfo.xcodeproj */;
+			containerPortal = 00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A283A1D9B042B00D4039D;
+			remoteInfo = "RCTImage-tvOS";
+		};
+		0AB4D40C1DC6831900AE4195 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28471D9B043800D4039D;
+			remoteInfo = "RCTLinking-tvOS";
+		};
+		0AB4D4101DC6831900AE4195 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28541D9B044C00D4039D;
+			remoteInfo = "RCTNetwork-tvOS";
+		};
+		0AB4D4141DC6831900AE4195 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28611D9B046600D4039D;
+			remoteInfo = "RCTSettings-tvOS";
+		};
+		0AB4D4181DC6831900AE4195 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A287B1D9B048500D4039D;
+			remoteInfo = "RCTText-tvOS";
+		};
+		0AB4D41D1DC6831900AE4195 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28881D9B049200D4039D;
+			remoteInfo = "RCTWebSocket-tvOS";
+		};
+		0AB4D4211DC6831900AE4195 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28131D9B038B00D4039D;
+			remoteInfo = "React-tvOS";
+		};
+		0ABF312C1DC684A700A78F8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 188B8609E0954A8E943ADFCB /* RNDeviceInfo.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = DA5891D81BA9A9FC002B4DB2;
 			remoteInfo = RNDeviceInfo;
-		};
-		0A3E1CF81D38325F00BBDA0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E7BFC373EEAC4210A4240EA3 /* RNSpinkit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D42CB3511B2538DE00FD0AE2;
-			remoteInfo = RNSpinkit;
-		};
-		0ADCDCA71D41CD6500ED5277 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0ADCDCA31D41CD6500ED5277 /* RNIdentityKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0ADCDC8A1D41C28A00ED5277;
-			remoteInfo = RNIdentityKit;
 		};
 		139105C01AF99BAD00B5F7CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -154,48 +172,7 @@
 		00E356EE1AD99517003FC87E /* ImpartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImpartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ImpartTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImpartTests.m; sourceTree = "<group>"; };
-		0A904FEA1D402F0200868A95 /* IDApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDApi.h; path = Impart/IdentityKit/Classes/IDApi.h; sourceTree = "<group>"; };
-		0A904FEB1D402F0200868A95 /* IDApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDApi.m; path = Impart/IdentityKit/Classes/IDApi.m; sourceTree = "<group>"; };
-		0A904FEC1D402F0200868A95 /* IDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDButton.h; path = Impart/IdentityKit/Classes/IDButton.h; sourceTree = "<group>"; };
-		0A904FED1D402F0200868A95 /* IDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IDButton.m; path = Impart/IdentityKit/Classes/IDButton.m; sourceTree = "<group>"; };
-		0A904FEE1D402F0200868A95 /* IdentityKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IdentityKit.h; path = Impart/IdentityKit/Classes/IdentityKit.h; sourceTree = "<group>"; };
-		0A904FF21D402F2700868A95 /* NSData+NXOAuth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+NXOAuth2.h"; path = "Impart/IdentityKit/Classes/OAuth2Client/NSData+NXOAuth2.h"; sourceTree = "<group>"; };
-		0A904FF31D402F2700868A95 /* NSData+NXOAuth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+NXOAuth2.m"; path = "Impart/IdentityKit/Classes/OAuth2Client/NSData+NXOAuth2.m"; sourceTree = "<group>"; };
-		0A904FF41D402F2700868A95 /* NSString+NXOAuth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+NXOAuth2.h"; path = "Impart/IdentityKit/Classes/OAuth2Client/NSString+NXOAuth2.h"; sourceTree = "<group>"; };
-		0A904FF51D402F2700868A95 /* NSString+NXOAuth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+NXOAuth2.m"; path = "Impart/IdentityKit/Classes/OAuth2Client/NSString+NXOAuth2.m"; sourceTree = "<group>"; };
-		0A904FF61D402F2700868A95 /* NSURL+NXOAuth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+NXOAuth2.h"; path = "Impart/IdentityKit/Classes/OAuth2Client/NSURL+NXOAuth2.h"; sourceTree = "<group>"; };
-		0A904FF71D402F2700868A95 /* NSURL+NXOAuth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURL+NXOAuth2.m"; path = "Impart/IdentityKit/Classes/OAuth2Client/NSURL+NXOAuth2.m"; sourceTree = "<group>"; };
-		0A904FF81D402F2700868A95 /* NXOAuth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2.h; sourceTree = "<group>"; };
-		0A904FF91D402F2700868A95 /* NXOAuth2AccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2AccessToken.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2AccessToken.h; sourceTree = "<group>"; };
-		0A904FFA1D402F2700868A95 /* NXOAuth2AccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2AccessToken.m; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2AccessToken.m; sourceTree = "<group>"; };
-		0A904FFB1D402F2700868A95 /* NXOAuth2Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2Account.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2Account.h; sourceTree = "<group>"; };
-		0A904FFC1D402F2700868A95 /* NXOAuth2Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2Account.m; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2Account.m; sourceTree = "<group>"; };
-		0A904FFD1D402F2700868A95 /* NXOAuth2Account+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NXOAuth2Account+Private.h"; path = "Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2Account+Private.h"; sourceTree = "<group>"; };
-		0A904FFE1D402F2700868A95 /* NXOAuth2AccountStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2AccountStore.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2AccountStore.h; sourceTree = "<group>"; };
-		0A904FFF1D402F2700868A95 /* NXOAuth2AccountStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2AccountStore.m; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2AccountStore.m; sourceTree = "<group>"; };
-		0A9050001D402F2700868A95 /* NXOAuth2Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2Client.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2Client.h; sourceTree = "<group>"; };
-		0A9050011D402F2700868A95 /* NXOAuth2Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2Client.m; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2Client.m; sourceTree = "<group>"; };
-		0A9050021D402F2700868A95 /* NXOAuth2ClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2ClientDelegate.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2ClientDelegate.h; sourceTree = "<group>"; };
-		0A9050031D402F2700868A95 /* NXOAuth2Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2Connection.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2Connection.h; sourceTree = "<group>"; };
-		0A9050041D402F2700868A95 /* NXOAuth2Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2Connection.m; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2Connection.m; sourceTree = "<group>"; };
-		0A9050051D402F2700868A95 /* NXOAuth2ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2ConnectionDelegate.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2ConnectionDelegate.h; sourceTree = "<group>"; };
-		0A9050061D402F2700868A95 /* NXOAuth2Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2Constants.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2Constants.h; sourceTree = "<group>"; };
-		0A9050071D402F2700868A95 /* NXOAuth2Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2Constants.m; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2Constants.m; sourceTree = "<group>"; };
-		0A9050081D402F2700868A95 /* NXOAuth2FileStreamWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2FileStreamWrapper.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2FileStreamWrapper.h; sourceTree = "<group>"; };
-		0A9050091D402F2700868A95 /* NXOAuth2FileStreamWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2FileStreamWrapper.m; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2FileStreamWrapper.m; sourceTree = "<group>"; };
-		0A90500A1D402F2700868A95 /* NXOAuth2PostBodyPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2PostBodyPart.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2PostBodyPart.h; sourceTree = "<group>"; };
-		0A90500B1D402F2700868A95 /* NXOAuth2PostBodyPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2PostBodyPart.m; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2PostBodyPart.m; sourceTree = "<group>"; };
-		0A90500C1D402F2700868A95 /* NXOAuth2PostBodyStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2PostBodyStream.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2PostBodyStream.h; sourceTree = "<group>"; };
-		0A90500D1D402F2700868A95 /* NXOAuth2PostBodyStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2PostBodyStream.m; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2PostBodyStream.m; sourceTree = "<group>"; };
-		0A90500E1D402F2700868A95 /* NXOAuth2Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2Request.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2Request.h; sourceTree = "<group>"; };
-		0A90500F1D402F2700868A95 /* NXOAuth2Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXOAuth2Request.m; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2Request.m; sourceTree = "<group>"; };
-		0A9050101D402F2700868A95 /* NXOAuth2TrustDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXOAuth2TrustDelegate.h; path = Impart/IdentityKit/Classes/OAuth2Client/NXOAuth2TrustDelegate.h; sourceTree = "<group>"; };
-		0A9050111D402F2700868A95 /* OAuth2Client_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuth2Client_Prefix.pch; path = Impart/IdentityKit/Classes/OAuth2Client/OAuth2Client_Prefix.pch; sourceTree = "<group>"; };
-		0ABF143F1D425DC7005982DA /* RNIDButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNIDButton.h; sourceTree = "<group>"; };
-		0ABF14401D425DC7005982DA /* RNIDButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNIDButton.m; sourceTree = "<group>"; };
-		0ABF14451D4267BA005982DA /* RNIDButtonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNIDButtonManager.h; sourceTree = "<group>"; };
-		0ABF14461D4267BA005982DA /* RNIDButtonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNIDButtonManager.m; sourceTree = "<group>"; };
-		0ADCDCA31D41CD6500ED5277 /* RNIdentityKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNIdentityKit.xcodeproj; path = ../../../Inflection/RNIdentityKit/RNIdentityKit.xcodeproj; sourceTree = "<group>"; };
+		081C9E3CBC6442C8A01C97CA /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Impart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Impart.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,12 +183,9 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Impart/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Impart/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		31500389B559456CAA6C0545 /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
-		3668E11904BA49F09F4A9D67 /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
+		188B8609E0954A8E943ADFCB /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
-		78FF83E824E242589E0EA6AE /* libRNSpinkit.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSpinkit.a; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		E7BFC373EEAC4210A4240EA3 /* RNSpinkit.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSpinkit.xcodeproj; path = "../node_modules/react-native-spinkit/ios/RNSpinkit.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,8 +211,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				204EC2406CFE47FC927C75E6 /* libRNDeviceInfo.a in Frameworks */,
-				560D57D825D5465EAC4900CE /* libRNSpinkit.a in Frameworks */,
+				6A98291AEBF74D50A240B7C2 /* libRNDeviceInfo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				00C302C01ABCB91800DB3ED1 /* libRCTImage.a */,
+				0AB4D4091DC6831900AE4195 /* libRCTImage-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -273,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */,
+				0AB4D4111DC6831900AE4195 /* libRCTNetwork-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -302,78 +277,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0A3E1CB31D382B3200BBDA0D /* Products */ = {
+		0ABF31181DC684A600A78F8D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A3E1CC11D382B3200BBDA0D /* libRNDeviceInfo.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		0A3E1CE91D38325F00BBDA0D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0A3E1CF91D38325F00BBDA0D /* libRNSpinkit.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		0A904FF11D402F0C00868A95 /* IdentityKit */ = {
-			isa = PBXGroup;
-			children = (
-				0A90501F1D402F2900868A95 /* NXOAuth2 */,
-				0A904FEA1D402F0200868A95 /* IDApi.h */,
-				0A904FEB1D402F0200868A95 /* IDApi.m */,
-				0A904FEC1D402F0200868A95 /* IDButton.h */,
-				0A904FED1D402F0200868A95 /* IDButton.m */,
-				0A904FEE1D402F0200868A95 /* IdentityKit.h */,
-			);
-			name = IdentityKit;
-			sourceTree = "<group>";
-		};
-		0A90501F1D402F2900868A95 /* NXOAuth2 */ = {
-			isa = PBXGroup;
-			children = (
-				0A904FF21D402F2700868A95 /* NSData+NXOAuth2.h */,
-				0A904FF31D402F2700868A95 /* NSData+NXOAuth2.m */,
-				0A904FF41D402F2700868A95 /* NSString+NXOAuth2.h */,
-				0A904FF51D402F2700868A95 /* NSString+NXOAuth2.m */,
-				0A904FF61D402F2700868A95 /* NSURL+NXOAuth2.h */,
-				0A904FF71D402F2700868A95 /* NSURL+NXOAuth2.m */,
-				0A904FF81D402F2700868A95 /* NXOAuth2.h */,
-				0A904FF91D402F2700868A95 /* NXOAuth2AccessToken.h */,
-				0A904FFA1D402F2700868A95 /* NXOAuth2AccessToken.m */,
-				0A904FFB1D402F2700868A95 /* NXOAuth2Account.h */,
-				0A904FFC1D402F2700868A95 /* NXOAuth2Account.m */,
-				0A904FFD1D402F2700868A95 /* NXOAuth2Account+Private.h */,
-				0A904FFE1D402F2700868A95 /* NXOAuth2AccountStore.h */,
-				0A904FFF1D402F2700868A95 /* NXOAuth2AccountStore.m */,
-				0A9050001D402F2700868A95 /* NXOAuth2Client.h */,
-				0A9050011D402F2700868A95 /* NXOAuth2Client.m */,
-				0A9050021D402F2700868A95 /* NXOAuth2ClientDelegate.h */,
-				0A9050031D402F2700868A95 /* NXOAuth2Connection.h */,
-				0A9050041D402F2700868A95 /* NXOAuth2Connection.m */,
-				0A9050051D402F2700868A95 /* NXOAuth2ConnectionDelegate.h */,
-				0A9050061D402F2700868A95 /* NXOAuth2Constants.h */,
-				0A9050071D402F2700868A95 /* NXOAuth2Constants.m */,
-				0A9050081D402F2700868A95 /* NXOAuth2FileStreamWrapper.h */,
-				0A9050091D402F2700868A95 /* NXOAuth2FileStreamWrapper.m */,
-				0A90500A1D402F2700868A95 /* NXOAuth2PostBodyPart.h */,
-				0A90500B1D402F2700868A95 /* NXOAuth2PostBodyPart.m */,
-				0A90500C1D402F2700868A95 /* NXOAuth2PostBodyStream.h */,
-				0A90500D1D402F2700868A95 /* NXOAuth2PostBodyStream.m */,
-				0A90500E1D402F2700868A95 /* NXOAuth2Request.h */,
-				0A90500F1D402F2700868A95 /* NXOAuth2Request.m */,
-				0A9050101D402F2700868A95 /* NXOAuth2TrustDelegate.h */,
-				0A9050111D402F2700868A95 /* OAuth2Client_Prefix.pch */,
-			);
-			name = NXOAuth2;
-			sourceTree = "<group>";
-		};
-		0ADCDCA41D41CD6500ED5277 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0ADCDCA81D41CD6500ED5277 /* libRNIdentityKit.a */,
+				0ABF312D1DC684A700A78F8D /* libRNDeviceInfo.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -382,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				139105C11AF99BAD00B5F7CC /* libRCTSettings.a */,
+				0AB4D4151DC6831900AE4195 /* libRCTSettings-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -390,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				139FDEF41B06529B00C62182 /* libRCTWebSocket.a */,
+				0AB4D41E1DC6831900AE4195 /* libRCTWebSocket-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -397,7 +306,6 @@
 		13B07FAE1A68108700A75B9A /* Impart */ = {
 			isa = PBXGroup;
 			children = (
-				0A904FF11D402F0C00868A95 /* IdentityKit */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -405,10 +313,6 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				0ABF143F1D425DC7005982DA /* RNIDButton.h */,
-				0ABF14401D425DC7005982DA /* RNIDButton.m */,
-				0ABF14451D4267BA005982DA /* RNIDButtonManager.h */,
-				0ABF14461D4267BA005982DA /* RNIDButtonManager.m */,
 			);
 			name = Impart;
 			sourceTree = "<group>";
@@ -417,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				146834041AC3E56700842450 /* libReact.a */,
+				0AB4D4221DC6831900AE4195 /* libReact-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -425,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				78C398B91ACF4ADC00677621 /* libRCTLinking.a */,
+				0AB4D40D1DC6831900AE4195 /* libRCTLinking-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -432,7 +338,6 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				0ADCDCA31D41CD6500ED5277 /* RNIdentityKit.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -443,8 +348,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				3668E11904BA49F09F4A9D67 /* RNDeviceInfo.xcodeproj */,
-				E7BFC373EEAC4210A4240EA3 /* RNSpinkit.xcodeproj */,
+				188B8609E0954A8E943ADFCB /* RNDeviceInfo.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -453,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				832341B51AAA6A8300B99B32 /* libRCTText.a */,
+				0AB4D4191DC6831900AE4195 /* libRCTText-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -464,7 +369,6 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ImpartTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
-				AB2FC57CC639439BB71A762E /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -477,13 +381,6 @@
 				00E356EE1AD99517003FC87E /* ImpartTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		AB2FC57CC639439BB71A762E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,7 +428,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 730;
+				LastUpgradeCheck = 800;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -593,16 +490,8 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = 0A3E1CB31D382B3200BBDA0D /* Products */;
-					ProjectRef = 3668E11904BA49F09F4A9D67 /* RNDeviceInfo.xcodeproj */;
-				},
-				{
-					ProductGroup = 0ADCDCA41D41CD6500ED5277 /* Products */;
-					ProjectRef = 0ADCDCA31D41CD6500ED5277 /* RNIdentityKit.xcodeproj */;
-				},
-				{
-					ProductGroup = 0A3E1CE91D38325F00BBDA0D /* Products */;
-					ProjectRef = E7BFC373EEAC4210A4240EA3 /* RNSpinkit.xcodeproj */;
+					ProductGroup = 0ABF31181DC684A600A78F8D /* Products */;
+					ProjectRef = 188B8609E0954A8E943ADFCB /* RNDeviceInfo.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -649,25 +538,60 @@
 			remoteRef = 00C302E31ABCB9EE00DB3ED1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0A3E1CC11D382B3200BBDA0D /* libRNDeviceInfo.a */ = {
+		0AB4D4091DC6831900AE4195 /* libRCTImage-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTImage-tvOS.a";
+			remoteRef = 0AB4D4081DC6831900AE4195 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AB4D40D1DC6831900AE4195 /* libRCTLinking-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTLinking-tvOS.a";
+			remoteRef = 0AB4D40C1DC6831900AE4195 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AB4D4111DC6831900AE4195 /* libRCTNetwork-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTNetwork-tvOS.a";
+			remoteRef = 0AB4D4101DC6831900AE4195 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AB4D4151DC6831900AE4195 /* libRCTSettings-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTSettings-tvOS.a";
+			remoteRef = 0AB4D4141DC6831900AE4195 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AB4D4191DC6831900AE4195 /* libRCTText-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTText-tvOS.a";
+			remoteRef = 0AB4D4181DC6831900AE4195 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AB4D41E1DC6831900AE4195 /* libRCTWebSocket-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTWebSocket-tvOS.a";
+			remoteRef = 0AB4D41D1DC6831900AE4195 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0AB4D4221DC6831900AE4195 /* libReact-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libReact-tvOS.a";
+			remoteRef = 0AB4D4211DC6831900AE4195 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0ABF312D1DC684A700A78F8D /* libRNDeviceInfo.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRNDeviceInfo.a;
-			remoteRef = 0A3E1CC01D382B3200BBDA0D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0A3E1CF91D38325F00BBDA0D /* libRNSpinkit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNSpinkit.a;
-			remoteRef = 0A3E1CF81D38325F00BBDA0D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0ADCDCA81D41CD6500ED5277 /* libRNIdentityKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNIdentityKit.a;
-			remoteRef = 0ADCDCA71D41CD6500ED5277 /* PBXContainerItemProxy */;
+			remoteRef = 0ABF312C1DC684A700A78F8D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		139105C11AF99BAD00B5F7CC /* libRCTSettings.a */ = {
@@ -756,25 +680,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A9050161D402F2700868A95 /* NXOAuth2Account.m in Sources */,
-				0A9050191D402F2700868A95 /* NXOAuth2Connection.m in Sources */,
-				0A90501E1D402F2700868A95 /* NXOAuth2Request.m in Sources */,
-				0A904FEF1D402F0200868A95 /* IDApi.m in Sources */,
-				0A9050181D402F2700868A95 /* NXOAuth2Client.m in Sources */,
-				0ABF14471D4267BA005982DA /* RNIDButtonManager.m in Sources */,
-				0A90501C1D402F2700868A95 /* NXOAuth2PostBodyPart.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				0A9050171D402F2700868A95 /* NXOAuth2AccountStore.m in Sources */,
-				0A90501D1D402F2700868A95 /* NXOAuth2PostBodyStream.m in Sources */,
-				0A9050141D402F2700868A95 /* NSURL+NXOAuth2.m in Sources */,
-				0ABF14411D425DC7005982DA /* RNIDButton.m in Sources */,
-				0A904FF01D402F0200868A95 /* IDButton.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				0A9050131D402F2700868A95 /* NSString+NXOAuth2.m in Sources */,
-				0A9050151D402F2700868A95 /* NXOAuth2AccessToken.m in Sources */,
-				0A90501A1D402F2700868A95 /* NXOAuth2Constants.m in Sources */,
-				0A9050121D402F2700868A95 /* NSData+NXOAuth2.m in Sources */,
-				0A90501B1D402F2700868A95 /* NXOAuth2FileStreamWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,10 +717,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ImpartTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -827,10 +735,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = ImpartTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -842,13 +751,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
-					"$(SRCROOT)/../node_modules/react-native-spinkit/ios/**",
 				);
 				INFOPLIST_FILE = Impart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -859,6 +768,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Impart;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -866,12 +776,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
-					"$(SRCROOT)/../node_modules/react-native-spinkit/ios/**",
 				);
 				INFOPLIST_FILE = Impart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -882,6 +792,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Impart;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -898,8 +809,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -908,6 +821,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -925,9 +839,8 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
-					"$(SRCROOT)/../node_modules/react-native-spinkit/ios/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -947,8 +860,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -956,6 +871,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -967,9 +883,8 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
-					"$(SRCROOT)/../node_modules/react-native-spinkit/ios/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
