@@ -5,7 +5,7 @@ import {
 import { styles as textStyles } from '../../common/constants/text'
 export default {
   container: {
-    flex: 1,
+    flexGrow: 1,
     alignItems: 'center',
     height: SCREEN_HEIGHT,
     width: SCREEN_WIDTH,
