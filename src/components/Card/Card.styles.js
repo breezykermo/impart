@@ -36,12 +36,11 @@ export default {
     borderRadius: 1,
   }],
   image: {
-    flex: 4,
+    flexGrow: 4,
     justifyContent: 'center',
     alignItems: 'center',
     width: CARD_WIDTH - 2, // -2 for border
     height: 240,
     /* NB: height is automatically set via image proportions */
   },
-  body: {},
 }

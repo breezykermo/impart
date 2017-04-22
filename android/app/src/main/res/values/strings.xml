@@ -1,7 +1,3 @@
 <resources>
-
-    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">eRBkX4LqXDHp50jv4kpRLUtS3oSLV1NPlr4VW</string>
-
-
     <string name="app_name">Impart</string>
 </resources>

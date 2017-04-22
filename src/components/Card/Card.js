@@ -19,7 +19,7 @@ const Card = ({ data }) => (
         <Text style={styles.headerText}>{data.get('header')}</Text>
       ) : null}
     </Image>
-    <View style={styles.body}>
+    <View>
       <DetailList data={data} />
     </View>
   </View>
