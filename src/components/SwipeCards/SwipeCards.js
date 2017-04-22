@@ -126,10 +126,6 @@ class SwipeCards extends Component {
     )
   }
 
-  renderCard(cardData) {
-    return this.props.renderCard(cardData)
-  }
-
   render() {
     let { pan, enter, } = this.state;
 
@@ -166,7 +162,7 @@ class SwipeCards extends Component {
           { this.props.card
               ? (
               <Animated.View style={[styles.card, animatedCardstyles]} {...this._panResponder.panHandlers}>
-                {this.renderCard(this.props.card)}
+                {this.props.renderCard(this.props.card)}
               </Animated.View>
               )
               : this.renderNoMoreCards() }

@@ -4,7 +4,7 @@ import { CARD_WIDTH, CARD_HEIGHT } from '../../common/constants/sizes'
 
 export default {
   container: {
-    flex: 10,
+    flexGrow: 1,
     flexDirection: 'column',
     backgroundColor: colors.white,
     borderColor: colors.darkGray,

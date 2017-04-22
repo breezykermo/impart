@@ -29,3 +29,4 @@ Card.propTypes = {
 }
 
 export default Card
+//       <DetailList data={data} />
