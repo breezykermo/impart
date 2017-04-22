@@ -1,10 +1,9 @@
 import Parse from 'parse/react-native'
-import { fromJS } from 'immutable'
 import mockParseCards from './offline/data/cards.js'
 import {
   SERVER_URL,
   PARSE_API_KEY,
-  PARSE_JS_KEY,
+  PARSE_JS_KEY
 } from './common/constants/api'
 
 // TODO: move these into ENV variables
@@ -18,9 +17,9 @@ let cards
 //   console.log('RUNNING WITH LIVE SERVER') // eslint-disable-line no-console
 //   cards = (new Parse.Query(Card)).ascending('Order')
 // } else {
-  console.log('RUNNING WITH OFFLINE CACHE') // eslint-disable-line no-console
-  cards = {
-    find: () => Promise.resolve(mockParseCards
+console.log('RUNNING WITH OFFLINE CACHE') // eslint-disable-line no-console
+cards = {
+  find: () => Promise.resolve(mockParseCards
       .map(card => {
         const c = new Card()
         Object.keys(card).forEach(key => {
@@ -30,8 +29,8 @@ let cards
         })
         return c
       })
-    ),
-  }
+    )
+}
 // }
 
 // cards.find().then(res => console.log(res))

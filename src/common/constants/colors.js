@@ -9,5 +9,5 @@ export const styles = {
   green: '#55e248',
   red: '#ff2a27',
   /* RGBA */
-  darkGrayOpaque: 'rgba(187, 187, 187, 0.4)',
+  darkGrayOpaque: 'rgba(187, 187, 187, 0.4)'
 }

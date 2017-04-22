@@ -6,12 +6,12 @@ export default {
     flexGrow: 1,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   buttonOne: {
-    flex: 1,
+    flex: 1
   },
   buttonTwo: {
-    flex: 1,
-  },
+    flex: 1
+  }
 }

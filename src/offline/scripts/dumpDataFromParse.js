@@ -10,7 +10,7 @@ import Parse from 'parse/node'
 import {
   SERVER_URL,
   PARSE_API_KEY,
-  PARSE_JS_KEY,
+  PARSE_JS_KEY
 } from '../../common/constants/api'
 
 Parse.initialize(PARSE_API_KEY, PARSE_JS_KEY)

@@ -7,7 +7,7 @@ import {
   CARD_FETCH_START,
   CARD_FETCH_SUCCESS,
   CARD_FETCH_ERROR,
-  UPDATE_SWIPED,
+  UPDATE_SWIPED
 } from './actions'
 
 export default (state = defaultState, action) => {

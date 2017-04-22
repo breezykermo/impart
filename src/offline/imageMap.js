@@ -14,5 +14,5 @@ export default {
   'more04.png': require('./images/more04.png'),
   'more05.png': require('./images/more05.png'),
   'more06.png': require('./images/more06.png'),
-  'more07.png': require('./images/more07.png'),
+  'more07.png': require('./images/more07.png')
 }

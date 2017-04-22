@@ -2,12 +2,12 @@ import { styles as colors } from '../../common/constants/colors'
 import {
   CARD_WIDTH,
   CARD_HEIGHT,
-  CARD_INSET,
+  CARD_INSET
 } from '../../common/constants/sizes'
 
 export default {
   container: {
-    backgroundColor: colors.gray,
+    backgroundColor: colors.gray
     // height: SCREEN_HEIGHT,
     // width: SCREEN_WIDTH,
   },
@@ -15,7 +15,7 @@ export default {
     marginTop: CARD_INSET,
     marginBottom: CARD_INSET,
     padding: 0,
-    backgroundColor: 'transparent',
+    backgroundColor: 'transparent'
   },
   backgroundCardContainer: {
     position: 'absolute',
@@ -23,10 +23,10 @@ export default {
     left: CARD_INSET + 2,
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   backgroundCard: {
     width: CARD_WIDTH,
-    height: CARD_HEIGHT,
-  },
+    height: CARD_HEIGHT
+  }
 }

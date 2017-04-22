@@ -1,2 +1,2 @@
-export * from './Detail'
+// export * from './Detail'
 export { default } from './Detail'

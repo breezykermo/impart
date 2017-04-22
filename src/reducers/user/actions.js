@@ -1,30 +1,30 @@
 import { local } from '../../api'
 import { Signup, Card } from '../../parse'
 import {
-  fetchFromParse,
+  fetchFromParse
 } from '../cards/actions'
 
 export const FETCH_USER_START = 'FETCH_USER_START'
 export const fetchUserStart = () => ({
-  type: FETCH_USER_START,
+  type: FETCH_USER_START
 })
 
 export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS'
 export const fetchUserSuccess = user => ({
   type: FETCH_USER_SUCCESS,
-  user,
+  user
 })
 
 export const FETCH_USER_ERROR = 'FETCH_USER_ERROR'
 export const fetchUserError = error => ({
   type: FETCH_USER_ERROR,
-  error,
+  error
 })
 
 export const UPDATE_FORM = 'UPDATE_FORM'
 export const updateForm = profile => ({
   type: UPDATE_FORM,
-  profile,
+  profile
 })
 
 export const syncUser = () => (dispatch) => {
@@ -73,19 +73,19 @@ export const saveProfile = profile => (dispatch) => {
 
 export const SIGNUP_START = 'SIGNUP_START'
 export const signupStart = () => ({
-  type: SIGNUP_START,
+  type: SIGNUP_START
 })
 
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
 export const signupSuccess = signup => ({
   type: SIGNUP_SUCCESS,
-  signup,
+  signup
 })
 
 export const SIGNUP_ERROR = 'SIGNUP_ERROR'
 export const signupError = error => ({
   type: SIGNUP_ERROR,
-  error,
+  error
 })
 
 export const signup = (card, profile) => (dispatch) => {
@@ -99,12 +99,12 @@ export const signup = (card, profile) => (dispatch) => {
         name: profile.name,
         email: profile.email,
         phoneNo: profile.phoneNo,
-        card: cardPointer,
+        card: cardPointer
       }, {
         success: (savedSignup) => {
           dispatch(signupSuccess(savedSignup))
         },
-        error: (obj, err) => dispatch(signupError(err)),
+        error: (obj, err) => dispatch(signupError(err))
       })
     })
     .catch(err => signupError(err))

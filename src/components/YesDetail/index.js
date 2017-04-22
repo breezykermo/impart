@@ -1,2 +1,2 @@
-export * from './YesDetail'
+// export * from './YesDetail'
 export { default } from './YesDetail'

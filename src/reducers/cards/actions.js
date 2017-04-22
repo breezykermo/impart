@@ -5,32 +5,32 @@ import { allCards } from '../../parse'
 /** FETCH action creators **/
 export const CARD_FETCH_START = 'CARD_FETCH_START'
 export const cardFetchStart = () => ({
-  type: CARD_FETCH_START,
+  type: CARD_FETCH_START
 })
 
 export const CARD_FETCH_SUCCESS = 'CARD_FETCH_SUCCESS'
 export const cardFetchSuccess = cards => ({
   type: CARD_FETCH_SUCCESS,
-  cards,
+  cards
 })
 
 export const CARD_FETCH_ERROR = 'CARD_FETCH_ERROR'
 export const cardFetchError = error => ({
   type: CARD_FETCH_ERROR,
-  error,
+  error
 })
 
 /** runtime action creators **/
 export const SAID_YES = 'SAID_YES'
 export const saidYes = card => ({
   type: SAID_YES,
-  card,
+  card
 })
 
 export const SAID_NO = 'SAID_NO'
 export const saidNo = card => ({
   type: SAID_NO,
-  card,
+  card
 })
 
 export const REFRESH_CARDS = 'REFRESH_CARDS'
@@ -42,7 +42,7 @@ export const refreshCards = () => (dispatch) => {
 export const UPDATE_SWIPED = 'UPDATE_SWIPED'
 export const updateSwiped = cards => ({
   type: UPDATE_SWIPED,
-  cards,
+  cards
 })
 
 export const addToSwiped = card => (dispatch) => {

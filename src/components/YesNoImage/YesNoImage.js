@@ -9,7 +9,7 @@ const YesNoImage = ({ pan, type }) => {
   const nopeOpacity = pan.x.interpolate({ inputRange: [-250, 0], outputRange: [1, 0] })
 
   const animatedStyles = {
-    opacity: isYes ? yupOpacity : nopeOpacity,
+    opacity: isYes ? yupOpacity : nopeOpacity
   }
 
   return (
@@ -21,7 +21,7 @@ const YesNoImage = ({ pan, type }) => {
 }
 YesNoImage.propTypes = {
   type: PropTypes.oneOf(['yes', 'no']),
-  pan: PropTypes.any.isRequired,
+  pan: PropTypes.any.isRequired
 }
 
 export default YesNoImage

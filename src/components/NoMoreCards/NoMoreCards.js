@@ -3,7 +3,7 @@ import {
   ScrollView,
   View,
   Text,
-  Image,
+  Image
 } from 'react-native'
 import Button from '../Button'
 import i18n from '../../common/i18n'
@@ -28,7 +28,7 @@ const NoMoreCards = props => (
   </ScrollView>
 )
 NoMoreCards.propTypes = {
-  refreshCards: PropTypes.func.isRequired,
+  refreshCards: PropTypes.func.isRequired
 }
 
 export default NoMoreCards

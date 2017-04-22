@@ -22,8 +22,8 @@ export default {
     shadowRadius: 2,
     shadowOffset: {
       height: 2,
-      width: 1,
-    },
+      width: 1
+    }
   },
   headerText: [textStyles.h1, {
     color: colors.white,
@@ -33,14 +33,14 @@ export default {
     marginLeft: 15,
     marginRight: 15,
     padding: 10,
-    borderRadius: 1,
+    borderRadius: 1
   }],
   image: {
     flexGrow: 4,
     justifyContent: 'center',
     alignItems: 'center',
     width: CARD_WIDTH - 2, // -2 for border
-    height: 240,
+    height: 240
     /* NB: height is automatically set via image proportions */
-  },
+  }
 }

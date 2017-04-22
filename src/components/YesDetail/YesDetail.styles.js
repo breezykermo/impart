@@ -5,13 +5,13 @@ import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../common/constants/sizes'
 export default {
   container: {
     marginTop: -5,
-    backgroundColor: colors.white,
+    backgroundColor: colors.white
   },
   headerImage: {
     height: SCREEN_HEIGHT / 3 + 20,
     width: SCREEN_WIDTH,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
     // paddingLeft: 43,
     // paddingRight: 43,
   },
@@ -22,22 +22,22 @@ export default {
     bottom: 20,
     marginLeft: 20,
     marginRight: 30,
-    padding: 10,
+    padding: 10
   }],
   body: {
     height: SCREEN_HEIGHT * (4 / 6), // 4/6th
-    flex: 1,
+    flex: 1
   },
   detailList: {
     marginTop: -15,
-    padding: 5,
+    padding: 5
   },
   detail: {
-    marginBottom: -4,
+    marginBottom: -4
   },
   longDesc: textStyles.copy,
   idButton: {
     height: 63,
-    backgroundColor: colors.primary,
-  },
+    backgroundColor: colors.primary
+  }
 }

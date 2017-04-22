@@ -8,9 +8,9 @@ const Loading = () => (
   <View style={styles.container}>
     <Spinner
       style={styles.spinner}
-      isVisible={true}
+      isVisible
       size={200}
-      type="WanderingCubes"
+      type='WanderingCubes'
       color={colors.primary}
     />
   </View>

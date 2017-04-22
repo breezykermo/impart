@@ -20,8 +20,8 @@ const coreContainer = {
   shadowRadius: 1,
   shadowOffset: {
     height: 1,
-    width: 1,
-  },
+    width: 1
+  }
 }
 const coreText = textStyles.copyButton
 
@@ -29,15 +29,15 @@ export default {
   container: [coreContainer, {
     paddingLeft: 5,
     paddingRight: 5,
-    backgroundColor: colors.white,
+    backgroundColor: colors.white
   }],
   text: [coreText],
   containerActive: [coreContainer, {
     paddingLeft: 5,
     paddingRight: 5,
-    backgroundColor: colors.primary,
+    backgroundColor: colors.primary
   }],
   textActive: [coreText, {
-    color: colors.white,
-  }],
+    color: colors.white
+  }]
 }

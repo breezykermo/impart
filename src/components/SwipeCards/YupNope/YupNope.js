@@ -9,8 +9,8 @@ const styles = {
   container: {
     position: 'absolute',
     top: (SCREEN_HEIGHT / 2) - (ICON_HEIGHT / 2),
-    left: (SCREEN_WIDTH / 2) - (ICON_WIDTH / 2),
-  },
+    left: (SCREEN_WIDTH / 2) - (ICON_WIDTH / 2)
+  }
 }
 
 const YupNope = () => (

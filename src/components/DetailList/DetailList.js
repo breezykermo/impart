@@ -10,7 +10,7 @@ const DetailList = ({ data, containerStyles, itemStyles }) => {
     dateOfEvent: data.get('dateOfEvent'),
     location: data.get('location'),
     shortDesc: data.get('shortDesc'),
-    perks: data.get('perks'),
+    perks: data.get('perks')
   }
 
   return (
@@ -29,7 +29,7 @@ DetailList.propTypes = {
   /** Optional styles for the container **/
   containerStyles: View.propTypes.style,
   /** Optional styles for the details **/
-  itemStyles: View.propTypes.style,
+  itemStyles: View.propTypes.style
 }
 
 export default DetailList

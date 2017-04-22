@@ -26,7 +26,7 @@ ButtonRow.propTypes = {
   acceptHandler: PropTypes.func,
   rejectHandler: PropTypes.func,
   renderButtonOne: PropTypes.func,
-  renderButtonTwo: PropTypes.func,
+  renderButtonTwo: PropTypes.func
 }
 
 export default ButtonRow

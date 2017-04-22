@@ -6,10 +6,10 @@ export default {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: SCREEN_HEIGHT - NAV_HEIGHT + 100,
+    height: SCREEN_HEIGHT - NAV_HEIGHT + 100
   },
   spinner: {
     flex: 1,
-    backgroundColor: 'transparent',
-  },
+    backgroundColor: 'transparent'
+  }
 }

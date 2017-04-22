@@ -16,7 +16,7 @@ const Detail = ({ icon, text, style }) => (
 Detail.propTypes = {
   style: View.propTypes.style,
   icon: PropTypes.string,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
 }
 
 export default Detail

@@ -4,7 +4,7 @@ import {
   TouchableOpacity,
   Text,
   Animated,
-  ScrollView,
+  ScrollView
 } from 'react-native'
 import styles from './DrawerTab.styles'
 import { returnIconAsImage } from '../../../../util/media'
@@ -17,17 +17,17 @@ class SlinkyTabs extends React.Component {
     headerOne: PropTypes.string.isRequired,
     renderContentOne: PropTypes.func.isRequired,
     headerTwo: PropTypes.string.isRequired,
-    renderContentTwo: PropTypes.func.isRequired,
+    renderContentTwo: PropTypes.func.isRequired
   }
 
   static defaultProps = {
     headerOne: '',
     renderContentOne: () => null,
     headerTwo: '',
-    renderContentTwo: () => null,
+    renderContentTwo: () => null
   }
 
-  constructor(props) {
+  constructor (props) {
     super(props)
     this._press = this._press.bind(this)
     // this._pressOne = this._pressOne.bind(this)
@@ -37,10 +37,10 @@ class SlinkyTabs extends React.Component {
   state = {
     firstHeight: new Animated.Value(this.props.topHeight), // eslint-disable-line new-cap
     open: false,
-    iconRotate: new Animated.Value(0),
+    iconRotate: new Animated.Value(0)
   }
 
-  _press() {
+  _press () {
     if (this.state.open) {
       Animated.timing(
         this.state.firstHeight,
@@ -55,12 +55,12 @@ class SlinkyTabs extends React.Component {
     this.setState({ open: !this.state.open })
   }
 
-  render() {
+  render () {
     const {
       headerOne,
       renderContentOne,
       headerTwo,
-      renderContentTwo,
+      renderContentTwo
     } = this.props
     return (
       <View style={styles.container}>

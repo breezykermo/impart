@@ -3,7 +3,7 @@ import ReactNative, {
   View,
   NativeModules,
   requireNativeComponent,
-  NativeAppEventEmitter,
+  NativeAppEventEmitter
 } from 'react-native'
 
 const RNIDButton = requireNativeComponent('RNIDButton', IDButton)
@@ -24,23 +24,23 @@ class IDButton extends React.Component {
     onError: PropTypes.func,
     onCachedToken: PropTypes.func,
     onVerified: PropTypes.func,
-    onUnverified: PropTypes.func,
+    onUnverified: PropTypes.func
   };
 
   static defaultProps = {
     style: {
       height: 63,
-      backgroundColor: 'purple',
+      backgroundColor: 'purple'
     },
     onAccessToken: () => ({}),
     onUserInfo: () => ({}),
     onError: () => ({}),
     onCachedToken: () => ({}),
     onVerified: () => ({}),
-    onUnverified: () => ({}),
+    onUnverified: () => ({})
   };
 
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.s1 = null
     this.s2 = null
@@ -50,7 +50,7 @@ class IDButton extends React.Component {
     this.s6 = null
   }
 
-  componentDidMount() {
+  componentDidMount () {
     NativeModules.RNIDButtonManager.initialize(ReactNative.findNodeHandle(this))
     this.s1 = NativeAppEventEmitter.addListener('didReceiveUserInfo', body => {
       this.props.onUserInfo(body)
@@ -77,7 +77,7 @@ class IDButton extends React.Component {
     })
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     this.s1.remove()
     this.s2.remove()
     this.s3.remove()
@@ -86,7 +86,7 @@ class IDButton extends React.Component {
     this.s6.remove()
   }
 
-  render() {
+  render () {
     return (
       <RNIDButton
         style={this.props.style}

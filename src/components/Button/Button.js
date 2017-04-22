@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import {
   View,
   TouchableHighlight,
-  Text,
+  Text
 } from 'react-native'
 import styles from './Button.styles'
 
@@ -10,32 +10,32 @@ class Button extends React.Component {
   static propTypes = {
     text: PropTypes.string,
     onPress: PropTypes.func.isRequired,
-    buttonStyles: View.propTypes.style,
+    buttonStyles: View.propTypes.style
   }
 
-  constructor(props) {
+  constructor (props) {
     super(props)
     this._onShowUnderlay.bind(this)
     this._onHideUnderlay.bind(this)
   }
 
   state = {
-    pressed: false,
+    pressed: false
   }
 
-  _onShowUnderlay() {
+  _onShowUnderlay () {
     this.setState({
-      pressed: true,
+      pressed: true
     })
   }
 
-  _onHideUnderlay() {
+  _onHideUnderlay () {
     this.setState({
-      pressed: false,
+      pressed: false
     })
   }
 
-  render() {
+  render () {
     const { onPress, text, buttonStyles } = this.props
     const { pressed } = this.state
 

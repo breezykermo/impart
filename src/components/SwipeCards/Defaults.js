@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from 'react-native'
 
 const styles = StyleSheet.create({
   noMoreCardsText: {
-    fontSize: 22,
-  },
+    fontSize: 22
+  }
 })
 
 const NoMoreCards = () => (
@@ -14,5 +14,5 @@ const NoMoreCards = () => (
 )
 
 export default {
-  NoMoreCards,
+  NoMoreCards
 }

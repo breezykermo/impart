@@ -5,5 +5,5 @@ export default fromJS({
   no: [],
   toDo: [],
   swiped: [],
-  isFetching: true, // for no flicker at app startup
+  isFetching: true // for no flicker at app startup
 })

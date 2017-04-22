@@ -6,21 +6,21 @@ import { bindActionCreators } from 'redux'
  * @param {array} actions - actions
  * @return {function} function to be passed to connect
  */
-export function mapDispatchToProps(actions = [], passDispatch = false) {
+export function mapDispatchToProps (actions = [], passDispatch = false) {
   return (dispatch) => {
     let creators = Array.isArray(actions) ? actions : [actions]
 
     creators = new Map()
       .merge(...creators)
       .filter(value => typeof value === 'function') // only pass functions
-      .toObject()	// convert immutable object to standard JS object
+      .toObject() // convert immutable object to standard JS object
 
     creators = bindActionCreators(creators, dispatch)
 
     if (passDispatch) {
       return {
         dispatch,
-        ...creators,
+        ...creators
       }
     }
 

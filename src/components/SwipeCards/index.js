@@ -1,2 +1,2 @@
-export * from './SwipeCards'
+// export * from './SwipeCards'
 export { default } from './SwipeCards'

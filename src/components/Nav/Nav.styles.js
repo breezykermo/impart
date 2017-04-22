@@ -11,31 +11,31 @@ export default {
     // marginBottom: 21,
     // bottom border
     borderBottomWidth: 0.5,
-    borderBottomColor: colors.lightGray,
+    borderBottomColor: colors.lightGray
   },
   title: {
     flex: 4,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   titleImage: {
     width: 90,
-    height: 30,
+    height: 30
   },
   side: {
     flex: 2,
     padding: 18,
-    position: 'absolute',
+    position: 'absolute'
   },
   menuIcon: {
     height: 20,
     width: 30,
-    left: 0,
+    left: 0
   },
   searchIcon: {
     marginTop: -10,
     height: 30,
     width: 30,
-    right: 18 + 30 + 18,
-  },
+    right: 18 + 30 + 18
+  }
 }

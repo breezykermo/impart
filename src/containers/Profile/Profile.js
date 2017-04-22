@@ -5,7 +5,7 @@ import Form, { Profile as ProfileFormType } from '../../util/form'
 import React, { PropTypes } from 'react'
 
 import {
-  View,
+  View
 } from 'react-native'
 import Button from '../../components/Button'
 import styles from './Profile.styles'
@@ -19,7 +19,7 @@ const Profile = props => (
         value={props.form}
         onChange={props.updateForm}
         options={{
-          auto: 'placeholders',
+          auto: 'placeholders'
         }}
       />
     </View>
@@ -30,7 +30,7 @@ const Profile = props => (
           props.signup(props.card, props.form)
           props.backHandler()
         }}
-        text="Submit details"
+        text='Submit details'
       />
     </View>
   </View>
@@ -52,12 +52,12 @@ Profile.propTypes = {
   /**
    * State of Profile fields form
    **/
-  form: PropTypes.object.isRequired,
+  form: PropTypes.object.isRequired
 }
 
 export default connect(
   state => ({
-    form: state.user.get('form'),
+    form: state.user.get('form')
   }),
   mapDispatchToProps(userActions)
 )(Profile)

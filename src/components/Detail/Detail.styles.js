@@ -8,7 +8,7 @@ export default {
   container: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   iconContainer: {
     // TODO: shift image up to the top of the container (within each row)
@@ -21,10 +21,10 @@ export default {
     marginLeft: (deviceType === 'iPhone 6 Plus') ? 15 : 0,
     marginRight: 20,
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 10
   },
   text: textStyles.copy,
   textContainer: {
-    width: CARD_WIDTH - (21 + 10 + 20 + 28),
-  },
+    width: CARD_WIDTH - (21 + 10 + 20 + 28)
+  }
 }

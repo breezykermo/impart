@@ -10,30 +10,30 @@ export default {
     borderTopWidth: 1,
     borderTopColor: colors.gray,
     paddingLeft: 36,
-    paddingRight: 36,
+    paddingRight: 36
     // paddingBottom: 10,
   },
   header: {
     backgroundColor: colors.white,
     paddingTop: 20,
     paddingBottom: 20,
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   headerTwo: {
     backgroundColor: 'transparent',
     paddingTop: 20,
     paddingBottom: 20,
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   titleText: [textStyles.copy, {
     letterSpacing: 0.5,
     fontWeight: 'bold',
-    color: colors.primary,
+    color: colors.primary
   }],
   titleTextTwo: [textStyles.copy, {
     letterSpacing: 0.5,
     fontWeight: 'bold',
-    color: colors.copy,
+    color: colors.copy
   }],
   containerTwo: {
     height: 300,
@@ -42,13 +42,13 @@ export default {
     borderTopColor: colors.gray,
     paddingLeft: 36,
     paddingRight: 36,
-    backgroundColor: colors.lightGray,
+    backgroundColor: colors.lightGray
   },
   iconContainer: {
     position: 'absolute',
-    right: 0,
+    right: 0
   },
   content: {
-    flexDirection: 'column',
-  },
+    flexDirection: 'column'
+  }
 }

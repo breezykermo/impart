@@ -18,5 +18,5 @@ export default {
   NAV_HEIGHT,
   CARD_INSET,
   CARD_HEIGHT,
-  CARD_WIDTH,
+  CARD_WIDTH
 }

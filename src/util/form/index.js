@@ -9,7 +9,7 @@ export const PhoneNumber = t.refinement(t.String, n => (
 export const Profile = t.struct({
   name: t.String,
   email: t.String,
-  phoneNo: PhoneNumber,
+  phoneNo: PhoneNumber
 })
 
 export default Form

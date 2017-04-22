@@ -14,10 +14,13 @@
     "debug:android": "adb reverse tcp:8081 tcp:8081 && node node_modules/react-native/local-cli/cli.js run-android",
     "bundle:ios": "node node_modules/react-native/local-cli/cli.js bundle --dev false --entry-file ./index.ios.js --platform ios --bundle-output ios/main.jsbundle",
     "bundle:android": "node node_modules/react-native/local-cli/cli.js bundle --dev false --entry-file ./index.android.js --platform android --bundle-output android/app/src/main/assets/index.android.bundle",
-    "lint": "eslint .",
+    "lint": "standard --fix",
     "test": "mocha --require react-native-mock/mock.js --compilers js:scripts/test/compile.js --recursive src/**/*.spec.js",
     "test:watch": "npm run test -- --watch",
     "dumpFromParse": "babel-node src/offline/scripts/dumpDataFromParse.js > src/offline/data/cards.js"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   },
   "dependencies": {
     "immutable": "^3.8.1",
@@ -38,17 +41,12 @@
     "babel-core": "^6.9.1",
     "babel-eslint": "^7.1.0",
     "chai": "^3.5.0",
-    "eslint": "^3.9.0",
-    "eslint-config-airbnb": "^12.0.0",
-    "eslint-plugin-import": "^2.0.1",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.4.1",
-    "eslint-plugin-react-native": "^2.0.0",
     "fs": "0.0.2",
     "mocha": "^3.1.2",
     "path": "^0.12.7",
     "react-native-debugger-open": "^0.3.1",
     "react-native-mock": "^0.2.3",
-    "sinon": "^1.17.4"
+    "sinon": "^1.17.4",
+    "standard": "^10.0.2"
   }
 }

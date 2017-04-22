@@ -4,21 +4,21 @@ export const styles = {
   h1: {
     fontFamily: 'HelveticaNeue-Medium',
     fontSize: 21,
-    color: colors.white,
+    color: colors.white
   },
   h2: {
     fontFamily: 'HelveticaNeue-Medium',
     fontSize: 17,
-    color: colors.copy,
+    color: colors.copy
   },
   copy: {
     fontFamily: 'HelveticaNeue',
     fontSize: 15,
-    color: colors.copy,
+    color: colors.copy
   },
   copyButton: {
     fontFamily: 'HelveticaNeue-Medium',
     fontSize: 18,
-    color: colors.primary,
-  },
+    color: colors.primary
+  }
 }

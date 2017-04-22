@@ -6,7 +6,7 @@ const yupNopeCore = {
   left: ((sizes.CARD_WIDTH / 2) - 8),
   borderRadius: 3,
   borderWidth: 1,
-  padding: 10,
+  padding: 10
 }
 
 export default {
@@ -15,24 +15,24 @@ export default {
     top: 0,
     width: sizes.SCREEN_WIDTH,
     height: sizes.SCREEN_HEIGHT,
-    backgroundColor: colors.white,
+    backgroundColor: colors.white
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.white,
+    backgroundColor: colors.white
   },
   yup: [yupNopeCore, {
-    borderColor: colors.green,
+    borderColor: colors.green
   }],
   yupText: [textStyles.h1, {
-    color: colors.green,
+    color: colors.green
   }],
   nope: [yupNopeCore, {
-    borderColor: colors.red,
+    borderColor: colors.red
   }],
   nopeText: [textStyles.h1, {
-    color: colors.red,
-  }],
+    color: colors.red
+  }]
 }

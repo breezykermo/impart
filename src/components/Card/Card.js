@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import {
   View,
   Text,
-  Image,
+  Image
 } from 'react-native'
 import DetailList from '../DetailList'
 import styles from './Card.styles'
@@ -25,7 +25,7 @@ const Card = ({ data }) => (
   </View>
 )
 Card.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.object
 }
 
 export default Card

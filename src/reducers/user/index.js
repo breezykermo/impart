@@ -1,7 +1,7 @@
 import defaultState from './defaultState'
 import {
   FETCH_USER_SUCCESS,
-  UPDATE_FORM,
+  UPDATE_FORM
 } from './actions'
 
 export default (state = defaultState, action) => {

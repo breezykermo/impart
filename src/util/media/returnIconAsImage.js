@@ -5,7 +5,7 @@ const defaultStyles = {
   square: { height: 21, width: 21 },
   tall: { height: 21, width: 14 },
   calendar: { height: 20, width: 21 },
-  drops: { height: 16, width: 16 },
+  drops: { height: 16, width: 16 }
 }
 
 export const returnIconAsImage = (iconName, style) => {

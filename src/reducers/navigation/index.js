@@ -1,7 +1,7 @@
 import defaultState from './defaultState'
 import {
   GO_TO_VIEW,
-  POP_VIEW,
+  POP_VIEW
 } from './actions'
 
 export default (state = defaultState, action) => {

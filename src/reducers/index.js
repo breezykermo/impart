@@ -6,5 +6,5 @@ import user from './user'
 export default combineReducers({
   navigation,
   cards,
-  user,
+  user
 })

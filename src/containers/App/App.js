@@ -30,18 +30,18 @@ class App extends Component {
     goToView: PropTypes.func.isRequired,
     popView: PropTypes.func.isRequired,
     syncUser: PropTypes.func.isRequired,
-    isLoading: PropTypes.bool.isRequired,
+    isLoading: PropTypes.bool.isRequired
   }
 
   state = {
-    cards: this.props.toDo,
+    cards: this.props.toDo
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.props.syncUser()
   }
 
-  render() {
+  render () {
     const {
       user,
       toDo,
@@ -52,7 +52,7 @@ class App extends Component {
       swipeNo,
       goToView,
       popView,
-      isLoading,
+      isLoading
     } = this.props
 
     let innerComponent
@@ -64,15 +64,15 @@ class App extends Component {
       innerComponent = (
         <View>
           {/* TODO: abstract this backdrop out??? */}
-        {toDo.length !== 0 ? (
-          <View style={styles.backgroundCardContainer}>
-            <Card styles={styles.backgroundCard} data={toDo[1] || toDo[0]} />
-          </View>
+          {toDo.length !== 0 ? (
+            <View style={styles.backgroundCardContainer}>
+              <Card styles={styles.backgroundCard} data={toDo[1] || toDo[0]} />
+            </View>
         ) : null}
           <SwipeCards
             style={styles.swipeCards}
-            renderYup={pan => <YesNoImage type="yes" pan={pan} />}
-            renderNope={pan => <YesNoImage type="no" pan={pan} />}
+            renderYup={pan => <YesNoImage type='yes' pan={pan} />}
+            renderNope={pan => <YesNoImage type='no' pan={pan} />}
 
             card={toDo[0]}
             renderCard={cardData => <Card data={cardData} />}
@@ -113,7 +113,7 @@ export default connect(
     currentView: state.navigation.get('current'),
     toDo: state.cards.get('toDo').toJS(),
     isLoading: state.cards.get('isFetching'),
-    user: state.user.get('profile'),
+    user: state.user.get('profile')
   }),
   mapDispatchToProps([navigationActions, cardActions, userActions])
 )(App)

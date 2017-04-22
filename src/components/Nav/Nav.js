@@ -25,7 +25,7 @@ const Nav = () => (
   </View>
 )
 Nav.propTypes = {
-  some: PropTypes.string,
+  some: PropTypes.string
 }
 
 export default Nav
